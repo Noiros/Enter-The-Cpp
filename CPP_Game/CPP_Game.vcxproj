@@ -141,7 +141,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="SRC\Engine\Input.cpp" />
     <ClCompile Include="SRC\Engine\ResourcesManager.cpp" />
+    <ClCompile Include="SRC\Game\Bullet.cpp" />
     <ClCompile Include="SRC\Game\Game.cpp" />
     <ClCompile Include="SRC\Engine\Logger.cpp" />
     <ClCompile Include="SRC\Game\Player.cpp" />
@@ -359,12 +361,14 @@
     <ClInclude Include="SDL2\inculdes\SDL_version.h" />
     <ClInclude Include="SDL2\inculdes\SDL_video.h" />
     <ClInclude Include="SDL2\inculdes\SDL_vulkan.h" />
+    <ClInclude Include="SRC\Engine\Input.h" />
     <ClInclude Include="SRC\Engine\Logger.h" />
     <ClInclude Include="SRC\Engine\Node.h" />
     <ClInclude Include="SRC\Engine\Node2D.h" />
     <ClInclude Include="SRC\Engine\PhysicNode2D.h" />
     <ClInclude Include="SRC\Engine\ResourcesManager.h" />
     <ClInclude Include="SRC\Engine\Utils.hpp" />
+    <ClInclude Include="SRC\Game\Bullet.h" />
     <ClInclude Include="SRC\Game\Game.h" />
     <ClInclude Include="SRC\Game\Player.h" />
   </ItemGroup>

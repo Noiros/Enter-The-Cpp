@@ -1,4 +1,65 @@
-﻿  Game.cpp
-  Player.cpp
+﻿  Input.cpp
+  Game.cpp
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4838: conversion from 'T' to 'int' requires a narrowing conversion
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4838:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4838:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4838:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4838:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4244:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4244:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4244:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,42): warning C4244:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4838: conversion from 'T' to 'int' requires a narrowing conversion
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4838:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4838:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4838:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4838:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4244:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4244:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4244:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,67): warning C4244:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4838: conversion from 'T' to 'int' requires a narrowing conversion
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4838:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4838:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4838:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4838:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4244:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4244:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4244:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,88): warning C4244:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4838: conversion from 'T' to 'int' requires a narrowing conversion
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4838:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4838:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4838:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4838:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4244:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4244:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4244:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(99,109): warning C4244:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4838: conversion from 'T' to 'int' requires a narrowing conversion
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4838:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4838:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4838:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4838:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4244:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4244:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4244:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,47): warning C4244:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4838: conversion from 'T' to 'int' requires a narrowing conversion
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4838:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4838:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4838:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4838:         ]
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4244: 'initializing': conversion from 'T' to 'int', possible loss of data
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4244:         with
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4244:         [
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4244:             T=float
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp(100,91): warning C4244:         ]
   Generating Code...
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Input.cpp(70,1): warning C4715: 'Input::GetStick': not all control paths return a value
   CPP_Game.vcxproj -> C:\Users\noiro\Documents\CPP-Game\x64\Debug\CPP_Game.exe

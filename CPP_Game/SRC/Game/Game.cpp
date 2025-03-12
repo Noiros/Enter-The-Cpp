@@ -1,11 +1,13 @@
 #include "Game.h"
 #include <iostream>
 #include <SDL.h>
-#include "../Engine/Logger.h"
 #include "Player.h"
 #include <Windows.h>
-#include "../Engine/Utils.hpp"
 #include <memory>
+
+#include "../Engine/Logger.h"
+#include "../Engine/Utils.hpp"
+#include "../Engine/ResourcesManager.h"
 
 Game::Game() {
 	Logger::Log("Game constructor called");
@@ -44,13 +46,17 @@ void Game::Start() {
 	Logger::Log("SDL Initialized");
 
 	//Engine setup
+	resourcesManager = std::make_unique<ResourcesManager>(renderer);
 
 	//Game setup
 	SetThreadPriority(GetCurrentThread(), SDL_THREAD_PRIORITY_TIME_CRITICAL);
 	isRunning = true;
 
+	resourcesManager->LoadTexture("./Datas/Assets/Ship.tga");
 	for (size_t i = 0; i < 1000; i++) {
-		std::unique_ptr<Player> player = std::make_unique<Player>(Utils::randVec2Range(1, DISPLAY_WIDTH - 10), Utils::randVec2Range(-500, 500), Utils::randColor());
+		SDL_Texture* texture = resourcesManager->GetTexture("./Datas/Assets/Ship.tga");
+		std::unique_ptr<Player> player = std::make_unique<Player>(Utils::randVec2Range(1, DISPLAY_WIDTH - 10), Utils::randVec2Range(-500, 500), Utils::randColor(), texture);
+		player->size = glm::vec2(64, 64);
 		nodes.push_back(std::move(player)); // Transfer ownership to the vector
 	}
 }
@@ -90,9 +96,15 @@ void Game::Render() {
 	for (const auto& node : nodes) {
 		Node2D* visual_node = dynamic_cast<Node2D*>(node.get());
 
-		SDL_SetRenderDrawColor(renderer, visual_node->modulate.r, visual_node->modulate.g, visual_node->modulate.b, visual_node->modulate.a);
-		SDL_FRect rect = { visual_node->position.x, visual_node->position.y, visual_node->size.x, visual_node->size.y };
-		SDL_RenderFillRectF(renderer, &rect);
+		SDL_Rect size = { visual_node->position.x, visual_node->position.y, visual_node->size.x, visual_node->size.y };
+		SDL_Rect rect = { 0, 0, visual_node->size.x * visual_node->scale.x, visual_node->size.y * visual_node->scale.y };
+
+		SDL_SetTextureColorMod(visual_node->texture, visual_node->modulate.r, visual_node->modulate.g, visual_node->modulate.b);
+		SDL_SetTextureBlendMode(visual_node->texture, SDL_BlendMode::SDL_BLENDMODE_BLEND);
+		SDL_RenderCopy(renderer, visual_node->texture, &rect, &size);
+
+		//SDL_SetRenderDrawColor(renderer, visual_node->modulate.r, visual_node->modulate.g, visual_node->modulate.b, visual_node->modulate.a);
+		//SDL_RenderFillRectF(renderer, &rect);
 	}
 
 	SDL_RenderPresent(renderer);

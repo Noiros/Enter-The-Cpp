@@ -9,7 +9,7 @@ public:
 	using vec2 = glm::vec2;
 
 	vec2 position;
-	vec2 scale;
+	vec2 scale = vec2(1, 1);
 	float rotation;
 
 	SDL_Color modulate;

@@ -21,11 +21,13 @@ void ResourcesManager::ClearAssets() {
 }
 
 void ResourcesManager::LoadTexture(std::string_view path) {
-	SDL_Texture* texture = IMG_LoadTexture(renderer, path.data());
-	if (texture) {
-		textures.emplace(path, texture);
-	} else {
-		Logger::Err("Texture not finded : " + static_cast<std::string>(path));
+	if (!textures.contains(path)) {
+		SDL_Texture* texture = IMG_LoadTexture(renderer, path.data());
+		if (texture) {
+			textures.emplace(path, texture);
+		} else {
+			Logger::Err("Texture not finded : " + static_cast<std::string>(path));
+		}
 	}
 }
 

@@ -1,7 +1,9 @@
 #pragma once
 #include <SDL.h>
 #include <memory>
+
 #include "../Engine/Node.h"
+#include "../Engine/ResourcesManager.h"
 
 //#define VSYNC
 //#define CAP_FPS
@@ -24,6 +26,8 @@ class Game {
 	private:
 		SDL_Window* window = nullptr;
 		SDL_Renderer* renderer = nullptr;
+		std::unique_ptr<ResourcesManager> resourcesManager;
+
 
 		bool isRunning;
 		uint64_t millisecondPerviousFrame = 0;
