@@ -11,18 +11,18 @@ enum class LogType : uint8_t { info, warning, error, critical };
 
 struct LogEntry
 {
-	LogType type;
-	std::string dateTime;
-	std::string msg;
+    LogType type;
+    std::string dateTime;
+    std::string msg;
 };
 
 class Logger
 {
-	public:
-		static void Log(std::string_view msg);
-		static void Err(std::string_view msg);
+public:
+    static void Log(std::string_view msg);
+    static void Err(std::string_view msg);
 
-	private:
-		static std::string GetCurrentDateTime();
-		inline static std::vector<LogEntry> messages;
+private:
+    static std::string GetCurrentDateTime();
+    inline static std::vector<LogEntry> messages;
 };

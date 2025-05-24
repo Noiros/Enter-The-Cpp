@@ -1,0 +1,3 @@
+﻿  Entities.cpp
+D:\Projects\HEAJ\24-25\CPlusPlus\CPP_Project\CPP_Project\SRC\Game\Entities.cpp(102,29): warning C4838: conversion from 'uint32_t' to 'int' requires a narrowing conversion
+  CPP_Project.vcxproj -> D:\Projects\HEAJ\24-25\CPlusPlus\CPP_Project\x64\Debug\CPP_Project.exe

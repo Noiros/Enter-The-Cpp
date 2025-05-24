@@ -7,33 +7,34 @@
 
 class Level
 {
-	public:
-		Level(SDL_Texture* t, const std::string& mapData, size_t w, size_t h) : tileSetTexture(t), width(w), height(h)
-		{
-			Logger::Log("Level constructo called");
-			ReadTileMapData(mapData);
-		}
-		~Level();
+public:
+    Level(SDL_Texture* t, const std::string& mapData, size_t w, size_t h) : tileSetTexture(t), width(w), height(h)
+    {
+        Logger::Log("Level constructo called");
+        ReadTileMapData(mapData);
+    }
 
-		void Update(float deltaTime);
-		void Render(SDL_Renderer* renderer);
+    ~Level();
 
-	private:
-		void ReadTileMapData(const std::string& filename);
+    void Update(float deltaTime);
+    void Render(SDL_Renderer* renderer);
 
-		SDL_Texture* tileSetTexture;
-		
-		static const size_t tileHeight = 128;
-		static const size_t tileWidth = 128;
+private:
+    void ReadTileMapData(const std::string& filename);
 
-		size_t width;
-		size_t height;
-		std::vector<uint8_t> tileMap; //assuming we do not have a tileset larger than 256 indices
+    SDL_Texture* tileSetTexture;
 
-		//camera stuff (could be in its own class)
-		const float initCamPosY = height * tileHeight - DISPLAY_HEIGHT;
-		float camPosY = initCamPosY;
-		float camSpeed = 50.0f;
+    static constexpr size_t tileHeight = 128;
+    static constexpr size_t tileWidth = 128;
 
-		//other data such as enemies or pickups initial pos/time or attack patterns could be stored here
+    size_t width;
+    size_t height;
+    std::vector<uint8_t> tileMap; //assuming we do not have a tileset larger than 256 indices
+
+    //camera stuff (could be in its own class)
+    const float initCamPosY = height * tileHeight - DISPLAY_HEIGHT;
+    float camPosY = initCamPosY;
+    float camSpeed = 50.0f;
+
+    //other data such as enemies or pickups initial pos/time or attack patterns could be stored here
 };
