@@ -1,0 +1,61 @@
+#pragma once
+#include "../Engine/Entity.h"
+#include <memory>
+
+enum class EntityType { PLAYER, ENEMY };
+
+struct BulletParams
+{
+	glm::vec2 pos = { 0,0 };
+	glm::vec2 vel = { 0,0 };
+};
+
+union BulletState
+{
+	BulletParams params;
+	class Bullet* next = nullptr; //forward declaration of Bullet. Pointer to the next available bullet.
+};
+
+class Bullet //simpler class does not inherit from entity
+{
+	public:
+		bool Update(float deltaTime); //true when destroyed
+		void Render(SDL_Renderer* renderer);
+
+		BulletState state;
+		bool isActive = false;
+		inline static SDL_Texture* texture = nullptr;
+
+	private:
+		inline static const glm::vec2 dim = { 8, 8 }; //shared across all instances
+		inline static const SDL_Color color = { 255, 80, 5 };
+};
+
+class Player : public Entity
+{
+	public:
+		float speed;
+		int animSpeed; //frames per second
+		std::unique_ptr<Input>& input;
+
+		Player(vec2 p, SDL_Texture* t, SDL_Texture* bt, std::unique_ptr<Input>& i) : Entity(p, vec2(0,0), EntityType::PLAYER, t), bulletTexture(bt), input(i)
+		{
+			Bullet::texture = bulletTexture;
+			head = &bullets[0]; //head
+			for (int i = 0; i < poolSize - 1; i++) bullets[i].state.next = &bullets[i + 1];
+			bullets[poolSize - 1].state.next = nullptr; //tail
+		}
+		~Player() = default;
+
+		void Update(float deltaTime) override;
+		void Render(SDL_Renderer* renderer) override;
+
+		void Shoot(vec2 pos, vec2 vel);
+
+	private:
+		Bullet* head;
+		SDL_Texture* bulletTexture;
+		static const uint32_t poolSize = 1000;
+		Bullet bullets[poolSize];
+};
+
