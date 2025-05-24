@@ -53,7 +53,7 @@ void Game::Start() {
 	isRunning = true;
 
 	resourcesManager->LoadTexture("./Datas/Assets/Ship.tga");
-	for (size_t i = 0; i < 1000; i++) {
+	for (size_t i = 0; i < 1; i++) {
 		SDL_Texture* texture = resourcesManager->GetTexture("./Datas/Assets/Ship.tga");
 		std::unique_ptr<Player> player = std::make_unique<Player>(Utils::randVec2Range(1, DISPLAY_WIDTH - 10), Utils::randVec2Range(-500, 500), Utils::randColor(), texture);
 		player->size = glm::vec2(64, 64);
