@@ -2,6 +2,7 @@
 #include <SDL.h>
 #include <memory>
 
+#include "../Engine/Input.h"
 #include "../Engine/Node.h"
 #include "../Engine/ResourcesManager.h"
 
@@ -13,6 +14,8 @@ const uint32_t MILLISEC_PER_FRAME = 1000 / FPS;
 
 const uint32_t DISPLAY_WIDTH = 1024;
 const uint32_t DISPLAY_HEIGHT = 1024;
+
+enum class Action { MoveLeft, MoveRight, MoveUp, MoveDown, Shoot };
 
 class Game {
 	public:
@@ -27,6 +30,7 @@ class Game {
 		SDL_Window* window = nullptr;
 		SDL_Renderer* renderer = nullptr;
 		std::unique_ptr<ResourcesManager> resourcesManager;
+		std::unique_ptr<Input> input;
 
 
 		bool isRunning;

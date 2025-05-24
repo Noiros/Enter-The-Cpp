@@ -33,7 +33,7 @@ void Input::ProcessInput() {
 
 	for (const auto& [action, key] : keyBinding) {
 		if (state[key]) heldKeys.insert(key);
-		if (SDL_GetKeyboardState(NULL)[key] && !heldKeys.count(key)) pressedKeys.insert(key);
+		if (state[key] && !heldKeys.count(key)) pressedKeys.insert(key);
 	}
 
 	if (gameController) {

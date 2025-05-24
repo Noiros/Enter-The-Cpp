@@ -46,6 +46,7 @@ void Game::Start() {
 	Logger::Log("SDL Initialized");
 
 	//Engine setup
+	input = std::make_unique<Input>();
 	resourcesManager = std::make_unique<ResourcesManager>(renderer);
 
 	//Game setup
