@@ -4,32 +4,13 @@
 #include "../Engine.h"
 
 
-Sprite2D::Sprite2D(std::string_view name)
-{
-    texture = ResourcesManager::GetInstance().GetTexture(name);
-}
-
-void Sprite2D::Update(float deltaTime)
-{
-}
-
-void Sprite2D::Ready()
-{
-}
-
 void Sprite2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale)
-{
-    //compute animation frame
-    uint32_t animFrame = (SDL_GetTicks64() * animSpeed / 1000) % 2; //2 frames for this anim
-    animFrame = 0;
-
-    //source rectangle for the blit
-    SDL_Rect src = {static_cast<int>(animFrame * 64), 0, 64, 64};
-    
+{    
     //dest rectangle
     SceneTree* sceneTree = &SceneTree::GetInstance();
     Node* ParentNode = sceneTree->GetRootNode(this);
     Transform2D* transform = sceneTree->GetComponent<Transform2D>(ParentNode);
+    textureSrc = {0, 0, int(transform->size.x), int(transform->size.y)};
 
     glm::ivec2 centerPos = {int(transform->size.x * transform->anchor.x), int(transform->size.y * transform->anchor.y)};
     SDL_Point center = {centerPos.x, centerPos.y};
@@ -37,5 +18,5 @@ void Sprite2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraS
 
     //blit
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND); //alpha blend
-    SDL_RenderCopyEx(renderer, texture, &src, &dst, transform->rotation, &center, SDL_FLIP_NONE);
+    SDL_RenderCopyEx(renderer, texture, &textureSrc, &dst, transform->rotation, &center, SDL_FLIP_NONE);
 }

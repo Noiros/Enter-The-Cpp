@@ -21,7 +21,7 @@ constexpr uint32_t DISPLAY_HEIGHT = 1024;
 
 enum class Action { MoveLeft, MoveRight, MoveUp, MoveDown, Shoot };
 
-class TileMap;
+class TileMap2D;
 
 class Game
 {

@@ -12,7 +12,7 @@ public:
     glm::vec2 GetCameraPos() { return cameraPos; }
     float GetCameraScale() { return CameraScale; }
 
-    float CameraLag = 1.0f;
+    float CameraLag = 2.0f;
     float CameraScale = 1.0f;
 
     void Update(float deltaTime) override;

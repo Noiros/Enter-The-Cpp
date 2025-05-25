@@ -4,8 +4,13 @@
 
 void Bullet::Ready()
 {
-    SceneTree::GetInstance().AddComponent<Sprite2D>(this, "Bullet");
+    SpriteSheet sheet("./Assets/Images/FX/PlantSpike.png", {16, 16});
+    Animation animIdle({0, 1, 2, 3}, sheet, 0.1f);
+    AnimatedSprite2D* sprite = SceneTree::GetInstance().AddComponent<AnimatedSprite2D>(this, sheet);
     movement = SceneTree::GetInstance().AddComponent<CharacterMovement2D>(this);
+
+    sprite->AddAnimation("Idle", animIdle);
+    sprite->PlayAnimation("Idle");
 }
 
 void Bullet::Update(float deltaTime)

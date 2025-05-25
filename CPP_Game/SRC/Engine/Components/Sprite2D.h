@@ -1,19 +1,19 @@
 ﻿#pragma once
 
 #include <SDL_render.h>
-#include <string_view>
+#include "../Resources/Sprite.h"
 
 #include "Component2D.h"
 
 class Sprite2D : public Component2D
 {
 public:
-    SDL_Texture* texture;
-    uint32_t animSpeed;
-
-    Sprite2D(std::string_view name);
-
-    void Update(float deltaTime);
-    void Ready();
+    Sprite2D(Sprite s) : sprite(s) {};
+    
     void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale);
+
+protected:
+    Sprite sprite;
+    SDL_Rect textureSrc;
+    SDL_Texture* texture;
 };

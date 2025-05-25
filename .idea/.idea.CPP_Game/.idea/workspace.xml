@@ -5,38 +5,41 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="26d8fb41-693a-4e48-a7f8-a4294213251e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/AnimatedSprite2D.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/AnimatedSprite2D.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Component2D.cpp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Component2D.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Sprite2D.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/ComponentUI.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/ComponentUI.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/NavAgent2D.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/NavAgent2D.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/NavMesh2D.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/NavMesh2D.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/NavigationServer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/NavigationServer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Resources/Animation.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Resources/CollisionShape.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Resources/Sprite.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Resources/SpriteSheet.hpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Enemy.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Enemy.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CPP_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CPP_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game.sln.DotSettings.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/Assets/Images/Tiles/Fences.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/Assets/Images/Tiles/Fields.tga" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/Assets/Maps/Main_Objects.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/Assets/Maps/Main_Tiles.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AssetsSources/Tiled/MainMap.tmx" beforeDir="false" afterPath="$PROJECT_DIR$/AssetsSources/Tiled/MainMap.tmx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/Assets/Maps/MainMap_Floor.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/Assets/Maps/MainMap_Floor.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/Assets/Maps/MainMap_House.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/Assets/Maps/MainMap_House.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/Assets/Maps/MainMap_Nature.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/Assets/Maps/MainMap_Nature.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/Assets/Maps/MainMap_Props.csv" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/Assets/Maps/MainMap_Props.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/CPP_Game.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/CPP_Game.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Component.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Camera2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Camera2D.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/AnimatedSprite2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/AnimatedSprite2D.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/AnimatedSprite2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/AnimatedSprite2D.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Camera2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Camera2D.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Collider2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Collider2D.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Movement.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/CharacterMovement2D.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Movement.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/CharacterMovement2D.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TextureRect.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Sprite2D.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TextureRect.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TileMap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TileMap.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TileMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TileMap.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform2D.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform2D.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Sprite2D.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Sprite2D.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Sprite2D.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Sprite2D.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TileMap.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TileMap2D.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TileMap.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TileMap2D.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/RenderingServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/RenderingServer.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/RenderingServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/RenderingServer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/SceneTree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/SceneTree.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/SceneTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/SceneTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/ResourcesManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/ResourcesManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/ResourcesManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Modules/ResourcesManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Utils.hpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Utils.hpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Bullet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Bullet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Bullet.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Bullet.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Player.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Nodes/Player.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.ilk" afterDir="false" />
@@ -50,11 +53,10 @@
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.write.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.idb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiled/Fences.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiled/Game.tiled-project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiled/Game.tiled-session" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiled/Main.tmx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tiled/Terrain.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/vc143.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/CPP_Game.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/CPP_Game.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -117,6 +119,21 @@
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
@@ -355,7 +372,78 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="cidr-memory-view://285" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://361" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/include/algorithm" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../../Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.44.35207/include/xhash" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CPP_Game/GLM/detail/type_vec2.inl" root0="SKIP_HIGHLIGHTING" />
@@ -428,7 +516,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748158755643</updated>
-      <workItem from="1748158757306" duration="34182000" />
+      <workItem from="1748158757306" duration="45711000" />
     </task>
     <servers />
   </component>

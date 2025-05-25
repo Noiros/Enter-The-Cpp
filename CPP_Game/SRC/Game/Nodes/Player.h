@@ -9,9 +9,6 @@
 class Player : public Node
 {
 public:
-    float speed = 100.0f;
-    int animSpeed; //frames per second
-
     InputManager* inputManager;
 
     void Update(float deltaTime) override;
@@ -21,7 +18,7 @@ public:
 
 private:
     CharacterMovement2D* movement;
-    Sprite2D* textureRect;
+    AnimatedSprite2D* animatedSprite;
     Camera2D* camera;
     
     glm::vec2 moveDir = glm::vec2(0, 0);

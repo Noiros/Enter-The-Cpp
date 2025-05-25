@@ -15,8 +15,8 @@ public:
     ResourcesManager& operator=(const ResourcesManager&) = delete;
 
     void ClearAssets();
-    void AddTexture(std::string_view name, std::string_view fileName);
-    SDL_Texture* GetTexture(std::string_view name) const;
+    void AddTexture(std::string_view fileName);
+    SDL_Texture* GetTexture(std::string_view fileName);
 
 private:
     static ResourcesManager* s_instance;

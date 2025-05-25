@@ -147,7 +147,10 @@
         <ClCompile Include="SRC\Engine\Components\Camera2D.cpp" />
         <ClCompile Include="SRC\Engine\Components\Collider2D.cpp" />
         <ClCompile Include="SRC\Engine\Components\Component2D.cpp" />
-        <ClCompile Include="SRC\Engine\Components\TileMap.cpp">
+        <ClCompile Include="SRC\Engine\Components\ComponentUI.cpp" />
+        <ClCompile Include="SRC\Engine\Components\NavAgent2D.cpp" />
+        <ClCompile Include="SRC\Engine\Components\NavMesh2D.cpp" />
+        <ClCompile Include="SRC\Engine\Components\TileMap2D.cpp">
           <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
           <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
           <Optimization>Disabled</Optimization>
@@ -304,6 +307,7 @@
             <SDLCheck>true</SDLCheck>
             <LinkCompiled>true</LinkCompiled>
         </ClCompile>
+        <ClCompile Include="SRC\Engine\Modules\NavigationServer.cpp" />
         <ClCompile Include="SRC\Engine\Modules\PhysicsServer.cpp">
             <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
             <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -686,6 +690,7 @@
           <LinkCompiled>true</LinkCompiled>
         </ClCompile>
         <ClCompile Include="SRC\Game\Nodes\Empty.cpp" />
+        <ClCompile Include="SRC\Game\Nodes\Enemy.cpp" />
         <ClCompile Include="SRC\Game\Nodes\Player.cpp">
           <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
           <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -772,22 +777,31 @@
         <ClInclude Include="SRC\Engine\Components\Camera2D.h" />
         <ClInclude Include="SRC\Engine\Components\Collider2D.h" />
         <ClInclude Include="SRC\Engine\Components\Component2D.h" />
-        <ClInclude Include="SRC\Engine\Components\TileMap.h" />
+        <ClInclude Include="SRC\Engine\Components\ComponentUI.h" />
+        <ClInclude Include="SRC\Engine\Components\NavAgent2D.h" />
+        <ClInclude Include="SRC\Engine\Components\NavMesh2D.h" />
+        <ClInclude Include="SRC\Engine\Components\TileMap2D.h" />
         <ClInclude Include="SRC\Engine\Components\CharacterMovement2D.h" />
         <ClInclude Include="SRC\Engine\Components\Sprite2D.h" />
         <ClInclude Include="SRC\Engine\Components\Transform2D.h" />
         <ClInclude Include="SRC\Engine\Engine.h"/>
         <ClInclude Include="SRC\Engine\Modules\GarbageCollector.h" />
         <ClInclude Include="SRC\Engine\Modules\InputManager.h"/>
+        <ClInclude Include="SRC\Engine\Modules\NavigationServer.h" />
         <ClInclude Include="SRC\Engine\Modules\PhysicsServer.h"/>
         <ClInclude Include="SRC\Engine\Modules\RenderingServer.h"/>
         <ClInclude Include="SRC\Engine\Modules\ResourcesManager.h"/>
         <ClInclude Include="SRC\Engine\Modules\SceneTree.h"/>
         <ClInclude Include="SRC\Engine\Node.h"/>
         <ClInclude Include="SRC\Engine\Logger.h"/>
+        <ClInclude Include="SRC\Engine\Resources\Animation.h" />
+        <ClInclude Include="SRC\Engine\Resources\CollisionShape.h" />
+        <ClInclude Include="SRC\Engine\Resources\Sprite.h" />
+        <ClInclude Include="SRC\Engine\Resources\SpriteSheet.hpp" />
         <ClInclude Include="SRC\Engine\Utils.hpp"/>
         <ClInclude Include="SRC\Game\Nodes\Bullet.h" />
         <ClInclude Include="SRC\Game\Nodes\Empty.h" />
+        <ClInclude Include="SRC\Game\Nodes\Enemy.h" />
         <ClInclude Include="SRC\Game\Nodes\Player.h" />
         <ClInclude Include="SRC\Game\Game.h"/>
     </ItemGroup>
