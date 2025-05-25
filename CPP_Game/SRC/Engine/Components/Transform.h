@@ -9,10 +9,10 @@ class Transform : public Component
 public:
     glm::vec2 position;
     glm::vec2 scale;
-    glm::vec2 rotation;
     glm::vec2 size = {64, 64};
+    float rotation;
 
-    Transform() = default;
+    Transform(glm::vec2 pos = {0, 0}, glm::vec2 scale = {1, 1}, float rot = 0.0f) :  position(pos), scale(scale), rotation(rot) {}
     ~Transform() override = default;
 
     void Update(float deltaTime) override;

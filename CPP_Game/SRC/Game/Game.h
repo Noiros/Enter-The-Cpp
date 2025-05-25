@@ -6,7 +6,7 @@
 #include "../Engine/Modules/InputManager.h"
 #include "../Engine/Modules/RenderingServer.h"
 #include <vector>
-#include "Player.h"
+#include "Nodes/Player.h"
 #include "../Engine/Engine.h""
 
 
@@ -33,7 +33,7 @@ public:
     void Quit();
 
 private:
-    std::unique_ptr<Player> player;
+    Player* player;
 
     //Level data
     std::unique_ptr<Level> level; //this could be a vector of levels

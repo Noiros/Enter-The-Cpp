@@ -13,13 +13,8 @@ public:
 
     Transform* transform;
 
-    Node()
-    {
-    }
-
-    virtual ~Node()
-    {
-    }
+    Node() = default;
+    virtual ~Node() = default;
 
     virtual void Ready() = 0;
     virtual void Update(float deltaTime) = 0;

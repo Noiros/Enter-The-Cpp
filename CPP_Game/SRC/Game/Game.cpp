@@ -3,7 +3,7 @@
 #include "../Engine/Logger.h"
 #include "../Engine/Modules/RenderingServer.h"
 #include <SDL.h>
-#include "Player.h"
+#include "Nodes/Player.h"
 #include "../Engine/Utils.hpp"
 #include <Windows.h>
 #include <glm.hpp>
@@ -48,5 +48,9 @@ void Game::Start(Engine* engine)
     //Create level
     level = std::make_unique<Level>(resourcesManager->GetTexture("Tileset"), "./Assets/Maps/Level01.csv", 8, 64);
 
-    sceneTree->AddNode<Player>();
+
+    player = sceneTree->AddNode<Player>();
+    player->transform->position.x = DISPLAY_WIDTH / 2.0f;
+    player->transform->position.y = DISPLAY_HEIGHT / 2.0f;
+    player->transform->rotation = 45.0f;
 }

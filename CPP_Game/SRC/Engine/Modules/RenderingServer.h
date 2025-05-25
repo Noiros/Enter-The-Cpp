@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include <SDL_rect.h>
 #include <SDL_render.h>
+#include <vec2.hpp>
 #include <vector>
 #include "../Component.h"
 
