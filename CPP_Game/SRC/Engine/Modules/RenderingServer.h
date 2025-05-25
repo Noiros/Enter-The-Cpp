@@ -10,28 +10,28 @@
 
 class RenderingServer
 {
-public:
-    RenderingServer();
+    public:
+        RenderingServer();
 
-    ~RenderingServer()
-    {
-    };
+        ~RenderingServer()
+        {
+        };
 
-    static void SetInstance(RenderingServer* instance) { s_instance = instance; };
-    static RenderingServer& GetInstance() { return *s_instance; };
-    RenderingServer(const RenderingServer&) = delete;
-    RenderingServer& operator=(const RenderingServer&) = delete;
+        static void SetInstance(RenderingServer* instance) { s_instance = instance; };
+        static RenderingServer& GetInstance() { return *s_instance; };
+        RenderingServer(const RenderingServer&) = delete;
+        RenderingServer& operator=(const RenderingServer&) = delete;
 
-    SDL_Renderer* GetRenderer() const { return renderer; }
-    void UpdateComponents(std::vector<Component*> components);
-    void Render();
-    void Clear();
+        SDL_Renderer* GetRenderer() const { return renderer; }
+        void UpdateComponents(std::vector<Component*> components);
+        void Render();
+        void Clear();
 
-    SDL_Window* window = nullptr;
-    SDL_Renderer* renderer = nullptr;
-    Camera2D* camera;
+        SDL_Window* window = nullptr;
+        SDL_Renderer* renderer = nullptr;
+        Camera2D* camera;
 
-private:
-    static RenderingServer* s_instance;
-    std::vector<Component*> orderedComponents;
+    private:
+        static RenderingServer* s_instance;
+        std::vector<Component*> orderedComponents;
 };

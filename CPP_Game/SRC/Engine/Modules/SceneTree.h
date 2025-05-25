@@ -8,7 +8,7 @@
 #include "../Logger.h"
 #include "../Node.h"
 #include "../Component.h"
-#include "../Components/Transform.h"
+#include "../Components/Transform2D.h"
 
 class SceneTree
 {
@@ -31,7 +31,7 @@ public:
         N* newNode = new N(std::forward<Args>(args)...);
         nodes[newNode] = {};
 
-        newNode->transform = AddComponent<Transform>(newNode); //add transform component by default
+        newNode->transform = AddComponent<Transform2D>(newNode); //add transform component by default
 
         Logger::Log("New node added to the scene");
         newNode->Ready();

@@ -1,11 +1,13 @@
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Component.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Component.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\AnimatedSprite2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\AnimatedSprite2D.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\BoxCollider2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\BoxCollider2D.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Camera2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Camera2D.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Collider2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Collider2D.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Component2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Component2D.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\TileMap.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\TileMap.obj
-C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Movement.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Movement.obj
-C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\TextureRect.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\TextureRect.obj
-C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Transform.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Transform.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\CharacterMovement2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\CharacterMovement2D.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Sprite2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Sprite2D.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Transform2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Transform2D.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Engine.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Engine.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Modules\GarbageCollector.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\GarbageCollector.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Modules\InputManager.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\InputManager.obj

@@ -4,6 +4,7 @@
 
 SceneTree* SceneTree::s_instance = nullptr;
 
+
 SceneTree::SceneTree()
 {
 }

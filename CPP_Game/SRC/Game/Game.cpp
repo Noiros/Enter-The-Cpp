@@ -38,21 +38,26 @@ void Game::Start(Engine* engine)
     inputManager->BindButton(Action::MoveUp, SDL_CONTROLLER_BUTTON_DPAD_UP);
     inputManager->BindButton(Action::MoveDown, SDL_CONTROLLER_BUTTON_DPAD_DOWN);
     inputManager->BindButton(Action::Shoot, SDL_CONTROLLER_BUTTON_A);
-
+    
     resourcesManager->AddTexture("Ship", "./Assets/Images/Ship.tga");
     resourcesManager->AddTexture("Bullet", "./Assets/Images/Bullet.tga");
-    
-    resourcesManager->AddTexture("TilesField", "./Assets/Images/Tiles/Fields.tga");
-    resourcesManager->AddTexture("TilesFences", "./Assets/Images/Tiles/Fences.tga");
+
+    //Load tiles
+    resourcesManager->AddTexture("TilesetFloor", "./Assets/Images/Tiles/TilesetFloor.tga");
+    resourcesManager->AddTexture("TilesetHouse", "./Assets/Images/Tiles/TilesetHouse.tga");
+    resourcesManager->AddTexture("TilesetNature", "./Assets/Images/Tiles/TilesetNature.tga");
+    resourcesManager->AddTexture("TilesetProps", "./Assets/Images/Tiles/TilesetProps.tga");
     
     //Create level
     Empty* level = sceneTree->AddNode<Empty>();
-    sceneTree->AddComponent<TileMap>(level, resourcesManager->GetTexture("TilesField"), "./Assets/Maps/Main_Tiles.csv", 50, 50)->ZOrder = -2;
-    sceneTree->AddComponent<TileMap>(level, resourcesManager->GetTexture("TilesFences"), "./Assets/Maps/Main_Objects.csv", 50, 50)->ZOrder = -1;
+    glm::ivec2 levelSize = {128, 128};
+    sceneTree->AddComponent<TileMap>(level, resourcesManager->GetTexture("TilesetFloor"), "./Assets/Maps/MainMap_Floor.csv", levelSize.x, levelSize.y)->ZOrder = -2;
+    sceneTree->AddComponent<TileMap>(level, resourcesManager->GetTexture("TilesetHouse"), "./Assets/Maps/MainMap_House.csv", levelSize.x, levelSize.y)->ZOrder = -1;
+    sceneTree->AddComponent<TileMap>(level, resourcesManager->GetTexture("TilesetProps"), "./Assets/Maps/MainMap_Props.csv", levelSize.x, levelSize.y)->ZOrder = -1;
+    sceneTree->AddComponent<TileMap>(level, resourcesManager->GetTexture("TilesetNature"), "./Assets/Maps/MainMap_Nature.csv", levelSize.x, levelSize.y)->ZOrder = -1;
     
     //Create player
     player = sceneTree->AddNode<Player>();
     player->transform->position.x = DISPLAY_WIDTH / 2.0f;
     player->transform->position.y = DISPLAY_HEIGHT / 2.0f;
-    
 }

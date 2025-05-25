@@ -2,11 +2,9 @@
 
 #include "../../Engine/Node.h"
 #include "../../Engine/Engine.h"
-#include "../../Engine/Components/Movement.h"
+#include "../../Engine/Components/CharacterMovement2D.h"
+#include "../../Engine/Components/AnimatedSprite2D.h"
 #include <memory>
-
-class Camera2D;
-class TextureRect;
 
 class Player : public Node
 {
@@ -22,8 +20,8 @@ public:
     void Shoot();
 
 private:
-    Movement* movement;
-    TextureRect* textureRect;
+    CharacterMovement2D* movement;
+    Sprite2D* textureRect;
     Camera2D* camera;
     
     glm::vec2 moveDir = glm::vec2(0, 0);

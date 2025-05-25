@@ -4,14 +4,13 @@
 #include "Bullet.h"
 #include "../../Engine/Utils.hpp"
 #include "../../Engine/Logger.h"
-#include "../../Engine/Components/TextureRect.h"
 
 void Player::Shoot()
 {
     Bullet* bullet = SceneTree::GetInstance().AddNode<Bullet>();
     bullet->transform->position = transform->position;
     bullet->transform->size = glm::vec2(8, 8);
-    bullet->movement->SetLinearVelocity(lookDir * 100.0f);
+    bullet->movement->SetLinearVelocity(lookDir * 1000.0f);
 }
 
 void Player::Ready()
@@ -20,8 +19,9 @@ void Player::Ready()
 
     SceneTree* sceneTree = &SceneTree::GetInstance();
 
-    textureRect = sceneTree->AddComponent<TextureRect>(this, "Ship");
-    movement = sceneTree->AddComponent<Movement>(this);
+    textureRect = sceneTree->AddComponent<AnimatedSprite2D>(this, "Ship");
+    movement = sceneTree->AddComponent<CharacterMovement2D>(this);
+    camera = sceneTree->AddComponent<Camera2D>(this);
 }
 
 void Player::Update(float deltaTime)
@@ -34,8 +34,8 @@ void Player::Update(float deltaTime)
 
     if (InputManager::GetInstance().IsActionHeld(Action::Shoot)) Shoot();
 
-    lookDir = glm::normalize(glm::vec2(InputManager::GetInstance().GetMouseX(), InputManager::GetInstance().GetMouseY()) - transform->position);
-
+    lookDir = glm::normalize(glm::vec2(InputManager::GetInstance().GetMouseX() - (DISPLAY_WIDTH / 2.0f), InputManager::GetInstance().GetMouseY() - (DISPLAY_HEIGHT / 2.0f)));
+    
     transform->rotation = glm::degrees(std::atan2(lookDir.y, lookDir.x)) + 90.0f;
     movement->SetLinearVelocity(moveDir * speed);
 }

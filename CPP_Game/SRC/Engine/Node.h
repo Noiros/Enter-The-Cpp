@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Components/Transform.h"
+#include "Components/Transform2D.h"
 
 // Forward declarations si nécessaires
 struct SDL_Renderer;
@@ -11,7 +11,7 @@ class Node
 public:
     bool toBeDestroyed = false;
 
-    Transform* transform;
+    Transform2D* transform;
 
     Node() = default;
     virtual ~Node() = default;

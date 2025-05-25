@@ -142,9 +142,11 @@
     </ItemDefinitionGroup>
     <ItemGroup>
         <ClCompile Include="SRC\Engine\Component.cpp"/>
+        <ClCompile Include="SRC\Engine\Components\AnimatedSprite2D.cpp" />
         <ClCompile Include="SRC\Engine\Components\BoxCollider2D.cpp" />
         <ClCompile Include="SRC\Engine\Components\Camera2D.cpp" />
         <ClCompile Include="SRC\Engine\Components\Collider2D.cpp" />
+        <ClCompile Include="SRC\Engine\Components\Component2D.cpp" />
         <ClCompile Include="SRC\Engine\Components\TileMap.cpp">
           <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
           <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -221,9 +223,9 @@
           <SDLCheck>true</SDLCheck>
           <LinkCompiled>true</LinkCompiled>
         </ClCompile>
-        <ClCompile Include="SRC\Engine\Components\Movement.cpp" />
-        <ClCompile Include="SRC\Engine\Components\TextureRect.cpp"/>
-        <ClCompile Include="SRC\Engine\Components\Transform.cpp"/>
+        <ClCompile Include="SRC\Engine\Components\CharacterMovement2D.cpp" />
+        <ClCompile Include="SRC\Engine\Components\Sprite2D.cpp" />
+        <ClCompile Include="SRC\Engine\Components\Transform2D.cpp" />
         <ClCompile Include="SRC\Engine\Engine.cpp"/>
         <ClCompile Include="SRC\Engine\Modules\GarbageCollector.cpp" />
         <ClCompile Include="SRC\Engine\Modules\InputManager.cpp">
@@ -765,13 +767,15 @@
     </ItemGroup>
     <ItemGroup>
         <ClInclude Include="SRC\Engine\Component.h"/>
+        <ClInclude Include="SRC\Engine\Components\AnimatedSprite2D.h" />
         <ClInclude Include="SRC\Engine\Components\BoxCollider2D.h" />
         <ClInclude Include="SRC\Engine\Components\Camera2D.h" />
         <ClInclude Include="SRC\Engine\Components\Collider2D.h" />
+        <ClInclude Include="SRC\Engine\Components\Component2D.h" />
         <ClInclude Include="SRC\Engine\Components\TileMap.h" />
-        <ClInclude Include="SRC\Engine\Components\Movement.h" />
-        <ClInclude Include="SRC\Engine\Components\TextureRect.h"/>
-        <ClInclude Include="SRC\Engine\Components\Transform.h"/>
+        <ClInclude Include="SRC\Engine\Components\CharacterMovement2D.h" />
+        <ClInclude Include="SRC\Engine\Components\Sprite2D.h" />
+        <ClInclude Include="SRC\Engine\Components\Transform2D.h" />
         <ClInclude Include="SRC\Engine\Engine.h"/>
         <ClInclude Include="SRC\Engine\Modules\GarbageCollector.h" />
         <ClInclude Include="SRC\Engine\Modules\InputManager.h"/>

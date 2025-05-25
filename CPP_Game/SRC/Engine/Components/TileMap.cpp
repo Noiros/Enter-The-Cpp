@@ -10,7 +10,7 @@ TileMap::~TileMap()
 }
 
 void TileMap::ReadTileMapData(const std::string& filename)
-{
+{   
     std::ifstream file(filename);
     if (!file.is_open()) Logger::Err("Error: Could not open map file!");
 
@@ -23,7 +23,7 @@ void TileMap::ReadTileMapData(const std::string& filename)
 
         while (std::getline(lineStream, cell, ','))
         {
-            uint8_t value = static_cast<uint8_t>(std::stoi(cell));
+            uint32_t value = static_cast<uint32_t>(std::stoi(cell));
             tileMap.emplace_back(value);
         }
     }
@@ -35,19 +35,23 @@ void TileMap::Update(float deltaTime)
     
 }
 
-void TileMap::Render(SDL_Renderer* renderer)
+void TileMap::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale)
 {    
     for (size_t y = 0; y < height; y++)
         for (size_t x = 0; x < width; x++)
         {
             //source rectangle for the blit
-            uint8_t tileSetIndex = tileMap[x + y * width];
-            glm::ivec2 srcPos = {(tileSetIndex % tilemapWidth) * tileWidth, (tileSetIndex / tilemapHeight) * tileHeight};
-            SDL_Rect src = {srcPos.x, srcPos.y, tileWidth, tileHeight};
+            if (tileMap.size() > x + y * width)
+            {
+                uint32_t tileSetIndex = tileMap[x + y * width];
+                glm::ivec2 srcPos = {int(tileSetIndex % tilemapWidth) * tileWidth, (tileSetIndex / tilemapWidth) * tileHeight};
+                //Logger::Log("Tile position: " + std::to_string(srcPos.x) + ", " + std::to_string(srcPos.y));
+                SDL_Rect src = {srcPos.x, srcPos.y, tileWidth, tileHeight};
 
-            SDL_FRect dst = {static_cast<float>(x) * tileWidth, static_cast<float>(y) * tileHeight, tileWidth, tileHeight};
+                SDL_FRect dst = {(static_cast<float>(x) * tileWidth - cameraPos.x) * cameraScale, (static_cast<float>(y) * tileHeight - cameraPos.y) * cameraScale, tileWidth * cameraScale, tileHeight * cameraScale};
 
-            //blit
-            SDL_RenderCopyF(renderer, tileSetTexture, &src, &dst);
+                //blit
+                SDL_RenderCopyF(renderer, tileSetTexture, &src, &dst);
+            }
         }
 }

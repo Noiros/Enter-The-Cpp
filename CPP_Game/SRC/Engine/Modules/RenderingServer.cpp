@@ -1,8 +1,10 @@
 ﻿#include "RenderingServer.h"
 
 #include <algorithm>
+#include <fwd.hpp>
 #include <SDL_render.h>
 #include "../../Game/Game.h"
+#include "SceneTree.h"
 
 #include "../Logger.h"
 
@@ -59,11 +61,15 @@ void RenderingServer::UpdateComponents(std::vector<Component*> components)
 
 void RenderingServer::Render()
 {
-    for (Component* comp : orderedComponents)
+    if (camera != NULL)
     {
-        comp->Render(renderer);
+        glm::vec2 cameraPos = camera->GetCameraPos() - glm::vec2(DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2);
+        for (Component* comp : orderedComponents)
+        {
+            comp->Render(renderer, cameraPos, camera->GetCameraScale());
+        }
+        
+        //wait for VSync (or not) and swap buffers -> draw becomes display and vice-versa
+        SDL_RenderPresent(renderer);
     }
-    
-    //wait for VSync (or not) and swap buffers -> draw becomes display and vice-versa
-    SDL_RenderPresent(renderer);
 }

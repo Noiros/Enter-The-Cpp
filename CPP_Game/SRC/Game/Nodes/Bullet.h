@@ -10,7 +10,7 @@ class Bullet : public Node
         void Ready() override;
         void Update(float deltaTime) override;
 
-    Movement* movement;
+    CharacterMovement2D* movement;
 };
 
 

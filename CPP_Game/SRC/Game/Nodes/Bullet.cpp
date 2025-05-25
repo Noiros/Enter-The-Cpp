@@ -1,11 +1,11 @@
 #include "../Game.h"
 #include "Bullet.h"
-#include "../../Engine/Components/TextureRect.h"
+#include "../../Engine/Components/Sprite2D.h"
 
 void Bullet::Ready()
 {
-    SceneTree::GetInstance().AddComponent<TextureRect>(this, "Bullet");
-    movement = SceneTree::GetInstance().AddComponent<Movement>(this);
+    SceneTree::GetInstance().AddComponent<Sprite2D>(this, "Bullet");
+    movement = SceneTree::GetInstance().AddComponent<CharacterMovement2D>(this);
 }
 
 void Bullet::Update(float deltaTime)
