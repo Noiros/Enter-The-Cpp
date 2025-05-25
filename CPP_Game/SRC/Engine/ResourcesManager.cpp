@@ -2,9 +2,12 @@
 #include "Logger.h"
 #include <SDL_image.h>
 
-ResourcesManager::ResourcesManager(SDL_Renderer* renderer)
+#include "RenderingServer.h"
+
+ResourcesManager* ResourcesManager::s_instance = nullptr;
+
+ResourcesManager::ResourcesManager()
 {
-    this->renderer = renderer;
     Logger::Log("AssetManager constructor called");
 }
 
@@ -25,7 +28,7 @@ void ResourcesManager::ClearAssets()
 
 void ResourcesManager::AddTexture(std::string_view name, std::string_view fileName)
 {
-    SDL_Texture* texture = IMG_LoadTexture(renderer, fileName.data()); //get the raw const char*
+    SDL_Texture* texture = IMG_LoadTexture(RenderingServer::GetInstance().GetRenderer(), fileName.data()); //get the raw const char*
     if (texture)
     {
         textures.emplace(name, texture);

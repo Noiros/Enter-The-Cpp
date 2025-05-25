@@ -1,6 +1,8 @@
 #include "InputManager.h"
 #include "Logger.h"
 
+InputManager* InputManager::s_instance = nullptr;
+
 InputManager::InputManager()
 {
     Logger::Log("Input constructor called.");

@@ -6,36 +6,26 @@
   <component name="ChangeListManager">
     <list default="true" id="26d8fb41-693a-4e48-a7f8-a4294213251e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.CPP_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CPP_Game/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Component.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Component.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TextureRect.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TextureRect.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Engine.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Engine.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Engine.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Engine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/InputManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/InputManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/InputManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/InputManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/RenderingServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/RenderingServer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/RenderingServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/RenderingServer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/ResourcesManager.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/ResourcesManager.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/ResourcesManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/ResourcesManager.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/SceneTree.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/SceneTree.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/SceneTree.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/SceneTree.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Bullet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Bullet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Bullet.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Bullet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Player.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Player.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Bullet.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Bullet.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.ilk" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.command.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.read.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.write.1.tlog" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Component.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Component.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Engine.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Engine.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Game.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Game.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Level.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Level.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Main.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Player.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Player.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/RenderingServer.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/RenderingServer.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/SceneTree.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/SceneTree.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/TextureRect.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/TextureRect.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Transform.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Transform.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.idb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/x64/Debug/CPP_Game.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/CPP_Game.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/x64/Debug/CPP_Game.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/CPP_Game.pdb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -54,6 +44,10 @@
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
@@ -86,7 +80,13 @@
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
-    <setting file="cidr-memory-view://36" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://44" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo"><![CDATA[{
   "customColor": "",
@@ -153,7 +153,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1748158755643</updated>
-      <workItem from="1748158757306" duration="6797000" />
+      <workItem from="1748158757306" duration="8740000" />
     </task>
     <servers />
   </component>

@@ -11,19 +11,17 @@
 class Engine
 {
     public:
-        std::unique_ptr<SceneTree> sceneTree;
-        std::unique_ptr<PhysicsServer> physicsServer;
-        std::unique_ptr<RenderingServer> renderingServer;
-        std::unique_ptr<ResourcesManager> resourcesManager;
-        std::unique_ptr<InputManager> inputManager;
-
-        //std::unique_ptr<Game> game;
+        PhysicsServer physicsServer;
+        RenderingServer renderingServer;
+        ResourcesManager resourcesManager;
+        SceneTree sceneTree;
+        InputManager inputManager;
     
         Engine();
         ~Engine();
 
-        static void SetInstance(Engine* instance);
-        static Engine& GetInstance();
+        static void SetInstance(Engine* instance) { s_instance = instance; };
+        static Engine& GetInstance() { return *s_instance; };
         Engine(const Engine&) = delete;
         Engine& operator=(const Engine&) = delete;
 

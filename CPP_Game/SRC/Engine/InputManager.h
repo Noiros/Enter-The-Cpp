@@ -20,8 +20,15 @@ public:
     bool IsActionPressed(Action action);
     float GetLeftStickX();
     float GetLeftStickY();
+    
+    static void SetInstance(InputManager* instance) { s_instance = instance; };
+    static InputManager& GetInstance() { return *s_instance; };
+    InputManager(const InputManager&) = delete;
+    InputManager& operator=(const InputManager&) = delete;
 
 private:
+    static InputManager* s_instance;
+    
     std::unordered_map<Action, SDL_Scancode> keyBindings;
     std::unordered_map<Action, SDL_GameControllerButton> buttonBindings;
     SDL_GameController* gameController = nullptr;

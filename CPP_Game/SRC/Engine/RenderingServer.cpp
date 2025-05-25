@@ -5,8 +5,10 @@
 
 #include "Logger.h"
 
+RenderingServer* RenderingServer::s_instance = nullptr;
 
-void RenderingServer::Setup()
+
+RenderingServer::RenderingServer()
 {
     if (SDL_Init(SDL_INIT_EVERYTHING) != 0)
     {
@@ -50,14 +52,4 @@ void RenderingServer::Render()
 {    
     //wait for VSync (or not) and swap buffers -> draw becomes display and vice-versa
     SDL_RenderPresent(renderer);
-}
-
-void RenderingServer::AddComponent(Component* component)
-{
-    Logger::Log("Component added to the rendering server");
-}
-
-void RenderingServer::RemoveComponent(Component* component)
-{
-    
 }

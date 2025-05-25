@@ -20,26 +20,27 @@
 }*/
 
 void Player::Ready()
-{
-    inputManager = Engine::GetInstance().inputManager.get();
-    
+{    
     Logger::Log("Player ready.");
-    Engine::GetInstance().sceneTree->AddComponent<TextureRect>(this, Engine::GetInstance().resourcesManager->GetTexture("Ship"));
+    
+    SceneTree* sceneTree = &SceneTree::GetInstance();
+    
+    sceneTree->AddComponent<TextureRect>(this, ResourcesManager::GetInstance().GetTexture("Ship"));
 }
 
 void Player::Update(float deltaTime)
 {
     Logger::Log("Player update.");
     
-    if (inputManager->IsActionHeld(Action::MoveLeft)) transform->position.x -= speed * deltaTime;
-    if (inputManager->IsActionHeld(Action::MoveRight)) transform->position.x += speed * deltaTime;
-    if (inputManager->IsActionHeld(Action::MoveUp)) transform->position.y -= speed * deltaTime;
-    if (inputManager->IsActionHeld(Action::MoveDown)) transform->position.y += speed * deltaTime;
+    if (InputManager::GetInstance().IsActionHeld(Action::MoveLeft)) transform->position.x -= speed * deltaTime;
+    if (InputManager::GetInstance().IsActionHeld(Action::MoveRight)) transform->position.x += speed * deltaTime;
+    if (InputManager::GetInstance().IsActionHeld(Action::MoveUp)) transform->position.y -= speed * deltaTime;
+    if (InputManager::GetInstance().IsActionHeld(Action::MoveDown)) transform->position.y += speed * deltaTime;
 
     //if (input->IsActionHeld(Action::Shoot)) Shoot(vec2(pos + vec2(28, 0)), vec2(0, -500) + Utils::RndVec2(-50, 50));
 
-    transform->position.x += inputManager->GetLeftStickX() * speed * deltaTime;
-    transform->position.y += inputManager->GetLeftStickY() * speed * deltaTime;
+    transform->position.x += InputManager::GetInstance().GetLeftStickX() * speed * deltaTime;
+    transform->position.y += InputManager::GetInstance().GetLeftStickY() * speed * deltaTime;
 
     //clamp position to borders
     const float rightBorder = DISPLAY_WIDTH - transform->size.x;
@@ -50,25 +51,3 @@ void Player::Update(float deltaTime)
     if (transform->position.y >= bottomBorder) transform->position.y = bottomBorder;
     else if (transform->position.y <= 0) transform->position.y = 0;
 }
-
-//void Player::Render(SDL_Renderer* renderer)
-//{
-    /*//render bullets first (so player is always on top)
-    for (size_t i = 0; i < poolSize; i++)
-    {
-        if (bullets[i].isActive) bullets[i].Render(renderer);
-    }
-
-    //compute animation frame
-    uint32_t animFrame = (SDL_GetTicks64() * animSpeed / 1000) % 2; //2 frames for this anim
-
-    //source rectangle for the blit
-    SDL_Rect src = {static_cast<int>(animFrame * 64), 0, 64, 64};
-
-    //dest rectangle
-    SDL_FRect dst = {pos.x, pos.y, dim.x, dim.y};
-
-    //blit
-    SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND); //alpha blend
-    SDL_RenderCopyF(renderer, texture, &src, &dst);*/
-//}

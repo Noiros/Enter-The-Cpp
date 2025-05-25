@@ -7,14 +7,22 @@
 
 class RenderingServer
 {
-    public:    
-        void Render();
-        void AddComponent(Component* component);
-        void RemoveComponent(Component* component);
+    public:
+        RenderingServer();
+        ~RenderingServer() {};
+    
+        static void SetInstance(RenderingServer* instance) { s_instance = instance; };
+        static RenderingServer& GetInstance() { return *s_instance; };
+        RenderingServer(const RenderingServer&) = delete;
+        RenderingServer& operator=(const RenderingServer&) = delete;
 
-        void Setup();
+        SDL_Renderer* GetRenderer() const { return renderer; }
+        void Render();
         void Clear();
 
         SDL_Window* window = nullptr;
         SDL_Renderer* renderer = nullptr;
+        
+    private:
+        static RenderingServer* s_instance;
 };

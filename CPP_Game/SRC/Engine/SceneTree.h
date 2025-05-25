@@ -10,9 +10,15 @@
 class SceneTree
 {
     public:
+        SceneTree();
+        ~SceneTree();
+    
         void UpdateNodes(SDL_Renderer* renderer, float deltaTime);
     
-        std::map<Node*, std::vector<Component*>> nodes;
+        static void SetInstance(SceneTree* instance) { s_instance = instance; };
+        static SceneTree& GetInstance() { return *s_instance; };
+        SceneTree(const SceneTree&) = delete;
+        SceneTree& operator=(const SceneTree&) = delete;
     
         template <class N, class ... Args>
         N* AddNode(Args&&... args)
@@ -77,5 +83,10 @@ class SceneTree
             }
             return nullptr;
         }
+
+    private:
+        std::map<Node*, std::vector<Component*>> nodes;
+        static SceneTree* s_instance;
+    
 }; // Ajout du point-virgule ici
 

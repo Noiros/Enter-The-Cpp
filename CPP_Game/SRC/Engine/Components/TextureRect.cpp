@@ -23,12 +23,11 @@ void TextureRect::Render(SDL_Renderer* renderer)
     SDL_Rect src = {static_cast<int>(animFrame * 64), 0, 64, 64};
 
     //dest rectangle
-
-    Node* ParentNode = Engine::GetInstance().sceneTree->GetRootNode(this);
-    Transform* transform = Engine::GetInstance().sceneTree->GetComponent<Transform>(ParentNode);
+    SceneTree* sceneTree = &SceneTree::GetInstance();
+    Node* ParentNode = sceneTree->GetRootNode(this);
+    Transform* transform = sceneTree->GetComponent<Transform>(ParentNode);
     
     SDL_FRect dst = {transform->position.x, transform->position.y, transform->size.x, transform->size.y};
-    //SDL_FRect dst = {0, 0, 640, 640};
     Logger::Log("Rendering texture");
 
     

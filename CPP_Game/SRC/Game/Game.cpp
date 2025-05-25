@@ -22,9 +22,9 @@ Game::~Game()
 
 void Game::Start(Engine* engine)
 {
-    InputManager* inputManager = engine->inputManager.get();
-    ResourcesManager* resourcesManager = engine->resourcesManager.get();
-    SceneTree* sceneTree = engine->sceneTree.get();
+    InputManager* inputManager = &InputManager::GetInstance();
+    ResourcesManager* resourcesManager = &ResourcesManager::GetInstance();
+    SceneTree* sceneTree = &SceneTree::GetInstance();
     
     //Game setup
     //Keyboard bindings
