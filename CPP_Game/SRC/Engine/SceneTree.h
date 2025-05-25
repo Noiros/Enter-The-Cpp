@@ -1,28 +1,29 @@
 ﻿#pragma once
 
+#include <map>
 #include <vector>
 
 #include "Node.h"
+#include "Component.h"
+#include "Components/Transform.h"
 
 class SceneTree
 {
     public:
         void UpdateNodes(SDL_Renderer* renderer, float deltaTime);
     
+        std::map<Node*, std::vector<Component*>> nodes;
+    
         template <class N, class ... Args>
         N* AddNode(Args&&... args)
         {    
-            // Vérifie à la compilation que T hérite de Component
             static_assert(std::is_base_of<Node, N>::value, "N must derive from Node");
 
-            // Optionnel: Vérifier si un composant de ce type existe déjà
-            // if (GetComponent<T>() != nullptr) {
-            //     // Gérer le cas : retourner le composant existant, logger, ou ne rien faire
-            //     return GetComponent<T>();
-            // }
-
             N* newNode = new N(std::forward<Args>(args)...);
-            nodes.push_back(newNode);
+            nodes[newNode] = {};
+
+            newNode->transform = AddComponent<Transform>(newNode); //add transform component by default
+            
             newNode->Ready();
             return newNode;
         }
@@ -38,13 +39,43 @@ class SceneTree
             //     // Gérer le cas : retourner le composant existant, logger, ou ne rien faire
             //     return GetComponent<T>();
             // }
-
+            
             T* newComponent = new T(std::forward<Args>(args)...);
-            newComponent->ParentNode = parentNode;
-            components.push_back(newComponent);
+            //newComponent->ParentNode = parentNode;
+            nodes[parentNode].push_back(newComponent);
             return newComponent;
         }
 
-        std::vector<Node*> nodes;
-        std::vector<Component*> components;
-};
+        template<typename N>
+        N* GetComponent(Node* parentNode)
+        {
+            // Vérifie à la compilation que T hérite de Component
+            static_assert(std::is_base_of<Component, N>::value, "T must derive from Node");
+
+            for (Component* comp : nodes[parentNode])
+            {
+                N* castedComp = dynamic_cast<N*>(comp);
+                if (castedComp != nullptr)
+                {
+                    return castedComp;
+                }
+            }
+            return nullptr;
+        }
+    
+        Node* GetRootNode(Component* comp)
+        {
+            for (auto const& [node, components] : nodes)
+            {
+                for (Component* currentComp : components)
+                {
+                    if (currentComp == comp)
+                    {
+                        return node;
+                    }
+                }
+            }
+            return nullptr;
+        }
+}; // Ajout du point-virgule ici
+

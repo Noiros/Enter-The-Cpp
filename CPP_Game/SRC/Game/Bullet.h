@@ -2,7 +2,7 @@
 
 #include "../Engine/Node.h"
 #include <memory>
-
+/*
 struct BulletParams
 {
     glm::vec2 pos = {0, 0};
@@ -29,5 +29,5 @@ private:
     inline static constexpr glm::vec2 dim = {8, 8}; //shared across all instances
     inline static constexpr SDL_Color color = {255, 80, 5};
 };
-
+*/
 

@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <unordered_map>
 #include <set>
+#include <__msvc_string_view.hpp>
 
 enum class Action;
 

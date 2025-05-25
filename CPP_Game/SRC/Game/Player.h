@@ -7,11 +7,11 @@
 class Player : public Node
 {
     public:
-        float speed;
+        float speed = 100.0f;
         int animSpeed; //frames per second
-        //std::unique_ptr<InputManager>& input;
+    
+        InputManager* inputManager;
 
-        Player() = default;
         ~Player() override = default;
 
         void Update(float deltaTime);

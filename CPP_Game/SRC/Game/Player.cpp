@@ -19,18 +19,27 @@
     }
 }*/
 
+void Player::Ready()
+{
+    inputManager = Engine::GetInstance().inputManager.get();
+    
+    Logger::Log("Player ready.");
+    Engine::GetInstance().sceneTree->AddComponent<TextureRect>(this, Engine::GetInstance().resourcesManager->GetTexture("Ship"));
+}
+
 void Player::Update(float deltaTime)
 {
     Logger::Log("Player update.");
     
-    /*if (input->IsActionHeld(Action::MoveLeft)) transform->position.x -= speed * deltaTime;
-    if (input->IsActionHeld(Action::MoveRight)) transform->position.x += speed * deltaTime;
-    if (input->IsActionHeld(Action::MoveUp)) transform->position.y -= speed * deltaTime;
-    if (input->IsActionHeld(Action::MoveDown)) transform->position.y += speed * deltaTime;
+    if (inputManager->IsActionHeld(Action::MoveLeft)) transform->position.x -= speed * deltaTime;
+    if (inputManager->IsActionHeld(Action::MoveRight)) transform->position.x += speed * deltaTime;
+    if (inputManager->IsActionHeld(Action::MoveUp)) transform->position.y -= speed * deltaTime;
+    if (inputManager->IsActionHeld(Action::MoveDown)) transform->position.y += speed * deltaTime;
+
     //if (input->IsActionHeld(Action::Shoot)) Shoot(vec2(pos + vec2(28, 0)), vec2(0, -500) + Utils::RndVec2(-50, 50));
 
-    transform->position.x += input->GetLeftStickX() * speed * deltaTime;
-    transform->position.y += input->GetLeftStickY() * speed * deltaTime;
+    transform->position.x += inputManager->GetLeftStickX() * speed * deltaTime;
+    transform->position.y += inputManager->GetLeftStickY() * speed * deltaTime;
 
     //clamp position to borders
     const float rightBorder = DISPLAY_WIDTH - transform->size.x;
@@ -39,7 +48,7 @@ void Player::Update(float deltaTime)
     if (transform->position.x >= rightBorder) transform->position.x = rightBorder;
     else if (transform->position.x <= 0) transform->position.x = 0;
     if (transform->position.y >= bottomBorder) transform->position.y = bottomBorder;
-    else if (transform->position.y <= 0) transform->position.y = 0;*/
+    else if (transform->position.y <= 0) transform->position.y = 0;
 }
 
 //void Player::Render(SDL_Renderer* renderer)
@@ -63,10 +72,3 @@ void Player::Update(float deltaTime)
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND); //alpha blend
     SDL_RenderCopyF(renderer, texture, &src, &dst);*/
 //}
-
-void Player::Ready()
-{
-    Logger::Log("Player ready.");
-    
-    Engine::GetInstance().sceneTree->AddComponent<TextureRect>(this, Engine::GetInstance().resourcesManager->GetTexture("Ship"));
-}

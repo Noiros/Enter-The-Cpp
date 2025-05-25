@@ -2,9 +2,6 @@
 
 #include <SDL.h>
 
-
-class Node;
-
 class Component
 {
         public:
@@ -12,6 +9,4 @@ class Component
                 virtual void Render(SDL_Renderer* renderer) = 0;
                 virtual void Update(float deltaTime) = 0;
                 virtual void Ready() = 0;
-
-                Node* ParentNode;
 };

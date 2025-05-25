@@ -2,7 +2,7 @@
 #include "../Engine/Utils.hpp"
 #include "bullet.h"
 #include <iostream>
-
+/*
 bool Bullet::Update(float deltaTime)
 {
     const float rightBorder = DISPLAY_WIDTH - dim.x;
@@ -48,5 +48,5 @@ void Bullet::Render(SDL_Renderer* renderer)
     SDL_SetTextureColorMod(texture, color.r, color.g, color.b);
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
     SDL_RenderCopyF(renderer, texture, &src, &dst);
-}
+}*/
 
