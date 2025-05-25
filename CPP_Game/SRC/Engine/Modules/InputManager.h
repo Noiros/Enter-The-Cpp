@@ -20,6 +20,8 @@ public:
     bool IsActionPressed(Action action);
     float GetLeftStickX();
     float GetLeftStickY();
+    float GetMouseX();
+    float GetMouseY();
 
     static void SetInstance(InputManager* instance) { s_instance = instance; };
     static InputManager& GetInstance() { return *s_instance; };

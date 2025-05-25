@@ -1,8 +1,11 @@
 ﻿#pragma once
 
 #include <map>
+#include <string>
 #include <vector>
 
+#include "RenderingServer.h"
+#include "../Logger.h"
 #include "../Node.h"
 #include "../Component.h"
 #include "../Components/Transform.h"
@@ -30,6 +33,7 @@ public:
 
         newNode->transform = AddComponent<Transform>(newNode); //add transform component by default
 
+        Logger::Log("New node added to the scene");
         newNode->Ready();
         return newNode;
     }
@@ -47,8 +51,10 @@ public:
         // }
 
         T* newComponent = new T(std::forward<Args>(args)...);
-        //newComponent->ParentNode = parentNode;
         nodes[parentNode].push_back(newComponent);
+        
+        RenderingServer::GetInstance().UpdateComponents(GetAllComponents());
+
         return newComponent;
     }
 
@@ -87,4 +93,17 @@ public:
 private:
     std::map<Node*, std::vector<Component*>> nodes;
     static SceneTree* s_instance;
-}; // Ajout du point-virgule ici
+
+    std::vector<Component*> GetAllComponents()
+    {
+        std::vector<Component*> allComponents;
+        for (const auto& [node, components] : nodes)
+        {
+            for (Component* component : components)
+            {
+                allComponents.push_back(component);
+            }
+        }
+        return allComponents;
+    }
+};

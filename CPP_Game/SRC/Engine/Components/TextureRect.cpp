@@ -25,15 +25,17 @@ void TextureRect::Render(SDL_Renderer* renderer)
 
     //source rectangle for the blit
     SDL_Rect src = {static_cast<int>(animFrame * 64), 0, 64, 64};
-
+    
     //dest rectangle
     SceneTree* sceneTree = &SceneTree::GetInstance();
     Node* ParentNode = sceneTree->GetRootNode(this);
     Transform* transform = sceneTree->GetComponent<Transform>(ParentNode);
 
-    SDL_Rect dst = {int(transform->position.x), int(transform->position.y), int(transform->size.x), int(transform->size.y)};
+    glm::ivec2 centerPos = {int(transform->size.x * transform->anchor.x), int(transform->size.y * transform->anchor.y)};
+    SDL_Point center = {centerPos.x, centerPos.y};
+    SDL_Rect dst = {int(transform->position.x) - centerPos.x, int(transform->position.y) - centerPos.y, int(transform->size.x), int(transform->size.y)};
 
     //blit
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND); //alpha blend
-    SDL_RenderCopyEx(renderer, texture, &src, &dst, transform->rotation, NULL, SDL_FLIP_NONE);
+    SDL_RenderCopyEx(renderer, texture, &src, &dst, transform->rotation, &center, SDL_FLIP_NONE);
 }

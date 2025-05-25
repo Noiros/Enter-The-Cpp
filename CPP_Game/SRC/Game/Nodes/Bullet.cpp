@@ -5,7 +5,7 @@
 void Bullet::Ready()
 {
     SceneTree::GetInstance().AddComponent<TextureRect>(this, "Bullet");
-    SceneTree::GetInstance().AddComponent<Movement>(this, glm::vec2(0, -1000));
+    movement = SceneTree::GetInstance().AddComponent<Movement>(this);
 }
 
 void Bullet::Update(float deltaTime)

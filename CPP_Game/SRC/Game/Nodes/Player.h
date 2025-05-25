@@ -5,6 +5,9 @@
 #include "../../Engine/Components/Movement.h"
 #include <memory>
 
+class Camera2D;
+class TextureRect;
+
 class Player : public Node
 {
 public:
@@ -16,8 +19,13 @@ public:
     void Update(float deltaTime) override;
     void Ready() override;
 
-    void Shoot(glm::vec2 pos, glm::vec2 vel);
+    void Shoot();
 
 private:
     Movement* movement;
+    TextureRect* textureRect;
+    Camera2D* camera;
+    
+    glm::vec2 moveDir = glm::vec2(0, 0);
+    glm::vec2 lookDir = glm::vec2(0, 0);
 };

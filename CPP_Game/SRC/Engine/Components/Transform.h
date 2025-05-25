@@ -8,6 +8,7 @@ class Transform : public Component
 {
 public:
     glm::vec2 position;
+    glm::vec2 anchor = {0.5f, 0.5f};
     glm::vec2 scale;
     glm::vec2 size = {64, 64};
     float rotation;

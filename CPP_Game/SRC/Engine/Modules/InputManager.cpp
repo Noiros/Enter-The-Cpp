@@ -85,3 +85,17 @@ float InputManager::GetLeftStickY()
 {
     return leftStickY;
 }
+
+float InputManager::GetMouseX()
+{
+    int x, y;
+    SDL_GetMouseState(&x, &y);
+    return x;
+}
+
+float InputManager::GetMouseY()
+{
+    int x, y;
+    SDL_GetMouseState(&x, &y);
+    return y;
+}

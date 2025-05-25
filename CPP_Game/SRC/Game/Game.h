@@ -21,7 +21,7 @@ constexpr uint32_t DISPLAY_HEIGHT = 1024;
 
 enum class Action { MoveLeft, MoveRight, MoveUp, MoveDown, Shoot };
 
-class Level;
+class TileMap;
 
 class Game
 {
@@ -34,9 +34,6 @@ public:
 
 private:
     Player* player;
-
-    //Level data
-    std::unique_ptr<Level> level; //this could be a vector of levels
 
     void ProcessInput();
     void Update();

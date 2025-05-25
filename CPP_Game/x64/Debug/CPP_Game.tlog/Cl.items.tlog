@@ -1,4 +1,8 @@
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Component.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Component.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\BoxCollider2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\BoxCollider2D.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Camera2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Camera2D.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Collider2D.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Collider2D.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\TileMap.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\TileMap.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Movement.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Movement.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\TextureRect.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\TextureRect.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Components\Transform.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Transform.obj
@@ -10,8 +14,8 @@ C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Modules\RenderingServer.cp
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Modules\ResourcesManager.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\ResourcesManager.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Modules\SceneTree.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\SceneTree.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Engine\Logger.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Logger.obj
-C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Level.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Level.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Nodes\Bullet.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Bullet.obj
+C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Nodes\Empty.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Empty.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Nodes\Player.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Player.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Game\Game.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Game.obj
 C:\Users\noiro\Documents\CPP-Game\CPP_Game\SRC\Main.cpp;C:\Users\noiro\Documents\CPP-Game\CPP_Game\x64\Debug\Main.obj

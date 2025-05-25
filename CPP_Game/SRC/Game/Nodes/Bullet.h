@@ -9,6 +9,8 @@ class Bullet : public Node
     public:    
         void Ready() override;
         void Update(float deltaTime) override;
+
+    Movement* movement;
 };
 
 

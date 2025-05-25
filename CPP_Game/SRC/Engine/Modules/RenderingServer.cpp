@@ -1,5 +1,6 @@
 ﻿#include "RenderingServer.h"
 
+#include <algorithm>
 #include <SDL_render.h>
 #include "../../Game/Game.h"
 
@@ -48,8 +49,21 @@ void RenderingServer::Clear()
     SDL_RenderClear(renderer);
 }
 
+void RenderingServer::UpdateComponents(std::vector<Component*> components)
+{
+    orderedComponents = components;
+    std::sort(orderedComponents.begin(), orderedComponents.end(), [](const Component* a, const Component* b) {
+        return a->ZOrder < b->ZOrder;
+    });
+}
+
 void RenderingServer::Render()
 {
+    for (Component* comp : orderedComponents)
+    {
+        comp->Render(renderer);
+    }
+    
     //wait for VSync (or not) and swap buffers -> draw becomes display and vice-versa
     SDL_RenderPresent(renderer);
 }

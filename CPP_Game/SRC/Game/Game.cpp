@@ -1,14 +1,12 @@
 #include "Game.h"
-#include <iostream>
 #include "../Engine/Logger.h"
 #include "../Engine/Modules/RenderingServer.h"
 #include <SDL.h>
 #include "Nodes/Player.h"
-#include "../Engine/Utils.hpp"
-#include <Windows.h>
+#include "Nodes/Empty.h"
 #include <glm.hpp>
 #include "../Engine/Engine.h"
-#include "Level.h"
+#include "../Engine/Components/TileMap.h"
 
 Game::Game()
 {
@@ -28,10 +26,10 @@ void Game::Start(Engine* engine)
 
     //Game setup
     //Keyboard bindings
-    inputManager->BindKey(Action::MoveLeft, SDL_SCANCODE_LEFT);
-    inputManager->BindKey(Action::MoveRight, SDL_SCANCODE_RIGHT);
-    inputManager->BindKey(Action::MoveUp, SDL_SCANCODE_UP);
-    inputManager->BindKey(Action::MoveDown, SDL_SCANCODE_DOWN);
+    inputManager->BindKey(Action::MoveLeft, SDL_SCANCODE_A);
+    inputManager->BindKey(Action::MoveRight, SDL_SCANCODE_D);
+    inputManager->BindKey(Action::MoveUp, SDL_SCANCODE_W);
+    inputManager->BindKey(Action::MoveDown, SDL_SCANCODE_S);
     inputManager->BindKey(Action::Shoot, SDL_SCANCODE_SPACE);
 
     //Gamepad mapping (assuming Xbox-style controller)
@@ -43,14 +41,18 @@ void Game::Start(Engine* engine)
 
     resourcesManager->AddTexture("Ship", "./Assets/Images/Ship.tga");
     resourcesManager->AddTexture("Bullet", "./Assets/Images/Bullet.tga");
-    resourcesManager->AddTexture("Tileset", "./Assets/Images/Tileset.tga");
-
+    
+    resourcesManager->AddTexture("TilesField", "./Assets/Images/Tiles/Fields.tga");
+    resourcesManager->AddTexture("TilesFences", "./Assets/Images/Tiles/Fences.tga");
+    
     //Create level
-    level = std::make_unique<Level>(resourcesManager->GetTexture("Tileset"), "./Assets/Maps/Level01.csv", 8, 64);
-
-
+    Empty* level = sceneTree->AddNode<Empty>();
+    sceneTree->AddComponent<TileMap>(level, resourcesManager->GetTexture("TilesField"), "./Assets/Maps/Main_Tiles.csv", 50, 50)->ZOrder = -2;
+    sceneTree->AddComponent<TileMap>(level, resourcesManager->GetTexture("TilesFences"), "./Assets/Maps/Main_Objects.csv", 50, 50)->ZOrder = -1;
+    
+    //Create player
     player = sceneTree->AddNode<Player>();
     player->transform->position.x = DISPLAY_WIDTH / 2.0f;
     player->transform->position.y = DISPLAY_HEIGHT / 2.0f;
-    player->transform->rotation = 45.0f;
+    
 }

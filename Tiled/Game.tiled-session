@@ -1,0 +1,23 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+    },
+    "last.exportedFilePath": "C:/Users/noiro/Documents/CPP-Game/CPP_Game/Assets/Maps",
+    "last.imagePath": "C:/Users/noiro/Downloads/craftpix-net-504452-free-village-pixel-tileset-for-top-down-defense/1.1 Tiles",
+    "map.height": 50,
+    "map.lastUsedExportFilter": "Fichiers CSV (*.csv)",
+    "map.lastUsedFormat": "tmx",
+    "map.width": 50,
+    "openFiles": [
+    ],
+    "project": "Game.tiled-project",
+    "recentFiles": [
+    ],
+    "tileset.lastUsedFormat": "tsx"
+}

@@ -3,7 +3,9 @@
 #include <SDL_render.h>
 #include <vec2.hpp>
 #include <vector>
+
 #include "../Component.h"
+#include "../Components/Camera2D.h"
 
 
 class RenderingServer
@@ -21,12 +23,15 @@ public:
     RenderingServer& operator=(const RenderingServer&) = delete;
 
     SDL_Renderer* GetRenderer() const { return renderer; }
+    void UpdateComponents(std::vector<Component*> components);
     void Render();
     void Clear();
 
     SDL_Window* window = nullptr;
     SDL_Renderer* renderer = nullptr;
+    Camera2D* camera;
 
 private:
     static RenderingServer* s_instance;
+    std::vector<Component*> orderedComponents;
 };
