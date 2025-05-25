@@ -6,16 +6,16 @@
 
 class Player : public Node
 {
-    public:
-        float speed = 100.0f;
-        int animSpeed; //frames per second
-    
-        InputManager* inputManager;
+public:
+    float speed = 100.0f;
+    int animSpeed; //frames per second
 
-        ~Player() override = default;
+    InputManager* inputManager;
 
-        void Update(float deltaTime);
-        void Ready();
+    ~Player() override = default;
 
-        //void Shoot(vec2 pos, vec2 vel);
+    void Update(float deltaTime) override;
+    void Ready() override;
+
+    //void Shoot(vec2 pos, vec2 vel);
 };

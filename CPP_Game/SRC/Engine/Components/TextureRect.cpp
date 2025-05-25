@@ -26,11 +26,11 @@ void TextureRect::Render(SDL_Renderer* renderer)
     SceneTree* sceneTree = &SceneTree::GetInstance();
     Node* ParentNode = sceneTree->GetRootNode(this);
     Transform* transform = sceneTree->GetComponent<Transform>(ParentNode);
-    
+
     SDL_FRect dst = {transform->position.x, transform->position.y, transform->size.x, transform->size.y};
     Logger::Log("Rendering texture");
 
-    
+
     //blit
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND); //alpha blend
     SDL_RenderCopyF(renderer, texture, &src, &dst);

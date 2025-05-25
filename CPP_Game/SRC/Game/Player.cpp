@@ -20,18 +20,18 @@
 }*/
 
 void Player::Ready()
-{    
+{
     Logger::Log("Player ready.");
-    
+
     SceneTree* sceneTree = &SceneTree::GetInstance();
-    
+
     sceneTree->AddComponent<TextureRect>(this, ResourcesManager::GetInstance().GetTexture("Ship"));
 }
 
 void Player::Update(float deltaTime)
 {
     Logger::Log("Player update.");
-    
+
     if (InputManager::GetInstance().IsActionHeld(Action::MoveLeft)) transform->position.x -= speed * deltaTime;
     if (InputManager::GetInstance().IsActionHeld(Action::MoveRight)) transform->position.x += speed * deltaTime;
     if (InputManager::GetInstance().IsActionHeld(Action::MoveUp)) transform->position.y -= speed * deltaTime;

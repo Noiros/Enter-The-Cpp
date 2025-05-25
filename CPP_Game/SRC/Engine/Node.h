@@ -8,14 +8,19 @@ enum class EntityType; // Conserve la déclaration si elle est utilisée ailleur
 
 class Node
 {
-    public:
-        bool toBeDestroyed = false;
+public:
+    bool toBeDestroyed = false;
 
-        Transform* transform;
-        Node() {}
-    
-        virtual ~Node() {}
-    
-        virtual void Ready() = 0;
-        virtual void Update(float deltaTime) = 0;
+    Transform* transform;
+
+    Node()
+    {
+    }
+
+    virtual ~Node()
+    {
+    }
+
+    virtual void Ready() = 0;
+    virtual void Update(float deltaTime) = 0;
 };

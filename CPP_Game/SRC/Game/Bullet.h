@@ -30,4 +30,3 @@ private:
     inline static constexpr SDL_Color color = {255, 80, 5};
 };
 */
-

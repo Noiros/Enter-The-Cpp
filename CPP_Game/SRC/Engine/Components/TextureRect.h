@@ -5,14 +5,17 @@
 
 class TextureRect : public Component
 {
-    public:    
-        SDL_Texture* texture;
-        uint32_t animSpeed;
+public:
+    SDL_Texture* texture;
+    uint32_t animSpeed;
 
-        TextureRect(SDL_Texture* tex) : texture(tex) {}
-        ~TextureRect() override = default;
+    TextureRect(SDL_Texture* tex) : texture(tex)
+    {
+    }
 
-        void Update(float deltaTime) override;
-        void Ready() override;
-        void Render(SDL_Renderer* renderer) override;
+    ~TextureRect() override = default;
+
+    void Update(float deltaTime) override;
+    void Ready() override;
+    void Render(SDL_Renderer* renderer) override;
 };

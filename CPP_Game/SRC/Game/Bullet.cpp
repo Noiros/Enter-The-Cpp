@@ -49,4 +49,3 @@ void Bullet::Render(SDL_Renderer* renderer)
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
     SDL_RenderCopyF(renderer, texture, &src, &dst);
 }*/
-

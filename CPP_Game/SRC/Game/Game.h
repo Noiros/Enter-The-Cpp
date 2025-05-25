@@ -2,22 +2,22 @@
 
 #include <SDL.h>
 #include "../Engine/Node.h"
-#include "../Engine/ResourcesManager.h"
-#include "../Engine/InputManager.h"
-#include "../Engine/RenderingServer.h"
+#include "../Engine/Modules/ResourcesManager.h"
+#include "../Engine/Modules/InputManager.h"
+#include "../Engine/Modules/RenderingServer.h"
 #include <vector>
 #include "Player.h"
-#include "..\Engine\Engine.h""
+#include "../Engine/Engine.h""
 
 
 #define VSYNC //FPS will be determined by the display refresh rate
 //#define CAP_FPS //If defined, this will limit to the set frame rate below. Otherwise, only the VSYNC will be the limiting factor.
 
-const uint32_t FPS = 30; //Only used if CAP_FPS
-const uint32_t MILLISEC_PER_FRAME = 1000 / FPS;
+constexpr uint32_t FPS = 30; //Only used if CAP_FPS
+constexpr uint32_t MILLISEC_PER_FRAME = 1000 / FPS;
 
-const uint32_t DISPLAY_WIDTH = 1024;
-const uint32_t DISPLAY_HEIGHT = 1024;
+constexpr uint32_t DISPLAY_WIDTH = 1024;
+constexpr uint32_t DISPLAY_HEIGHT = 1024;
 
 enum class Action { MoveLeft, MoveRight, MoveUp, MoveDown, Shoot };
 
@@ -25,19 +25,19 @@ class Level;
 
 class Game
 {
-    public:
-        Game();
-        ~Game();
+public:
+    Game();
+    ~Game();
 
-        void Start(Engine* engine);
-        void Quit();
+    void Start(Engine* engine);
+    void Quit();
 
-    private:
-        std::unique_ptr<Player> player;
+private:
+    std::unique_ptr<Player> player;
 
-        //Level data
-        std::unique_ptr<Level> level; //this could be a vector of levels
+    //Level data
+    std::unique_ptr<Level> level; //this could be a vector of levels
 
-        void ProcessInput();
-        void Update();
+    void ProcessInput();
+    void Update();
 };

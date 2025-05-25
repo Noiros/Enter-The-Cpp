@@ -1,39 +1,39 @@
 ﻿#pragma once
 #include <memory>
 
-#include "InputManager.h"
-#include "PhysicsServer.h"
-#include "RenderingServer.h"
-#include "ResourcesManager.h"
-#include "SceneTree.h"
+#include "Modules/InputManager.h"
+#include "Modules/PhysicsServer.h"
+#include "Modules/RenderingServer.h"
+#include "Modules/ResourcesManager.h"
+#include "Modules/SceneTree.h"
 
 
 class Engine
 {
-    public:
-        PhysicsServer physicsServer;
-        RenderingServer renderingServer;
-        ResourcesManager resourcesManager;
-        SceneTree sceneTree;
-        InputManager inputManager;
-    
-        Engine();
-        ~Engine();
+public:
+    PhysicsServer physicsServer;
+    RenderingServer renderingServer;
+    ResourcesManager resourcesManager;
+    SceneTree sceneTree;
+    InputManager inputManager;
 
-        static void SetInstance(Engine* instance) { s_instance = instance; };
-        static Engine& GetInstance() { return *s_instance; };
-        Engine(const Engine&) = delete;
-        Engine& operator=(const Engine&) = delete;
+    Engine();
+    ~Engine();
 
-        void Setup();
-        void Run();
-        void Quit();
+    static void SetInstance(Engine* instance) { s_instance = instance; };
+    static Engine& GetInstance() { return *s_instance; };
+    Engine(const Engine&) = delete;
+    Engine& operator=(const Engine&) = delete;
 
-    private:
-        static Engine* s_instance;
+    void Setup();
+    void Run();
+    void Quit();
 
-        bool isRunning;
-        uint64_t millisecondPreviousFrame = 0;
+private:
+    static Engine* s_instance;
 
-        void Update();
+    bool isRunning;
+    uint64_t millisecondPreviousFrame = 0;
+
+    void Update();
 };

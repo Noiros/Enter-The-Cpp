@@ -13,9 +13,8 @@ Engine::Engine()
 Engine::~Engine()
 {
     Logger::Log("Engine destructor called");
-    s_instance = nullptr; 
+    s_instance = nullptr;
 }
-
 
 
 void Engine::Setup()
@@ -24,7 +23,7 @@ void Engine::Setup()
 
     // Setup Scene Tree
     SceneTree::SetInstance(&sceneTree);
-    
+
     // Setup Input Manager
     InputManager::SetInstance(&inputManager);
 
@@ -68,9 +67,9 @@ void Engine::Update()
     millisecondPreviousFrame = SDL_GetTicks64();
 
     renderingServer.Clear();
-    sceneTree.UpdateNodes(renderingServer.renderer, deltaTime);    
+    sceneTree.UpdateNodes(renderingServer.renderer, deltaTime);
     renderingServer.Render();
-    
+
     SDL_Event sdlEvent;
     while (SDL_PollEvent(&sdlEvent))
     {

@@ -1,7 +1,7 @@
 #include "Game.h"
 #include <iostream>
 #include "../Engine/Logger.h"
-#include "../Engine/RenderingServer.h"
+#include "../Engine/Modules/RenderingServer.h"
 #include <SDL.h>
 #include "Player.h"
 #include "../Engine/Utils.hpp"
@@ -25,7 +25,7 @@ void Game::Start(Engine* engine)
     InputManager* inputManager = &InputManager::GetInstance();
     ResourcesManager* resourcesManager = &ResourcesManager::GetInstance();
     SceneTree* sceneTree = &SceneTree::GetInstance();
-    
+
     //Game setup
     //Keyboard bindings
     inputManager->BindKey(Action::MoveLeft, SDL_SCANCODE_LEFT);
@@ -50,7 +50,3 @@ void Game::Start(Engine* engine)
 
     sceneTree->AddNode<Player>();
 }
-
-
-
-
