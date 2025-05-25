@@ -51,9 +51,9 @@ void Level::Render(SDL_Renderer* renderer)
             float integral;
             float frac = modf(camPosY, &integral);
             float pixelOffset = frac + static_cast<int>(integral) % tileHeight;
-            SDL_FRect dst = {x * tileWidth, y * tileHeight - pixelOffset, tileWidth + .5, tileHeight + .5};
+            //SDL_FRect dst = {x * tileWidth, y * tileHeight - pixelOffset, tileWidth + .5, tileHeight + .5};
 
             //blit
-            SDL_RenderCopyF(renderer, tileSetTexture, &src, &dst);
+            //SDL_RenderCopyF(renderer, tileSetTexture, &src, &dst);
         }
 }

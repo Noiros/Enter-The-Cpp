@@ -1,10 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="26d8fb41-693a-4e48-a7f8-a4294213251e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Component.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Component.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/ComponentBase.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TextureRect.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/TextureRect.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Components/Transform.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Engine.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Engine.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/RenderingServer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/RenderingServer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/SceneTree.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/SceneTree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Bullet.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Bullet.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CPP_Game/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CPP_Game/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/CPP_Game.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/CPP_Game.vcxproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Node.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Node.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Physics.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/PhysicsServer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/Physics.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/PhysicsServer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Engine/ResourcesManager.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Engine/ResourcesManager.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Game.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Level.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Level.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Player.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Player.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Game/Player.h" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Game/Player.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/SRC/Main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/SRC/Main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.ilk" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.ilk" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/Cl.items.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.secondary.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/CPP_Game.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Game.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Game.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/InputManager.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/InputManager.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Level.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Level.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Logger.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Logger.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/Player.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/Player.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/ResourcesManager.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/ResourcesManager.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.idb" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.idb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Debug/vc143.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.iobj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.iobj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.ipdb" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.ipdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/CL.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/Cl.items.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/Cl.items.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/link.command.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/link.command.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/link.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/link.read.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/link.secondary.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/link.secondary.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/link.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/CPP_Game.tlog/link.write.1.tlog" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/Game.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/Game.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/InputManager.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/InputManager.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/Level.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/Level.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/Logger.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/Logger.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/Main.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/Main.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/Player.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/Player.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/ResourcesManager.obj" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/ResourcesManager.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CPP_Game/x64/Release/vc143.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/CPP_Game/x64/Release/vc143.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/CPP_Game.exe" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/CPP_Game.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Debug/CPP_Game.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Debug/CPP_Game.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Release/CPP_Game.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/x64/Release/CPP_Game.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/x64/Release/CPP_Game.pdb" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///dummy.cpp" root0="SKIP_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://16" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 2
+}]]></component>
+  <component name="ProjectId" id="2xZw9pnvvYFXbQr80v0LENJjy5G" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ Project.CPP_Project.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="CPP_Project" type="CppProject" factoryName="C++ Project">
       <configuration_1 setup="1">
@@ -39,4 +158,19 @@
       </method>
     </configuration>
   </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="26d8fb41-693a-4e48-a7f8-a4294213251e" name="Changes" comment="" />
+      <created>1748158755643</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1748158755643</updated>
+      <workItem from="1748158757306" duration="3422000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
 </project>
