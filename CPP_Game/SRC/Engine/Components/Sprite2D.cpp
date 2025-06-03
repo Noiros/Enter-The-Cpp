@@ -2,14 +2,17 @@
 
 #include "Transform2D.h"
 #include "../Engine.h"
+#include "../GameObject.h"
 
+
+void Sprite2D::Ready()
+{
+    transform = &gameObject->GetComponent<Transform2D>();
+}
 
 void Sprite2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale)
 {    
     //dest rectangle
-    SceneTree* sceneTree = &SceneTree::GetInstance();
-    Node* ParentNode = sceneTree->GetRootNode(this);
-    Transform2D* transform = sceneTree->GetComponent<Transform2D>(ParentNode);
     textureSrc = {0, 0, int(transform->size.x), int(transform->size.y)};
 
     glm::ivec2 centerPos = {int(transform->size.x * transform->anchor.x), int(transform->size.y * transform->anchor.y)};

@@ -14,14 +14,14 @@ public:
     PhysicsServer physicsServer;
     RenderingServer renderingServer;
     ResourcesManager resourcesManager;
-    SceneTree sceneTree;
     InputManager inputManager;
+    SceneTree sceneTree;
 
     Engine();
     ~Engine();
-
+    
     static void SetInstance(Engine* instance) { s_instance = instance; };
-    static Engine& GetInstance() { return *s_instance; };
+    static Engine& Get() { return *s_instance; };
     Engine(const Engine&) = delete;
     Engine& operator=(const Engine&) = delete;
 

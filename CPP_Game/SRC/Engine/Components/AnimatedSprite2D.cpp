@@ -2,10 +2,12 @@
 
 #include "Transform2D.h"
 #include "../Engine.h"
+#include "../GameObject.h"
+
 
 void AnimatedSprite2D::Ready()
 {
-    
+    transform = &gameObject->GetComponent<Transform2D>();
 }
 
 void AnimatedSprite2D::PlayAnimation(std::string_view animationName)
@@ -21,12 +23,6 @@ void AnimatedSprite2D::AddAnimation(std::string_view name, Animation anim)
     animations.emplace(name, anim);
 }
 
-
-void AnimatedSprite2D::Update(float deltaTime)
-{
-    
-}
-
 uint32_t AnimatedSprite2D::CalculateAnimationFrame()
 {
     uint64_t currentTicks = SDL_GetTicks64();
@@ -36,11 +32,7 @@ uint32_t AnimatedSprite2D::CalculateAnimationFrame()
 }
 
 void AnimatedSprite2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale)
-{
-    SceneTree* sceneTree = &SceneTree::GetInstance();
-    Node* ParentNode = sceneTree->GetRootNode(this);
-    Transform2D* transform = sceneTree->GetComponent<Transform2D>(ParentNode);
-    
+{    
     uint32_t animFrame = CalculateAnimationFrame();
     glm::ivec2 pos = currentAnimation->sprite.GetFramePosition(currentAnimation->frames[animFrame]);
     SDL_Rect textureSrc = {pos.x, pos.y, int(currentAnimation->sprite.tileSize.x), int(currentAnimation->sprite.tileSize.y)};
@@ -53,5 +45,4 @@ void AnimatedSprite2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float
     //blit
     SDL_SetTextureBlendMode(spriteSheet.texture, SDL_BLENDMODE_BLEND); //alpha blend
     SDL_RenderCopyEx(renderer, spriteSheet.texture, &textureSrc, &dst, transform->rotation, &center, SDL_FLIP_NONE);
-    
 }

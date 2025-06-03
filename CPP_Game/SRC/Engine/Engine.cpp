@@ -20,7 +20,7 @@ Engine::~Engine()
 void Engine::Setup()
 {
     SetThreadPriority(GetCurrentThread(), THREAD_PRIORITY_TIME_CRITICAL);
-
+    
     // Setup Scene Tree
     SceneTree::SetInstance(&sceneTree);
 
@@ -67,7 +67,7 @@ void Engine::Update()
     millisecondPreviousFrame = SDL_GetTicks64();
 
     renderingServer.Clear();
-    sceneTree.UpdateNodes(renderingServer.renderer, deltaTime);
+    sceneTree.Update(deltaTime);
     renderingServer.Render();
 
     SDL_Event sdlEvent;

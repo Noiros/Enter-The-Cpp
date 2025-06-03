@@ -2,22 +2,23 @@
 
 #include <cmath>
 
+#include "Transform2D.h"
 #include "../Modules/RenderingServer.h"
-#include "../Modules/SceneTree.h"
+#include "../GameObject.h"
 
 void Camera2D::SetCurrent()
 {
-    RenderingServer::GetInstance().camera = this;
+    RenderingServer::Get().camera = this;
 }
 
-Camera2D::Camera2D()
+void Camera2D::Ready()
 {
+    transform = &gameObject->GetComponent<Transform2D>();
     SetCurrent();
 }
 
 void Camera2D::Update(float deltaTime)
 {
-    glm::vec2 pos = SceneTree::GetInstance().GetComponent<Transform2D>(SceneTree::GetInstance().GetRootNode(this))->position;
-    cameraPos.x = std::lerp(cameraPos.x, pos.x, (deltaTime * CameraLag));
-    cameraPos.y = std::lerp(cameraPos.y, pos.y, (deltaTime * CameraLag));
+    cameraPos.x = std::lerp(cameraPos.x, transform->position.x, (deltaTime * CameraLag));
+    cameraPos.y = std::lerp(cameraPos.y, transform->position.y, (deltaTime * CameraLag));
 }

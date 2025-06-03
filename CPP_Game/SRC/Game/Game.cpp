@@ -2,12 +2,12 @@
 #include "../Engine/Logger.h"
 #include "../Engine/Modules/RenderingServer.h"
 #include <SDL.h>
-#include "Nodes/Player.h"
-#include "Nodes/Empty.h"
+#include "GameObject/Player.h"
+#include "GameObject/Empty.h"
 #include <glm.hpp>
 #include "../Engine/Engine.h"
 #include "../Engine/Components/TileMap2D.h"
-#include "Nodes/Enemy.h"
+#include "GameObject/Enemy.h"
 
 Game::Game()
 {
@@ -21,9 +21,9 @@ Game::~Game()
 
 void Game::Start(Engine* engine)
 {
-    InputManager* inputManager = &InputManager::GetInstance();
-    ResourcesManager* resourcesManager = &ResourcesManager::GetInstance();
-    SceneTree* sceneTree = &SceneTree::GetInstance();
+    InputManager* inputManager = &InputManager::Get();
+    ResourcesManager* resourcesManager = &ResourcesManager::Get();
+    SceneTree* sceneTree = &SceneTree::Get();
 
     //Game setup
     //Keyboard bindings
@@ -41,18 +41,29 @@ void Game::Start(Engine* engine)
     inputManager->BindButton(Action::Shoot, SDL_CONTROLLER_BUTTON_A);
 
     //Create level
-    Empty* level = sceneTree->AddNode<Empty>();
     glm::ivec2 levelSize = {128, 128};
     float finalTileSize = 64;
-    sceneTree->AddComponent<TileMap2D>(level, resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetFloor.tga"), "./Assets/Maps/MainMap_Floor.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize)->ZOrder = -2;
-    sceneTree->AddComponent<TileMap2D>(level, resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetHouse.tga"), "./Assets/Maps/MainMap_House.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize)->ZOrder = -1;
-    sceneTree->AddComponent<TileMap2D>(level, resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetProps.tga"), "./Assets/Maps/MainMap_Props.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize)->ZOrder = -1;
-    sceneTree->AddComponent<TileMap2D>(level, resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetNature.tga"), "./Assets/Maps/MainMap_Nature.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize)->ZOrder = -1;
+    
+    Empty* level = sceneTree->AddGameObject<Empty>();
+    level->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetFloor.tga"), "./Assets/Maps/MainMap_Floor.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize).ZOrder = -2;
+    level->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetHouse.tga"), "./Assets/Maps/MainMap_House.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize).ZOrder = -1;
+    level->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetProps.tga"), "./Assets/Maps/MainMap_Props.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize).ZOrder = -1;
+    level->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetNature.tga"), "./Assets/Maps/MainMap_Nature.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize).ZOrder = -1;
     
     //Create player
-    player = sceneTree->AddNode<Player>();
-    player->transform->position.x = DISPLAY_WIDTH / 2.0f;
-    player->transform->position.y = DISPLAY_HEIGHT / 2.0f;
-    
-    sceneTree->AddNode<Enemy>();
+    player = sceneTree->AddGameObject<Player>("Player");
+    player->GetComponent<Transform2D>().position = glm::vec2(DISPLAY_WIDTH / 2.0f, DISPLAY_HEIGHT / 2.0f);
+
+    /*glm::vec2 center = glm::vec2(DISPLAY_WIDTH / 2.0f, DISPLAY_HEIGHT / 2.0f);
+    float radius = 1000.0f;
+    for (int i = 0; i < 10; i++)
+    {
+        float angle = static_cast<float>(i) * (2.0f * 3.14) / 10.0f; // Angle en radians pour chaque point
+        glm::vec2 position;
+        position.x = center.x + radius * glm::cos(angle);
+        position.y = center.y + radius * glm::sin(angle);
+
+        Enemy* enemy = sceneTree->AddGameObject<Enemy>();
+        enemy->GetComponent<Transform2D>().position = position;
+    }*/
 }

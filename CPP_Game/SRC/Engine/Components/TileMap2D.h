@@ -16,12 +16,12 @@ class TileMap2D : public Component2D
             tilemapHeight = tileSetTextureSize.y / tileHeight;
             ReadTileMapData(mapData);
         }
+        ~TileMap2D();
     
         void Update(float deltaTime) override;
         void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale) override;
 
     private:
-        ~TileMap2D();
         void ReadTileMapData(const std::string& filename);
 
         SDL_Texture* tileSetTexture;
@@ -37,20 +37,13 @@ class TileMap2D : public Component2D
         size_t height;
         //Taille des tiles rendues en pixels
         float finalTileWidth = 16;
-        float finalTileHeight = 16;
+        float finalTileHeight = 16; 
     
         std::vector<uint32_t> tileMap;
-
-        //camera stuff (could be in its own class)
-        const float initCamPosY = height * tileHeight - DISPLAY_HEIGHT;
-        float camPosY = initCamPosY;
-        float camSpeed = 50.0f;
 
         SDL_Point GetTextureSize(SDL_Texture *texture) {
             SDL_Point size;
             SDL_QueryTexture(texture, NULL, NULL, &size.x, &size.y);
             return size;
         }
-
-        //other data such as enemies or pickups initial pos/time or attack patterns could be stored here
 };

@@ -4,6 +4,7 @@
 #include "../Resources/Animation.h"
 
 #include "Component2D.h"
+#include "Transform2D.h"
 
 class AnimatedSprite2D : public Component2D
 {
@@ -12,17 +13,17 @@ class AnimatedSprite2D : public Component2D
 
         SpriteSheet spriteSheet;
     
-        void Ready() override;
-        void Update(float deltaTime) override;
-        uint32_t CalculateAnimationFrame();
-        void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale) override;
+        void Ready();
+        void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale);
 
+        uint32_t CalculateAnimationFrame();
         void PlayAnimation(std::string_view name);
         void AddAnimation(std::string_view name, Animation anim);
 
-        std::map<std::string_view, Animation> animations;
 
     private:
+        std::map<std::string_view, Animation> animations;
         Animation* currentAnimation;
+        Transform2D* transform;
 };
 

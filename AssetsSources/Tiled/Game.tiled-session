@@ -3,7 +3,7 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Collisions.tsx",
+    "activeFile": "MainMap.tmx",
     "expandedProjectPaths": [
         "."
     ],
@@ -11,33 +11,34 @@
         "Collisions.tsx": {
             "dynamicWrapping": true,
             "scaleInDock": 3,
-            "scaleInEditor": 16
+            "scaleInEditor": 2
         },
         "Floor.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 3,
+            "scaleInDock": 4,
             "scaleInEditor": 2
         },
         "Houses.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 2,
+            "scaleInEditor": 2
         },
         "MainMap.tmx": {
-            "scale": 3,
-            "selectedLayer": 0,
+            "scale": 1.5,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 2262.833333333333,
-                "y": 2718.833333333333
+                "x": 221.66666666666663,
+                "y": 245.66666666666669
             }
         },
         "Nature.tsx": {
-            "scaleInDock": 1,
-            "scaleInEditor": 1
+            "scaleInDock": 3,
+            "scaleInEditor": 2
         },
         "Props.tsx": {
+            "dynamicWrapping": false,
             "scaleInDock": 3,
-            "scaleInEditor": 4
+            "scaleInEditor": 2
         }
     },
     "last.exportedFilePath": "C:/Users/noiro/Documents/CPP-Game/CPP_Game/Assets/Maps",
@@ -51,21 +52,21 @@
     "map.tileWidth": 16,
     "map.width": 128,
     "openFiles": [
-        "MainMap.tmx",
         "Floor.tsx",
         "Props.tsx",
         "Collisions.tsx",
         "Houses.tsx",
-        "Nature.tsx"
+        "Nature.tsx",
+        "MainMap.tmx"
     ],
     "project": "Game.tiled-project",
     "recentFiles": [
-        "MainMap.tmx",
         "Floor.tsx",
         "Props.tsx",
-        "Nature.tsx",
+        "Collisions.tsx",
         "Houses.tsx",
-        "Collisions.tsx"
+        "Nature.tsx",
+        "MainMap.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

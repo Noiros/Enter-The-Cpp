@@ -53,10 +53,10 @@ void RenderingServer::Clear()
 
 void RenderingServer::UpdateComponents(std::vector<Component*> components)
 {
-    orderedComponents = components;
+    /*orderedComponents = components;
     std::sort(orderedComponents.begin(), orderedComponents.end(), [](const Component* a, const Component* b) {
         return a->ZOrder < b->ZOrder;
-    });
+    });*/
 }
 
 void RenderingServer::Render()
@@ -64,10 +64,13 @@ void RenderingServer::Render()
     if (camera != NULL)
     {
         glm::vec2 cameraPos = camera->GetCameraPos() - glm::vec2(DISPLAY_WIDTH / 2, DISPLAY_HEIGHT / 2);
-        for (Component* comp : orderedComponents)
+
+        SceneTree::Get().Render(renderer, cameraPos, camera->GetCameraScale());
+        
+        /*for (Component* comp : orderedComponents)
         {
             comp->Render(renderer, cameraPos, camera->GetCameraScale());
-        }
+        }*/
         
         //wait for VSync (or not) and swap buffers -> draw becomes display and vice-versa
         SDL_RenderPresent(renderer);

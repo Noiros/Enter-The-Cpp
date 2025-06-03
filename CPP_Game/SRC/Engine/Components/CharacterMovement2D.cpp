@@ -1,12 +1,20 @@
 ﻿#include "CharacterMovement2D.h"
 
+#include <SDL_timer.h>
+
+#include "../GameObject.h"
 #include "../Modules/SceneTree.h"
+#include "../GameObject.h"
+
+float timer = 0.0f;
+float delay = 5000.0f;
 
 void CharacterMovement2D::Update(float deltaTime)
-{
-    SceneTree* sceneTree = &SceneTree::GetInstance();
-    Node* ParentNode = sceneTree->GetRootNode(this);
-    Transform2D* transform = sceneTree->GetComponent<Transform2D>(ParentNode);
-    
+{    
     transform->position += velocity * deltaTime;
+}
+
+void CharacterMovement2D::Ready()
+{
+    transform = &gameObject->GetComponent<Transform2D>();
 }

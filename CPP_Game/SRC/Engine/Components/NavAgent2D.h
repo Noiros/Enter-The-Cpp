@@ -4,6 +4,5 @@
 class NavAgent2D : public Component2D
 {
 public:
-
     
 };

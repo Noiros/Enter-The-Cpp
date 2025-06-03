@@ -8,7 +8,7 @@ class Sprite
 public:
     Sprite(std::string_view textureName) : textureName(textureName)
     {
-        texture = ResourcesManager::GetInstance().GetTexture(textureName);
+        texture = ResourcesManager::Get().GetTexture(textureName);
     };
     
     std::string_view textureName;

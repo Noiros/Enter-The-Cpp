@@ -1,15 +1,18 @@
 ﻿#pragma once
+#include <SDL_render.h>
+#include <glm.hpp>
 
-#include <SDL.h>
-#include <vec2.hpp>
+class GameObject;
 
 class Component
 {
-public:
-    virtual ~Component() = default; // Destructeur virtuel pour permettre dynamic_cast
-    virtual void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale) = 0;
-    virtual void Update(float deltaTime) = 0;
-    virtual void Ready() = 0;
-    
-    int ZOrder = 0;
+    public:
+        Component() = default;
+        virtual ~Component() = default;
+
+        GameObject* gameObject;
+
+        virtual void Ready() {}
+        virtual void Update(float deltaTime) {}
+        virtual void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale) {}
 };

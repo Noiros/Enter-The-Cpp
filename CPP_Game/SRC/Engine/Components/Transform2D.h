@@ -6,7 +6,7 @@
 
 class Transform2D : public Component2D
 {
-public:
+public:    
     glm::vec2 position;
     glm::vec2 anchor = {0.5f, 0.5f};
     glm::vec2 scale;

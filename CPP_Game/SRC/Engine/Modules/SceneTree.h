@@ -1,109 +1,48 @@
 ﻿#pragma once
-
-#include <map>
-#include <string>
+#include <memory>
+#include <SDL_render.h>
 #include <vector>
-
-#include "RenderingServer.h"
-#include "../Logger.h"
-#include "../Node.h"
-#include "../Component.h"
-#include "../Components/Transform2D.h"
+#include <map>
+#include "../GameObject.h"
 
 class SceneTree
 {
-public:
-    SceneTree();
-    ~SceneTree();
+    public:
+        SceneTree() = default;
+        ~SceneTree() = default;
 
-    void UpdateNodes(SDL_Renderer* renderer, float deltaTime);
+        void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale);
+        void Update(float deltaTime);
+        void ProcessPendingGameObjects();
 
-    static void SetInstance(SceneTree* instance) { s_instance = instance; };
-    static SceneTree& GetInstance() { return *s_instance; };
-    SceneTree(const SceneTree&) = delete;
-    SceneTree& operator=(const SceneTree&) = delete;
-
-    template <class N, class... Args>
-    N* AddNode(Args&&... args)
-    {
-        static_assert(std::is_base_of_v<Node, N>, "N must derive from Node");
-
-        N* newNode = new N(std::forward<Args>(args)...);
-        nodes[newNode] = {};
-
-        newNode->transform = AddComponent<Transform2D>(newNode); //add transform component by default
-
-        Logger::Log("New node added to the scene");
-        newNode->Ready();
-        return newNode;
-    }
-
-    template <typename T, typename... Args>
-    T* AddComponent(Node* parentNode, Args&&... args)
-    {
-        // Vérifie à la compilation que T hérite de Component
-        static_assert(std::is_base_of_v<Component, T>, "T must derive from Component");
-
-        // Optionnel: Vérifier si un composant de ce type existe déjà
-        // if (GetComponent<T>() != nullptr) {
-        //     // Gérer le cas : retourner le composant existant, logger, ou ne rien faire
-        //     return GetComponent<T>();
-        // }
-
-        T* newComponent = new T(std::forward<Args>(args)...);
-        nodes[parentNode].push_back(newComponent);
+        template<typename T>
+        inline T& GetGameObjectByName(std::string_view name)
+        {
+            auto ptr = gameObjectByName.at(name);
+            return *static_cast<T*>(ptr);
+        }
+    
+        template <class T, class... Args>
+        T* AddGameObject(std::string_view objectName = "Default", Args&&... args)
+        {
+            T* newGameObject = new T(std::forward<Args>(args)...);
+            std::unique_ptr<GameObject> unique_ptr { newGameObject };
+            pendingGameObjects.emplace_back(std::move(unique_ptr));
+            gameObjectByName.emplace(objectName, newGameObject);
+            newGameObject->SetName(objectName);
+            newGameObject->Ready();
+            return newGameObject;
+        }
         
-        RenderingServer::GetInstance().UpdateComponents(GetAllComponents());
+        // Create singleton
+        static void SetInstance(SceneTree* instance) { s_instance = instance; };
+        static SceneTree& Get() { return *s_instance; };
+        SceneTree(const SceneTree&) = delete;
+        SceneTree& operator=(const SceneTree&) = delete;
 
-        return newComponent;
-    }
-
-    template <typename N>
-    N* GetComponent(Node* parentNode)
-    {
-        // Vérifie à la compilation que T hérite de Component
-        static_assert(std::is_base_of_v<Component, N>, "T must derive from Node");
-
-        for (Component* comp : nodes[parentNode])
-        {
-            N* castedComp = dynamic_cast<N*>(comp);
-            if (castedComp != nullptr)
-            {
-                return castedComp;
-            }
-        }
-        return nullptr;
-    }
-
-    Node* GetRootNode(Component* comp)
-    {
-        for (const auto& [node, components] : nodes)
-        {
-            for (Component* currentComp : components)
-            {
-                if (currentComp == comp)
-                {
-                    return node;
-                }
-            }
-        }
-        return nullptr;
-    }
-
-private:
-    std::map<Node*, std::vector<Component*>> nodes;
-    static SceneTree* s_instance;
-
-    std::vector<Component*> GetAllComponents()
-    {
-        std::vector<Component*> allComponents;
-        for (const auto& [node, components] : nodes)
-        {
-            for (Component* component : components)
-            {
-                allComponents.push_back(component);
-            }
-        }
-        return allComponents;
-    }
+    private:
+        std::vector<std::unique_ptr<GameObject>> gameObjects;
+        std::vector<std::unique_ptr<GameObject>> pendingGameObjects;
+        std::map<std::string_view, GameObject*> gameObjectByName;
+        static SceneTree* s_instance;
 };

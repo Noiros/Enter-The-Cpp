@@ -1,13 +1,13 @@
 #pragma once
 
 #include <SDL.h>
-#include "../Engine/Node.h"
+#include "../Engine/GameObject.h"
 #include "../Engine/Modules/ResourcesManager.h"
 #include "../Engine/Modules/InputManager.h"
 #include "../Engine/Modules/RenderingServer.h"
 #include <vector>
-#include "Nodes/Player.h"
-#include "../Engine/Engine.h""
+#include "GameObject/Player.h"
+#include "../Engine/Engine.h"
 
 
 #define VSYNC //FPS will be determined by the display refresh rate
