@@ -10,7 +10,8 @@ public:
     Collider2D(CollisionShape shape) : collisionShape(shape) {};
     
     CollisionShape collisionShape;
-
+    int layer = 0;
+        
     void Ready();
     void Update(float deltaTime);
     void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale);

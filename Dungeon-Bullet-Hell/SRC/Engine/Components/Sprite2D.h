@@ -15,6 +15,7 @@ public:
     void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale);
 
 private:
+    SDL_Point GetTextureSize();
     Sprite sprite;
     SDL_Rect textureSrc;
     SDL_Texture* texture;

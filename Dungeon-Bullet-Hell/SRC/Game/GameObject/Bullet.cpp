@@ -1,18 +1,14 @@
 #include "Bullet.h"
 
-/*void Bullet::Ready()
-{
-    /*SpriteSheet spriteSheet("./Assets/Images/FX/PlantSpike.png", {16, 16});
-    Animation animIdle({0, 1, 2, 3}, spriteSheet, 0.1f);
+#include "../../Engine/Components/Sprite2D.h"
 
-    AnimatedSprite2D* sprite = &AddComponent<AnimatedSprite2D>(spriteSheet);
+
+void Bullet::Ready()
+{
+    AddComponent<Sprite2D>(Sprite("./Assets/Images/FX/PlantSpike.png"));
+    
     movement = &AddComponent<CharacterMovement2D>();
 
-    sprite->AddAnimation("Idle", animIdle);
-    sprite->PlayAnimation("Idle");
-}*/
-
-/*void Bullet::Update(float deltaTime)
-{
-    
-}*/
+    transform->rotation = glm::degrees(std::atan2(direction.y, direction.x));
+    movement->SetLinearVelocity(direction * bulletSpeed * 1000.0f);
+}

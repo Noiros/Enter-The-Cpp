@@ -20,6 +20,9 @@ void Enemy::Ready()
     transform = &GetComponent<Transform2D>();
 
     player = &SceneTree::Get().GetGameObjectByName<Player>("Player");
+    
+    CollisionShape collisionShape({-16, -16, 32, 32});
+    AddComponent<Collider2D>(collisionShape);
 }
 
 void Enemy::Update(float deltaTime)

@@ -1,6 +1,7 @@
 ﻿#pragma once
 
 #include <vec2.hpp>
+#include <__msvc_string_view.hpp>
 
 #include "Component2D.h"
 

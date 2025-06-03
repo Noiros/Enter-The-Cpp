@@ -1,9 +1,11 @@
 ﻿#include "Collider2D.h"
 #include "../GameObject.h"
+#include "../Modules/PhysicsServer.h"
 
 void Collider2D::Ready()
 {
     transform = &gameObject->GetComponent<Transform2D>();
+    PhysicsServer::Get().AddCollider(this, layer);
 }
 
 void Collider2D::Update(float deltaTime)

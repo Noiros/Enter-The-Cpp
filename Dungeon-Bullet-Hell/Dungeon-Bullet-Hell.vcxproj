@@ -52,6 +52,7 @@
     <ClInclude Include="SRC\Game\GameObject\Bullet.h" />
     <ClInclude Include="SRC\Game\GameObject\Empty.h" />
     <ClInclude Include="SRC\Game\GameObject\Enemy.h" />
+    <ClInclude Include="SRC\Game\GameObject\Gun.h" />
     <ClInclude Include="SRC\Game\GameObject\Player.h" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +81,7 @@
     <ClCompile Include="SRC\Game\GameObject\Bullet.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Empty.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Enemy.cpp" />
+    <ClCompile Include="SRC\Game\GameObject\Gun.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Player.cpp" />
     <ClCompile Include="SRC\Main.cpp" />
   </ItemGroup>

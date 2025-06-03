@@ -8,6 +8,8 @@
 
 #include <memory>
 
+#include "Gun.h"
+
 class Player : public GameObject
 {
 public:
@@ -15,13 +17,13 @@ public:
     
     void Update(float deltaTime);
     void Ready();
-
-    void Shoot();
+    void EquipGun();
 
 private:
     CharacterMovement2D* movement;
     AnimatedSprite2D* animatedSprite;
     Camera2D* camera;
+    Gun* gun;
     
     glm::vec2 moveDir = glm::vec2(0, 0);
     glm::vec2 lookDir = glm::vec2(0, 0);

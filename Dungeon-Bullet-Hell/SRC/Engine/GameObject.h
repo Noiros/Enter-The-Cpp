@@ -12,7 +12,7 @@ class GameObject
 public:
     GameObject()
     {
-        this->AddComponent<Transform2D>();
+        transform = &this->AddComponent<Transform2D>();
     };
     virtual ~GameObject() = default;
 
@@ -67,7 +67,8 @@ public:
     {
         active = false;
     }
-    
+
+    Transform2D* transform;
     virtual void Ready() {
         active = true;
     }

@@ -6,6 +6,7 @@
 #include "GameObject/Empty.h"
 #include <glm.hpp>
 #include "../Engine/Engine.h"
+#include "../Engine/Components/ColliderTileMap2D.h"
 #include "../Engine/Components/TileMap2D.h"
 #include "GameObject/Enemy.h"
 
@@ -49,12 +50,13 @@ void Game::Start(Engine* engine)
     level->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetHouse.tga"), "./Assets/Maps/MainMap_House.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize).ZOrder = -1;
     level->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetProps.tga"), "./Assets/Maps/MainMap_Props.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize).ZOrder = -1;
     level->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Images/Tiles/TilesetNature.tga"), "./Assets/Maps/MainMap_Nature.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize).ZOrder = -1;
+    level->AddComponent<ColliderTileMap2D>("./Assets/Maps/MainMap_Collisions.csv", levelSize.x, levelSize.y, finalTileSize, finalTileSize);
     
     //Create player
     player = sceneTree->AddGameObject<Player>("Player");
     player->GetComponent<Transform2D>().position = glm::vec2(DISPLAY_WIDTH / 2.0f, DISPLAY_HEIGHT / 2.0f);
 
-    /*glm::vec2 center = glm::vec2(DISPLAY_WIDTH / 2.0f, DISPLAY_HEIGHT / 2.0f);
+    glm::vec2 center = glm::vec2(DISPLAY_WIDTH / 2.0f, DISPLAY_HEIGHT / 2.0f);
     float radius = 1000.0f;
     for (int i = 0; i < 10; i++)
     {
@@ -65,5 +67,5 @@ void Game::Start(Engine* engine)
 
         Enemy* enemy = sceneTree->AddGameObject<Enemy>();
         enemy->GetComponent<Transform2D>().position = position;
-    }*/
+    }
 }

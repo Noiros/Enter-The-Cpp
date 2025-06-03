@@ -2,21 +2,11 @@
 #include "Player.h"
 
 #include "Bullet.h"
-#include "Empty.h"
 #include "../../Engine/Utils.hpp"
 #include "../../Engine/Logger.h"
 
-#include "../../Engine/Components/Transform2D.h"
 #include "../../Engine/Resources/CollisionShape.h"
 
-void Player::Shoot()
-{
-    Empty* bullet = SceneTree::Get().AddGameObject<Empty>();
-    //Transform2D* bulletTransform = &bullet->GetComponent<Transform2D>();
-    //bulletTransform->position = GetComponent<Transform2D>().position;
-    //bulletTransform->size = glm::vec2(64, 64);
-    //bullet->movement->SetLinearVelocity(lookDir * 1000.0f);
-}
 
 void Player::Ready()
 {
@@ -43,8 +33,15 @@ void Player::Ready()
     
     animatedSprite->PlayAnimation("Idle");
 
-    CollisionShape collisionShape;
+    CollisionShape collisionShape({-16, -16, 32, 32});
     AddComponent<Collider2D>(collisionShape);
+
+    EquipGun();
+}
+
+void Player::EquipGun()
+{
+    gun = SceneTree::Get().AddGameObject<Gun>("", this);
 }
 
 void Player::Update(float deltaTime)
@@ -72,9 +69,6 @@ void Player::Update(float deltaTime)
         animatedSprite->PlayAnimation("WalkDown");
     }
     if (moveDir == glm::vec2(0, 0)) animatedSprite->PlayAnimation("Idle");
-
-    
-    if (InputManager::Get().IsActionHeld(Action::Shoot)) Shoot();
 
     lookDir = glm::normalize(glm::vec2(InputManager::Get().GetMouseX() - (DISPLAY_WIDTH / 2.0f), InputManager::Get().GetMouseY() - (DISPLAY_HEIGHT / 2.0f)));
     

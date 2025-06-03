@@ -33,6 +33,9 @@ void Engine::Setup()
     // Setup Resources Manager
     ResourcesManager::SetInstance(&resourcesManager);
 
+    // Setup Physics Server
+    PhysicsServer::SetInstance(&physicsServer);
+
     isRunning = true;
     Logger::Log("Engine setup done !");
 }
