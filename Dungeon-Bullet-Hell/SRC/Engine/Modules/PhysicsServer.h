@@ -10,8 +10,10 @@ public:
     ~PhysicsServer() {};
     
     void AddCollider(Collider2D* collider, int layer = 0);
+    void RmCollider(Collider2D* collider);
     
-    bool TestMovement(Collider2D* collider, glm::vec2 velocity);
+    Collider2D* TestMovement(Collider2D* collider, glm::vec2 velocity);
+    Collider2D* IsOverlapping(Collider2D* collider);
     bool IsColliding(Collider2D* obj1, Collider2D* obj2);
     bool IsCollidingAABB(SDL_Rect obj1, SDL_Rect obj2);
 

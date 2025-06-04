@@ -30,9 +30,9 @@ void TileMap2D::ReadTileMapData(const std::string& filename)
     file.close();
 }
 
-void TileMap2D::Update(float deltaTime)
+void TileMap2D::Ready()
 {    
-    
+    transform = &gameObject->GetComponent<Transform2D>();
 }
 
 void TileMap2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale)
@@ -48,7 +48,7 @@ void TileMap2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float camera
                 //Logger::Log("Tile position: " + std::to_string(srcPos.x) + ", " + std::to_string(srcPos.y));
                 SDL_Rect src = {srcPos.x, srcPos.y, tileWidth, tileHeight};
 
-                SDL_FRect dst = {(static_cast<float>(x) * finalTileWidth - cameraPos.x) * cameraScale, (static_cast<float>(y) * finalTileHeight - cameraPos.y) * cameraScale, finalTileWidth * cameraScale, finalTileHeight * cameraScale};
+                SDL_FRect dst = {(static_cast<float>(x) * finalTileWidth - cameraPos.x + transform->position.x) * cameraScale, (static_cast<float>(y) * finalTileHeight - cameraPos.y + transform->position.y) * cameraScale, finalTileWidth * cameraScale, finalTileHeight * cameraScale};
 
                 //blit
                 SDL_RenderCopyF(renderer, tileSetTexture, &src, &dst);

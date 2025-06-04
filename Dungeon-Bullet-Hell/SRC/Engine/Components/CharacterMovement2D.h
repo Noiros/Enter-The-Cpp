@@ -7,6 +7,7 @@ class CharacterMovement2D : public Component2D
 {
 public:
     CharacterMovement2D(glm::vec2 baseVelocity = {0, 0}) : velocity(baseVelocity) {}
+    ~CharacterMovement2D() = default;
 
     void AddLinearVelocity(glm::vec2 vel) { velocity += vel; }
     void SetLinearVelocity(glm::vec2 vel) { velocity = vel; }

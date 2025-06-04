@@ -9,19 +9,55 @@ void PhysicsServer::AddCollider(Collider2D* collider, int layer)
     colliders[layer].push_back(collider);
 }
 
-bool PhysicsServer::TestMovement(Collider2D* collider, glm::vec2 movement)
+void PhysicsServer::RmCollider(Collider2D* collider)
+{
+    for (auto it = colliders.begin(); it != colliders.end(); ++it)
+    {
+        for (auto it2 = it->second.begin(); it2 != it->second.end(); ++it2)
+        {
+            if (*it2 == collider)
+            {
+                it->second.erase(it2);
+                return;
+            }
+        }
+    }
+}
+
+Collider2D* PhysicsServer::TestMovement(Collider2D* collider, glm::vec2 movement)
 {
     SDL_Rect destAABB = collider->collisionShape.collisionShape;
     destAABB.x += movement.x + collider->gameObject->transform->position.x;
     destAABB.y += movement.y + collider->gameObject->transform->position.y;
     for (Collider2D* coll : colliders[collider->layer])
     {
-        if (coll != collider && IsCollidingAABB(destAABB, coll->collisionShape.collisionShape) == true)
+        SDL_Rect testAABB = coll->collisionShape.collisionShape;
+        testAABB.x += coll->gameObject->transform->position.x;
+        testAABB.y += coll->gameObject->transform->position.y;
+        if (coll->gameObject->IsActive() && coll->isTrigger == false && coll != collider && IsCollidingAABB(destAABB, testAABB) == true)
         {
-            return true;
+            return coll;
         }
     }
-    return false;
+    return nullptr;
+}
+
+Collider2D* PhysicsServer::IsOverlapping(Collider2D* collider)
+{
+    SDL_Rect destAABB = collider->collisionShape.collisionShape;
+    destAABB.x += collider->gameObject->transform->position.x;
+    destAABB.y += collider->gameObject->transform->position.y;
+    for (Collider2D* coll : colliders[collider->layer])
+    {
+        SDL_Rect testAABB = coll->collisionShape.collisionShape;
+        testAABB.x += coll->gameObject->transform->position.x;
+        testAABB.y += coll->gameObject->transform->position.y;
+        if (coll != collider && IsCollidingAABB(destAABB, testAABB) == true)
+        {
+            return coll;
+        }
+    }
+    return nullptr;
 }
 
 bool PhysicsServer::IsColliding(Collider2D* obj1, Collider2D* obj2)

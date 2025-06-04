@@ -30,6 +30,7 @@
     <ClInclude Include="SRC\Engine\Components\ComponentUI.h" />
     <ClInclude Include="SRC\Engine\Components\NavAgent2D.h" />
     <ClInclude Include="SRC\Engine\Components\NavMesh2D.h" />
+    <ClInclude Include="SRC\Engine\Components\ObjectTileMap2D.h" />
     <ClInclude Include="SRC\Engine\Components\Sprite2D.h" />
     <ClInclude Include="SRC\Engine\Components\TileMap2D.h" />
     <ClInclude Include="SRC\Engine\Components\Transform2D.h" />
@@ -43,17 +44,20 @@
     <ClInclude Include="SRC\Engine\Modules\RenderingServer.h" />
     <ClInclude Include="SRC\Engine\Modules\ResourcesManager.h" />
     <ClInclude Include="SRC\Engine\Modules\SceneTree.h" />
+    <ClInclude Include="SRC\Engine\Plugins\DungeonGenerator.h" />
     <ClInclude Include="SRC\Engine\Resources\Animation.h" />
     <ClInclude Include="SRC\Engine\Resources\CollisionShape.h" />
     <ClInclude Include="SRC\Engine\Resources\Sprite.h" />
     <ClInclude Include="SRC\Engine\Resources\SpriteSheet.hpp" />
     <ClInclude Include="SRC\Engine\Utils.hpp" />
     <ClInclude Include="SRC\Game\Game.h" />
+    <ClInclude Include="SRC\Game\GameConfigs\GameConfigs.h" />
     <ClInclude Include="SRC\Game\GameObject\Bullet.h" />
     <ClInclude Include="SRC\Game\GameObject\Empty.h" />
     <ClInclude Include="SRC\Game\GameObject\Enemy.h" />
     <ClInclude Include="SRC\Game\GameObject\Gun.h" />
     <ClInclude Include="SRC\Game\GameObject\Player.h" />
+    <ClInclude Include="SRC\Game\RoomList.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SRC\Engine\Components\AnimatedSprite2D.cpp" />
@@ -65,6 +69,7 @@
     <ClCompile Include="SRC\Engine\Components\ComponentUI.cpp" />
     <ClCompile Include="SRC\Engine\Components\NavAgent2D.cpp" />
     <ClCompile Include="SRC\Engine\Components\NavMesh2D.cpp" />
+    <ClCompile Include="SRC\Engine\Components\ObjectTileMap2D.cpp" />
     <ClCompile Include="SRC\Engine\Components\Sprite2D.cpp" />
     <ClCompile Include="SRC\Engine\Components\TileMap2D.cpp" />
     <ClCompile Include="SRC\Engine\Components\Transform2D.cpp" />
@@ -77,30 +82,91 @@
     <ClCompile Include="SRC\Engine\Modules\RenderingServer.cpp" />
     <ClCompile Include="SRC\Engine\Modules\ResourcesManager.cpp" />
     <ClCompile Include="SRC\Engine\Modules\SceneTree.cpp" />
+    <ClCompile Include="SRC\Engine\Plugins\DungeonGenerator.cpp">
+      <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <Optimization>Disabled</Optimization>
+      <SupportJustMyCode>true</SupportJustMyCode>
+      <AssemblerOutput>NoListing</AssemblerOutput>
+      <AssemblerListingLocation>x64\Debug\</AssemblerListingLocation>
+      <UndefineAllPreprocessorDefinitions>false</UndefineAllPreprocessorDefinitions>
+      <BrowseInformation>false</BrowseInformation>
+      <BrowseInformationFile>x64\Debug\</BrowseInformationFile>
+      <CompileAs>Default</CompileAs>
+      <UseDynamicDebugging>false</UseDynamicDebugging>
+      <ConformanceMode>true</ConformanceMode>
+      <DiagnosticsFormat>Column</DiagnosticsFormat>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
+      <ErrorReporting>Prompt</ErrorReporting>
+      <ExpandAttributedSource>false</ExpandAttributedSource>
+      <ExceptionHandling>Sync</ExceptionHandling>
+      <EnableASAN>false</EnableASAN>
+      <EnableFuzzer>false</EnableFuzzer>
+      <EnableFiberSafeOptimizations>false</EnableFiberSafeOptimizations>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <EnableVectorLength>NotSet</EnableVectorLength>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <ForceConformanceInForLoopScope>true</ForceConformanceInForLoopScope>
+      <GenerateModuleDependencies>false</GenerateModuleDependencies>
+      <GenerateSourceDependencies>false</GenerateSourceDependencies>
+      <GenerateXMLDocumentationFiles>false</GenerateXMLDocumentationFiles>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <LanguageStandard_C>Default</LanguageStandard_C>
+      <MinimalRebuild>false</MinimalRebuild>
+      <ModuleDependenciesFile>x64\Debug\</ModuleDependenciesFile>
+      <ModuleOutputFile>x64\Debug\</ModuleOutputFile>
+      <OmitDefaultLibName>false</OmitDefaultLibName>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <ObjectFileName>x64\Debug\</ObjectFileName>
+      <CallingConvention>Cdecl</CallingConvention>
+      <ProgramDataBaseFileName>x64\Debug\vc143.pdb</ProgramDataBaseFileName>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <PrecompiledHeaderOutputFile>x64\Debug\Dungeon-Bullet-Hell.pch</PrecompiledHeaderOutputFile>
+      <PreprocessToFile>false</PreprocessToFile>
+      <PreprocessKeepComments>false</PreprocessKeepComments>
+      <PreprocessSuppressLineNumbers>false</PreprocessSuppressLineNumbers>
+      <RemoveUnreferencedCodeData>true</RemoveUnreferencedCodeData>
+      <ScanSourceForModuleDependencies>false</ScanSourceForModuleDependencies>
+      <ShowIncludes>false</ShowIncludes>
+      <SourceDependenciesFile>x64\Debug\</SourceDependenciesFile>
+      <SuppressStartupBanner>true</SuppressStartupBanner>
+      <BufferSecurityCheck>true</BufferSecurityCheck>
+      <SmallerTypeCheck>false</SmallerTypeCheck>
+      <SpectreMitigation>false</SpectreMitigation>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <TrackerLogDirectory>x64\Debug\Dungeon-.a0061366.tlog\</TrackerLogDirectory>
+      <TranslateIncludes>false</TranslateIncludes>
+      <MinimalRebuildFromTracking>true</MinimalRebuildFromTracking>
+      <TreatWarningAsError>false</TreatWarningAsError>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <UseFullPaths>true</UseFullPaths>
+      <WarningLevel>Level3</WarningLevel>
+      <XMLDocumentationFileName>x64\Debug\</XMLDocumentationFileName>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <IntelJCCErratum>false</IntelJCCErratum>
+      <BuildStlModules>false</BuildStlModules>
+      <TreatAngleIncludeAsExternal>false</TreatAngleIncludeAsExternal>
+      <ExternalWarningLevel>InheritWarningLevel</ExternalWarningLevel>
+      <TreatExternalTemplatesAsInternal>true</TreatExternalTemplatesAsInternal>
+      <DisableAnalyzeExternal>false</DisableAnalyzeExternal>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_UNICODE;UNICODE;</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <LinkCompiled>true</LinkCompiled>
+    </ClCompile>
     <ClCompile Include="SRC\Game\Game.cpp" />
+    <ClCompile Include="SRC\Game\GameConfigs\GameConfigs.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Bullet.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Empty.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Enemy.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Gun.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Player.cpp" />
+    <ClCompile Include="SRC\Game\RoomList.cpp" />
     <ClCompile Include="SRC\Main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Assets\Images\Bullet.tga" />
-    <Content Include="Assets\Images\Characters\Player.tga" />
-    <Content Include="Assets\Images\Characters\Skeleton.png" />
-    <Content Include="Assets\Images\FX\PlantSpike.png" />
-    <Content Include="Assets\Images\Ship.tga" />
-    <Content Include="Assets\Images\Tileset.tga" />
-    <Content Include="Assets\Images\Tiles\TilesetFloor.tga" />
-    <Content Include="Assets\Images\Tiles\TilesetHouse.tga" />
-    <Content Include="Assets\Images\Tiles\TilesetNature.tga" />
-    <Content Include="Assets\Images\Tiles\TilesetProps.tga" />
-    <Content Include="Assets\Maps\MainMap_Collisions.csv" />
-    <Content Include="Assets\Maps\MainMap_Floor.csv" />
-    <Content Include="Assets\Maps\MainMap_House.csv" />
-    <Content Include="Assets\Maps\MainMap_Nature.csv" />
-    <Content Include="Assets\Maps\MainMap_Props.csv" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

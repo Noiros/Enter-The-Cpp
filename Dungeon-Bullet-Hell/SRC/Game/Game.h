@@ -29,6 +29,11 @@ public:
     Game();
     ~Game();
 
+    InputManager* inputManager;
+    ResourcesManager* resourcesManager;
+    SceneTree* sceneTree;
+    
+    void GenMap();
     void Start(Engine* engine);
     void Quit();
 

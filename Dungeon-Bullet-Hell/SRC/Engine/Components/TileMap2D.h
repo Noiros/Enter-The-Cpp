@@ -17,14 +17,15 @@ class TileMap2D : public Component2D
             ReadTileMapData(mapData);
         }
         ~TileMap2D();
-    
-        void Update(float deltaTime) override;
+
+        void Ready() override;
         void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale) override;
 
     private:
         void ReadTileMapData(const std::string& filename);
 
         SDL_Texture* tileSetTexture;
+        Transform2D* transform;
 
         //Taille d'une tile
         static constexpr size_t tileHeight = 16;

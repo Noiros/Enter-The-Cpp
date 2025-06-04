@@ -10,7 +10,7 @@ void Sprite2D::Ready()
 {
     transform = &gameObject->GetComponent<Transform2D>();
     texture = sprite.texture;
-    //transform->size = glm::vec2(GetTextureSize().x, GetTextureSize().y);
+    transform->size = glm::vec2(GetTextureSize().x, GetTextureSize().y);
 }
 
 void Sprite2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale)
@@ -27,7 +27,7 @@ void Sprite2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraS
     SDL_RenderCopyEx(renderer, texture, &textureSrc, &dst, transform->rotation, &center, SDL_FLIP_NONE);
 }
 
-SDL_Point Sprite2D::GetTextureSize() {
+const SDL_Point Sprite2D::GetTextureSize() {
     SDL_Point size;
     SDL_QueryTexture(texture, NULL, NULL, &size.x, &size.y);
     return size;

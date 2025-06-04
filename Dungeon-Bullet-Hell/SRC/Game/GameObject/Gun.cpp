@@ -8,8 +8,9 @@ void Gun::Ready()
 {
     GameObject::Ready();
 
-    transform->anchor = glm::vec2(-0.5f, 0.5f);
     sprite = &AddComponent<Sprite2D>(Sprite("./Assets/Guns/milit.png"));
+    transform->scale = glm::vec2(3.0f);
+    transform->anchor = glm::vec2(-0.5f, 0.5f);
 }
 
 void Gun::Update(float deltaTime)
@@ -40,7 +41,7 @@ void Gun::Shoot()
     spreadFireDir.y = lookAtDir.x * sinSpread + lookAtDir.y * cosSpread;
     
     lastFire = SDL_GetTicks();
-    Bullet* bullet = SceneTree::Get().AddGameObject<Bullet>("", spreadFireDir);
+    Bullet* bullet = SceneTree::Get().AddGameObject<Bullet>("", spreadFireDir, parent);
     bullet->transform->position = transform->position;
     bullet->bulletSpeed = bulletSpeed;
 }

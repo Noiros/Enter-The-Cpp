@@ -11,6 +11,7 @@ void Collider2D::Ready()
 void Collider2D::Update(float deltaTime)
 {
     Component2D::Update(deltaTime);
+
 }
 
 void Collider2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale)

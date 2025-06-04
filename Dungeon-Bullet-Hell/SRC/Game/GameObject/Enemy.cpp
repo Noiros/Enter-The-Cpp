@@ -27,6 +27,6 @@ void Enemy::Ready()
 
 void Enemy::Update(float deltaTime)
 {
-    glm::vec2 moveDirection = glm::normalize(player->GetComponent<Transform2D>().position - transform->position);
-    movement->SetLinearVelocity( moveDirection * 200.0f );
+    //glm::vec2 moveDirection = glm::normalize(player->GetComponent<Transform2D>().position - transform->position);
+    //movement->SetLinearVelocity( moveDirection * 200.0f );
 }

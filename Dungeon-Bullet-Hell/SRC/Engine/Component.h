@@ -16,3 +16,4 @@ class Component
         virtual void Update(float deltaTime) {}
         virtual void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale) {}
 };
+

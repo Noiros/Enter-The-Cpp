@@ -48,11 +48,6 @@ public:
         return compBitset[GetComponentTypeID<T>()];
     }
 
-    inline bool IsActive() const
-    {
-        return active;
-    }
-
     inline std::string GetName() const
     {
         return name;
@@ -63,22 +58,26 @@ public:
         this->name = name;
     }
 
-    inline void DestroyGameObject()
+    inline bool IsActive() const
     {
-        active = false;
+        return active;
     }
 
-    Transform2D* transform;
-    virtual void Ready() {
-        active = true;
+    inline void SetActive(bool active)
+    {
+        this->active = active;
     }
+    
+    Transform2D* transform;
+    virtual void Ready() {}
     virtual void Update(float deltaTime) {}
     virtual void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale) {}
+    virtual void HitObject(GameObject* other) {}
     
     
 private:
+    bool active = true;
     std::string name;
-    bool active = false;
     ComponentArray compList;
     ComponentBitset compBitset;
     std::vector<std::unique_ptr<Component>> components;

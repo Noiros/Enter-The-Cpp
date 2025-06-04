@@ -11,7 +11,8 @@ public:
     
     CollisionShape collisionShape;
     int layer = 0;
-        
+    bool isTrigger = false;
+
     void Ready();
     void Update(float deltaTime);
     void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale);
