@@ -10,6 +10,9 @@ class Sprite2D : public Component2D
 {
 public:
     Sprite2D(Sprite s) : sprite(s) {};
+
+    bool HFlip = false;
+    bool VFlip = false;
     
     void Ready();
     void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale);

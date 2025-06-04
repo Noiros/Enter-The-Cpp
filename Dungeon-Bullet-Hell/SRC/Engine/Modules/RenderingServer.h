@@ -23,7 +23,6 @@ class RenderingServer
         RenderingServer& operator=(const RenderingServer&) = delete;
 
         SDL_Renderer* GetRenderer() const { return renderer; }
-        void UpdateComponents(std::vector<Component*> components);
         void Render();
         void Clear();
 

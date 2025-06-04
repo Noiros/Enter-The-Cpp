@@ -10,8 +10,12 @@
 #include "../Engine/Plugins/DungeonGenerator.h"
 #include "../Engine/Engine.h"
 #include "../Engine/Components/ColliderTileMap2D.h"
+#include "../Engine/Components/ObjectTileMap2D.h"
 #include "../Engine/Components/TileMap2D.h"
 #include "GameObject/Enemy.h"
+#include "GameObject/RoomObject.h"
+#include "GameObject/Enemies/BaseEnemy.h"
+#include "GameObject/Enemies/ShotgunEnemy.h"
 
 Game::Game()
 {
@@ -36,32 +40,28 @@ void Game::Start(Engine* engine)
     inputManager->BindKey(Action::MoveUp, SDL_SCANCODE_W);
     inputManager->BindKey(Action::MoveDown, SDL_SCANCODE_S);
     inputManager->BindKey(Action::Shoot, SDL_SCANCODE_SPACE);
+    inputManager->BindKey(Action::Dash, SDL_SCANCODE_LSHIFT);
 
     //Gamepad mapping (assuming Xbox-style controller)
     inputManager->BindButton(Action::MoveLeft, SDL_CONTROLLER_BUTTON_DPAD_LEFT);
     inputManager->BindButton(Action::MoveRight, SDL_CONTROLLER_BUTTON_DPAD_RIGHT);
     inputManager->BindButton(Action::MoveUp, SDL_CONTROLLER_BUTTON_DPAD_UP);
     inputManager->BindButton(Action::MoveDown, SDL_CONTROLLER_BUTTON_DPAD_DOWN);
-    inputManager->BindButton(Action::Shoot, SDL_CONTROLLER_BUTTON_A);
+    inputManager->BindButton(Action::Shoot, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER);
+    inputManager->BindButton(Action::Dash, SDL_CONTROLLER_BUTTON_LEFTSHOULDER);
 
-    GenMap();
-    
     //Create player
     player = sceneTree->AddGameObject<Player>("Player");
-    player->GetComponent<Transform2D>().position = glm::vec2(DISPLAY_WIDTH / 2.0f, DISPLAY_HEIGHT / 2.0f);
+    player->transform->position = glm::vec2(10, 10) * 48.0f;
+    
+    //Enemy* enemy = sceneTree->AddGameObject<Enemy>();
+    //enemy->transform->position = glm::vec2(5, 5) * 48.0f;
+    
+    //Initialize gameObjects IDs
+    sceneTree->RegisterGameObjectFactory(0, [](std::string_view name){ return std::make_unique<BaseEnemy>(); });
+    sceneTree->RegisterGameObjectFactory(1, [](std::string_view name){ return std::make_unique<ShotgunEnemy>(); });
 
-    /*glm::vec2 center = glm::vec2(DISPLAY_WIDTH / 2.0f, DISPLAY_HEIGHT / 2.0f);
-    float radius = 1000.0f;
-    for (int i = 0; i < 10; i++)
-    {
-        float angle = static_cast<float>(i) * (2.0f * 3.14f) / 10.0f; // Angle en radians pour chaque point
-        glm::vec2 position;
-        position.x = center.x + radius * glm::cos(angle);
-        position.y = center.y + radius * glm::sin(angle);
-
-        Enemy* enemy = sceneTree->AddGameObject<Enemy>();
-        enemy->GetComponent<Transform2D>().position = position;
-    }*/
+    GenMap();
 }
 
 
@@ -69,48 +69,25 @@ void Game::GenMap()
 {
     RoomList roomList;
     DungeonGenerator generator;
-    generator.GenerateDungeon(15); 
-    generator.PrintDungeon();
-
-    std::cout << "\nDétails des salles:\n";
+    generator.GenerateDungeon(50); 
+    
     for (Room* room : generator.rooms) {
-        std::cout << "Salle à (" << room->position.x << ", " << room->position.y << "), Portes: " << room->GetDoorCount();
+        Logger::Log("Add Room (" + std::to_string(room->position.x) + ", " + std::to_string(room->position.y) + ") Door count: " + std::to_string(room->GetDoorCount()));
         
-        // Afficher les orientations des portes
-        std::cout << " (";
-        bool firstDoor = true;
-        if (room->connections.at(Direction::NORTH)) {
-            std::cout << "N";
-            firstDoor = false;
-        }
-        if (room->connections.at(Direction::SOUTH)) {
-            if (!firstDoor) std::cout << ", ";
-            std::cout << "S";
-            firstDoor = false;
-        }
-        if (room->connections.at(Direction::EAST)) {
-            if (!firstDoor) std::cout << ", ";
-            std::cout << "E";
-            firstDoor = false;
-        }
-        if (room->connections.at(Direction::WEST)) {
-            if (!firstDoor) std::cout << ", ";
-            std::cout << "W";
-        }
-        std::cout << ")\n";
-
         const RoomResource* roomRes = roomList.GetBestRoomResource(room);
 
         if (roomRes != nullptr)
         {
             glm::ivec2 roomSize = {20, 20};
-            float finalTileSize = 5;
-            Empty* roomLevel = sceneTree->AddGameObject<Empty>();
-            roomLevel->transform->position = room->position * finalTileSize * 20.0f;
-            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Floor.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
-            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Walls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -1;
-            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Overlay.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -1;
+            float finalTileSize = 48;
+            RoomObject* roomLevel = sceneTree->AddGameObject<RoomObject>();
+            roomLevel->transform->position = glm::vec2(room->position.x, -room->position.y) * finalTileSize * 20.0f;
+            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Floor.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -4;
+            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Walls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
+            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Overlay.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
+            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/Deco.png"), std::string(roomRes->csvPath) + "_Deco.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -1;
             roomLevel->AddComponent<ColliderTileMap2D>(std::string(roomRes->csvPath) + "_Colls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize);
+            roomLevel->AddComponent<ObjectTileMap2D>(std::string(roomRes->csvPath) + "_Objects.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize);
 
             Logger::Log("Room generated");
         }

@@ -7,10 +7,19 @@ class Enemy : public GameObject
     public:
         void Update(float deltaTime);
         void Ready();
+        void EquipGun();
+        void TakeDamage(int damage);
 
-private:
+        bool roomActive = false;
+
+        int HP = 3;
+    
+        float viewDistance = 1500.0f;
+        float attackDistance = 300.0f;
+
+protected:
     Player* player;
     CharacterMovement2D* movement;
     AnimatedSprite2D* animatedSprite;
-    Transform2D* transform;
+    Gun* gun;
 };

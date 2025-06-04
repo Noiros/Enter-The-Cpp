@@ -59,10 +59,16 @@ void InputManager::ProcessInput()
         //read left stick axis
         leftStickX = SDL_GameControllerGetAxis(gameController, SDL_CONTROLLER_AXIS_LEFTX) / 32767.0f; //normalize
         leftStickY = SDL_GameControllerGetAxis(gameController, SDL_CONTROLLER_AXIS_LEFTY) / 32767.0f;
+        
+        //read right stick axis
+        rightStickX = SDL_GameControllerGetAxis(gameController, SDL_CONTROLLER_AXIS_RIGHTX) / 32767.0f; //normalize
+        rightStickY = SDL_GameControllerGetAxis(gameController, SDL_CONTROLLER_AXIS_RIGHTY) / 32767.0f;
 
         //apply dead zone
         if (fabs(leftStickX) < DEAD_ZONE) leftStickX = 0.0f;
         if (fabs(leftStickY) < DEAD_ZONE) leftStickY = 0.0f;
+        if (fabs(rightStickX) < DEAD_ZONE) rightStickX = 0.0f;
+        if (fabs(rightStickY) < DEAD_ZONE) rightStickY = 0.0f;
     }
 }
 
@@ -84,6 +90,16 @@ float InputManager::GetLeftStickX()
 float InputManager::GetLeftStickY()
 {
     return leftStickY;
+}
+
+float InputManager::GetRightStickX()
+{
+    return rightStickX;
+}
+
+float InputManager::GetRightStickY()
+{
+    return rightStickY;
 }
 
 float InputManager::GetMouseX()

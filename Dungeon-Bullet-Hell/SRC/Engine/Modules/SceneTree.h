@@ -1,4 +1,5 @@
 ﻿#pragma once
+#include <functional>
 #include <memory>
 #include <SDL_render.h>
 #include <vector>
@@ -35,6 +36,23 @@ class SceneTree
         }
 
         void DestroyGameObject(GameObject* gameObject);
+
+        using GameObjectCreator = std::function<std::unique_ptr<GameObject>(std::string_view)>;
+        std::map<int, GameObjectCreator> objectFactories; 
+
+        void RegisterGameObjectFactory(int id, GameObjectCreator creator);
+        std::unique_ptr<GameObject> CreateGameObjectByID(int id, std::string_view name);
+        
+        inline GameObject* AddGameObjectByID(int id, std::string_view name = "") {
+            std::unique_ptr<GameObject> obj = CreateGameObjectByID(id, name);
+            if (obj) {
+                GameObject* rawPtr = obj.release(); // Utilisez .release() pour transférer la propriété
+                gameObjects.push_back(std::unique_ptr<GameObject>(rawPtr)); // Ré-encapsulez si nécessaire ou ajustez gameObjects
+                rawPtr->Ready(); // Appeler Ready après l'ajout à la liste
+                return rawPtr;
+            }
+            return nullptr;
+        }
 
         // Create singleton
         static void SetInstance(SceneTree* instance) { s_instance = instance; };

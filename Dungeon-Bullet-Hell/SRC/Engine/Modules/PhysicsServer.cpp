@@ -60,6 +60,28 @@ Collider2D* PhysicsServer::IsOverlapping(Collider2D* collider)
     return nullptr;
 }
 
+std::vector<Collider2D*> PhysicsServer::GetOverloppingBodies(Collider2D* collider, int layer)
+{
+    std::vector<Collider2D*> bodies;
+    
+    SDL_Rect destAABB = collider->collisionShape.collisionShape;
+    destAABB.x += collider->gameObject->transform->position.x;
+    destAABB.y += collider->gameObject->transform->position.y;
+    
+    for (Collider2D* coll : colliders[collider->layer])
+    {
+        SDL_Rect testAABB = coll->collisionShape.collisionShape;
+        testAABB.x += coll->gameObject->transform->position.x;
+        testAABB.y += coll->gameObject->transform->position.y;
+        if (coll->gameObject->IsActive() && coll != collider && IsCollidingAABB(destAABB, testAABB) == true)
+        {
+            bodies.push_back(coll);
+        }
+    }
+    
+    return bodies;
+}
+
 bool PhysicsServer::IsColliding(Collider2D* obj1, Collider2D* obj2)
 {
     return true;

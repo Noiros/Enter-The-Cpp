@@ -22,10 +22,21 @@ void Sprite2D::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraS
     SDL_Point center = {centerPos.x, centerPos.y};
     SDL_Rect dst = {int(transform->position.x) - centerPos.x - int(cameraPos.x), int(transform->position.y) - centerPos.y - int(cameraPos.y), int(transform->size.x * cameraScale * transform->scale.x), int(transform->size.y * cameraScale * transform->scale.y)};
 
+    SDL_RendererFlip flip = SDL_FLIP_NONE;
+    if (HFlip)
+    {
+        flip = static_cast<SDL_RendererFlip>(flip | SDL_FLIP_HORIZONTAL);
+    }
+    if (VFlip)
+    {
+        flip = static_cast<SDL_RendererFlip>(flip | SDL_FLIP_VERTICAL);
+    }
+
     //blit
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND); //alpha blend
-    SDL_RenderCopyEx(renderer, texture, &textureSrc, &dst, transform->rotation, &center, SDL_FLIP_NONE);
+    SDL_RenderCopyEx(renderer, texture, &textureSrc, &dst, gameObject->transform->rotation, &center, flip); // Utiliser le 'flip' calculé
 }
+
 
 const SDL_Point Sprite2D::GetTextureSize() {
     SDL_Point size;

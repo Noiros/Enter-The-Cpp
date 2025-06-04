@@ -11,7 +11,8 @@ public:
     glm::vec2 GetCameraPos() { return cameraPos; }
     float GetCameraScale() { return CameraScale; }
 
-    float CameraLag = 2.0f;
+    glm::vec2 OffsetPosition;
+    float CameraLag = 5.0f;
     float CameraScale = 1.0f;
 
     void Ready();

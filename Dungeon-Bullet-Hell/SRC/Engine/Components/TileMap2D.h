@@ -10,7 +10,6 @@ class TileMap2D : public Component2D
     public:
         TileMap2D(SDL_Texture* t, const std::string& mapData, size_t w, size_t h, float ftw, float fth) : tileSetTexture(t), width(w), height(h), finalTileWidth(ftw), finalTileHeight(fth)
         {
-            Logger::Log("Level constructor called");
             SDL_Point tileSetTextureSize = GetTextureSize(tileSetTexture);
             tilemapWidth = tileSetTextureSize.x / tileWidth;
             tilemapHeight = tileSetTextureSize.y / tileHeight;

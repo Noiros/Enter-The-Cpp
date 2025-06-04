@@ -5,5 +5,4 @@
 class Component2D : public Component
 {
 public:    
-    int ZOrder = 0;
 };

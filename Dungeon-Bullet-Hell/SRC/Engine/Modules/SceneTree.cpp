@@ -1,23 +1,43 @@
 ﻿#include "SceneTree.h"
 
 #include "../../Game/Game.h"
+#include "../Logger.h"
 
 SceneTree* SceneTree::s_instance = nullptr;
 
 void SceneTree::Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale)
 {
+    std::vector<Component*> componentsToRender;
+    for (auto& gameObject : gameObjects)
+    {
+        if (gameObject->IsActive())
+        {
+            for (std::unique_ptr<Component>& comp : *gameObject->GetAllComponents())
+            {
+                componentsToRender.push_back(comp.get());
+            }
+        }
+    }
+
+    std::sort(componentsToRender.begin(), componentsToRender.end(), 
+              [](Component* a, Component* b) {
+                  return a->ZOrder < b->ZOrder;
+              });
+
+    for (Component* comp : componentsToRender)
+    {
+        comp->Render(renderer, cameraPos, cameraScale);
+    }
+
     for (auto& gameObject : gameObjects)
     {
         if (gameObject->IsActive())
         {
             gameObject->Render(renderer, cameraPos, cameraScale);
-            for (std::unique_ptr<Component>& comp : *gameObject->GetAllComponents())
-            {
-                comp->Render(renderer, cameraPos, cameraScale);
-            }
         }
     }
 }
+
 
 void SceneTree::Update(float deltaTime)
 {
@@ -25,11 +45,11 @@ void SceneTree::Update(float deltaTime)
     {
         if (gameObject->IsActive())
         {
-            gameObject->Update(deltaTime);
             for (std::unique_ptr<Component>& comp : *gameObject->GetAllComponents())
             {
                 comp->Update(deltaTime);
             }
+            gameObject->Update(deltaTime);
         }
     }
 
@@ -84,3 +104,18 @@ void SceneTree::ProcessPendingGameObjects()
     }
 }
 
+void SceneTree::RegisterGameObjectFactory(int id, GameObjectCreator creator) {
+    objectFactories[id] = creator;
+}
+
+std::unique_ptr<GameObject> SceneTree::CreateGameObjectByID(int id, std::string_view name) {
+    auto it = objectFactories.find(id);
+    if (it != objectFactories.end()) {
+        std::unique_ptr<GameObject> newObj = it->second(name);
+        if (newObj) {
+            newObj->SetName(name);
+        }
+        return newObj;
+    }
+    return nullptr;
+}

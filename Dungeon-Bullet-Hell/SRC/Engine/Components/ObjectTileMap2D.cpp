@@ -17,9 +17,12 @@ void ObjectTileMap2D::Ready()
                 uint32_t tileSetIndex = tileMap[x + y * width];
                 if (tileSetIndex != -1)
                 {
-                    glm::vec2 tilePos = {x * finalTileWidth + gameObject->transform->position.x, y * finalTileHeight + gameObject->transform->position.y};
-
-                    
+                    glm::vec2 tilePos = {(static_cast<float>(x) * finalTileWidth + gameObject->transform->position.x), (static_cast<float>(y) * finalTileHeight + gameObject->transform->position.y)};
+                    GameObject* newObj = SceneTree::Get().AddGameObjectByID(tileSetIndex);
+                    if (newObj) {
+                        Logger::Log("Add GameObject -> ID " + std::to_string(tileSetIndex) + " at (" + std::to_string(tilePos.x) + ", " + std::to_string(tilePos.y) + ")");
+                        newObj->GetComponent<Transform2D>().position = glm::vec2(tilePos.x, tilePos.y);
+                    }
                 }
             }
         }
@@ -29,7 +32,7 @@ void ObjectTileMap2D::Ready()
 void ObjectTileMap2D::ReadTileMapData(const std::string& filename)
 {   
     std::ifstream file(filename);
-    if (!file.is_open()) Logger::Err("Error: Could not open map file!");
+    if (!file.is_open()) Logger::Err("Could not open map file!");
 
     tileMap.reserve(width * height);
     std::string line;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
  <editorsettings>
-  <export target="../../Dungeon-Bullet-Hell/Assets/Maps/Rooms/4/4_Room_NSWE_01.csv" format="csv"/>
+  <export target="../../Dungeon-Bullet-Hell/Assets/Maps/Rooms/3_Room_NEW_01.csv" format="csv"/>
  </editorsettings>
  <tileset firstgid="1" source="../WallsFloor.tsx"/>
  <tileset firstgid="300" source="../Collisions.tsx"/>
@@ -49,8 +49,8 @@
 15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,
 15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,
 15,16,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,14,15,
-15,43,2,2,2,2,2,2,3,0,0,1,2,2,2,2,2,2,45,15,
-15,15,15,15,15,15,15,15,16,0,0,14,15,15,15,15,15,15,15,15
+15,43,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,45,15,
+15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15,15
 </data>
  </layer>
  <layer id="3" name="Overlay" width="20" height="20">
@@ -121,8 +121,8 @@
 0,300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,300,0,
 0,300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,300,0,
 0,300,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,300,0,
-0,300,300,300,300,300,300,300,300,0,0,300,300,300,300,300,300,300,300,0,
-0,0,0,0,0,0,0,0,300,0,0,300,0,0,0,0,0,0,0,0
+0,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,300,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
 </map>

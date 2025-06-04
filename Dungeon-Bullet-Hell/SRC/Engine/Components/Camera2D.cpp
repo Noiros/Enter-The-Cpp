@@ -19,6 +19,6 @@ void Camera2D::Ready()
 
 void Camera2D::Update(float deltaTime)
 {
-    cameraPos.x = std::lerp(cameraPos.x, transform->position.x, (deltaTime * CameraLag));
-    cameraPos.y = std::lerp(cameraPos.y, transform->position.y, (deltaTime * CameraLag));
+    cameraPos.x = std::lerp(cameraPos.x, transform->position.x + OffsetPosition.x, (deltaTime * CameraLag));
+    cameraPos.y = std::lerp(cameraPos.y, transform->position.y + OffsetPosition.y, (deltaTime * CameraLag));
 }

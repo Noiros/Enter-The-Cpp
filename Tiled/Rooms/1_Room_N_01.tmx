@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.2" orientation="orthogonal" renderorder="right-down" width="20" height="20" tilewidth="16" tileheight="16" infinite="0" nextlayerid="6" nextobjectid="1">
  <editorsettings>
-  <export target="../../Dungeon-Bullet-Hell/Assets/Maps/Rooms/4/1_Room_E_01.csv" format="csv"/>
+  <export target="../../Dungeon-Bullet-Hell/Assets/Maps/Rooms/1_Room_N_01.csv" format="csv"/>
  </editorsettings>
  <tileset firstgid="1" source="../WallsFloor.tsx"/>
  <tileset firstgid="300" source="../Collisions.tsx"/>
+ <tileset firstgid="301" source="../Objects.tsx"/>
  <layer id="1" name="Floor" width="20" height="20">
   <data encoding="csv">
 80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,80,
@@ -84,6 +85,7 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,301,0,0,0,0,0,0,0,0,0,0,0,0,301,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
@@ -94,14 +96,13 @@
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,301,0,0,0,0,0,0,0,0,0,0,0,0,301,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 </data>
  </layer>
- <layer id="5" name="Colls" width="20" height="20" visible="0">
+ <layer id="5" name="Colls" width="20" height="20">
   <data encoding="csv">
 0,0,0,0,0,0,0,0,300,0,0,300,0,0,0,0,0,0,0,0,
 0,0,0,0,0,0,0,0,300,0,0,300,0,0,0,0,0,0,0,0,

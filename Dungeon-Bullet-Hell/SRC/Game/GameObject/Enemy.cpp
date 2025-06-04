@@ -5,17 +5,7 @@
 
 void Enemy::Ready()
 {
-    SpriteSheet spriteSheet("./Assets/Images/Characters/Skeleton.png", {16, 16});
-    
-    animatedSprite = &AddComponent<AnimatedSprite2D>(spriteSheet);
-    
-    Animation animIdle({0}, spriteSheet, 1.0f);
-    animatedSprite->AddAnimation("Idle", animIdle);
-    Animation animWalkUp({9, 13, 17, 21}, spriteSheet, 0.1f);
-    animatedSprite->AddAnimation("WalkUp", animWalkUp);
-
     animatedSprite->PlayAnimation("Idle");
-
     movement = &AddComponent<CharacterMovement2D>();
     transform = &GetComponent<Transform2D>();
 
@@ -23,10 +13,43 @@ void Enemy::Ready()
     
     CollisionShape collisionShape({-16, -16, 32, 32});
     AddComponent<Collider2D>(collisionShape);
+    EquipGun();
+}
+
+void Enemy::EquipGun()
+{
+    gun = SceneTree::Get().AddGameObject<Gun>("", this);
+    gun->team = ENEMY;
+    gun->fireRate = 1.5f;
 }
 
 void Enemy::Update(float deltaTime)
 {
-    //glm::vec2 moveDirection = glm::normalize(player->GetComponent<Transform2D>().position - transform->position);
-    //movement->SetLinearVelocity( moveDirection * 200.0f );
+    if (!roomActive) return;
+    
+    movement->SetLinearVelocity(glm::vec2(0, 0));
+    
+    float playerDistance = glm::distance(player->GetComponent<Transform2D>().position, transform->position);
+
+    if (playerDistance < viewDistance)
+    {
+        gun->lookAtDir = glm::normalize(player->GetComponent<Transform2D>().position - transform->position);
+        gun->Shoot();
+        if (playerDistance > attackDistance)
+        {
+            glm::vec2 moveDirection = glm::normalize(player->GetComponent<Transform2D>().position - transform->position);
+            movement->SetLinearVelocity( moveDirection * 200.0f );
+        }
+    }
+
+    if (movement->GetLinearVelocity() == glm::vec2(0, 0)) animatedSprite->PlayAnimation("Idle");
+    if (movement->GetLinearVelocity().x < 0) animatedSprite->PlayAnimation("WalkLeft");
+    if (movement->GetLinearVelocity().x > 0) animatedSprite->PlayAnimation("WalkRight");
+    if (movement->GetLinearVelocity().y < 0) animatedSprite->PlayAnimation("WalkUp");
+    if (movement->GetLinearVelocity().y > 0) animatedSprite->PlayAnimation("WalkDown");
+}
+
+void Enemy::TakeDamage(int damage)
+{
+    
 }

@@ -6,14 +6,15 @@ class GameObject;
 
 class Component
 {
-    public:
-        Component() = default;
-        virtual ~Component() = default;
+public:
+    Component() = default;
+    virtual ~Component() = default;
 
-        GameObject* gameObject;
+    GameObject* gameObject;
+    int ZOrder = 0;
 
-        virtual void Ready() {}
-        virtual void Update(float deltaTime) {}
-        virtual void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale) {}
+    virtual void Ready() {}
+    virtual void Update(float deltaTime) {}
+    virtual void Render(SDL_Renderer* renderer, glm::vec2 cameraPos, float cameraScale) {}
 };
 

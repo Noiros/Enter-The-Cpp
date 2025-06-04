@@ -9,7 +9,6 @@ class ObjectTileMap2D : public Component2D
 public:
     ObjectTileMap2D(const std::string& mapData, size_t w, size_t h, float ftw, float fth) : width(w), height(h), finalTileWidth(ftw), finalTileHeight(fth)
     {
-        Logger::Log("Level constructor called");
         ReadTileMapData(mapData);
     }
     ~ObjectTileMap2D() {};

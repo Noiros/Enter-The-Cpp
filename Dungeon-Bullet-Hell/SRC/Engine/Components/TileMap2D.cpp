@@ -6,7 +6,6 @@
 
 TileMap2D::~TileMap2D()
 {
-    Logger::Log("Level destructor called");
 }
 
 void TileMap2D::ReadTileMapData(const std::string& filename)

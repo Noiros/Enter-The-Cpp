@@ -2,12 +2,17 @@
 #include "../../Engine/GameObject.h"
 #include "../../Engine/Components/Sprite2D.h"
 
+enum GunTeam { PLAYER, ENEMY };
+
 class Gun : public GameObject
 {
 public:
+    int bulletsPerShot = 1;
     float fireRate = 0.1f;
     float bulletSpeed = 2.0f;
-    float gunSpread = 2.0f;
+    float gunSpread = 20.0;
+    glm::vec2 gunHandle = {20, 0};
+    GunTeam team = PLAYER;
     
     Sprite2D* sprite;
     GameObject* parent;

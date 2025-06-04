@@ -1,14 +1,14 @@
-#pragma once
+﻿#pragma once
 
 #include "../../Engine/GameObject.h"
 #include "../../Engine/Components/CharacterMovement2D.h"
 
-class Bullet : public GameObject
+class EnemyBullet : public GameObject
 {    
 public:
-    float bulletSpeed = 2.0f;
+    float bulletSpeed = 1.0f;
     
-    Bullet(glm::vec2 dir, GameObject* s) : direction(dir), shooterObject(s) {};
+    EnemyBullet(glm::vec2 dir, GameObject* s) : direction(dir), shooterObject(s) {};
     
     void Ready() override;
     void HitObject(GameObject* other) override;

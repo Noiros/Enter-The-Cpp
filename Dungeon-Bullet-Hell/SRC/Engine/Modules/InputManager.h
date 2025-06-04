@@ -20,6 +20,8 @@ public:
     bool IsActionPressed(Action action);
     float GetLeftStickX();
     float GetLeftStickY();
+    float GetRightStickX();
+    float GetRightStickY();
     float GetMouseX();
     float GetMouseY();
 
@@ -42,5 +44,7 @@ private:
 
     float leftStickX = 0.0f;
     float leftStickY = 0.0f;
+    float rightStickX = 0.0f;
+    float rightStickY = 0.0f;
     const float DEAD_ZONE = 0.2f;
 };
