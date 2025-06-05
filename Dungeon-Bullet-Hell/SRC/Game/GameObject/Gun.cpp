@@ -50,22 +50,21 @@ void Gun::Shoot()
 
     lastFire = SDL_GetTicks();
     
-    // Si plusieurs balles, répartir l'angle
-    float totalSpreadAngle = glm::radians(gunSpread); // Convertir le spread en radians
+    float totalSpreadAngle = glm::radians(gunSpread);
     float angleStep = 0.0f;
+    float startAngle = 0;
     if (bulletsPerShot > 1) {
         angleStep = totalSpreadAngle / (bulletsPerShot - 1);
+        startAngle = -totalSpreadAngle / 2.0f;
     }
-    
-    float startAngle = -totalSpreadAngle / 2.0f; // Commencer au milieu de l'arc
+    float randomSpreadAngle = (static_cast<float>(rand()) / RAND_MAX - 0.5f) * totalSpreadAngle;
     
     for (int i = 0; i < bulletsPerShot; ++i)
     {
-        float currentAngle = startAngle + i * angleStep;
+        float currentAngle = startAngle + i * angleStep + randomSpreadAngle;
         
         glm::vec2 fireDir = glm::normalize(lookAtDir);
         
-        // Appliquer la rotation à la direction du tir
         glm::vec2 spreadFireDir;
         spreadFireDir.x = fireDir.x * std::cos(currentAngle) - fireDir.y * std::sin(currentAngle);
         spreadFireDir.y = fireDir.x * std::sin(currentAngle) + fireDir.y * std::cos(currentAngle);

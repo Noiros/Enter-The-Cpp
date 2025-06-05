@@ -55,8 +55,8 @@ class SceneTree
         }
 
         // Create singleton
-        static void SetInstance(SceneTree* instance) { s_instance = instance; };
-        static SceneTree& Get() { return *s_instance; };
+        static void SetInstance(SceneTree* instance) { s_instance = instance; }
+        static SceneTree& Get() { return *s_instance; }
         SceneTree(const SceneTree&) = delete;
         SceneTree& operator=(const SceneTree&) = delete;
 

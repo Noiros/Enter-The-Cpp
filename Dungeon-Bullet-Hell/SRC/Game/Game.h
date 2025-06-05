@@ -1,11 +1,8 @@
 #pragma once
 
 #include <SDL.h>
-#include "../Engine/GameObject.h"
 #include "../Engine/Modules/ResourcesManager.h"
 #include "../Engine/Modules/InputManager.h"
-#include "../Engine/Modules/RenderingServer.h"
-#include <vector>
 #include "GameObject/Player.h"
 #include "../Engine/Engine.h"
 
@@ -36,11 +33,7 @@ public:
     
     void GenMap();
     void Start(Engine* engine);
-    void Quit();
 
 private:
     Player* player;
-
-    void ProcessInput();
-    void Update();
 };

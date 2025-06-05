@@ -27,8 +27,7 @@
     <ClInclude Include="SRC\Engine\Components\ColliderTileMap2D.h" />
     <ClInclude Include="SRC\Engine\Components\Component2D.h" />
     <ClInclude Include="SRC\Engine\Components\ComponentUI.h" />
-    <ClInclude Include="SRC\Engine\Components\NavAgent2D.h" />
-    <ClInclude Include="SRC\Engine\Components\NavMesh2D.h" />
+    <ClInclude Include="SRC\Engine\Components\LabelUI.h" />
     <ClInclude Include="SRC\Engine\Components\ObjectTileMap2D.h" />
     <ClInclude Include="SRC\Engine\Components\Sprite2D.h" />
     <ClInclude Include="SRC\Engine\Components\TileMap2D.h" />
@@ -37,9 +36,7 @@
     <ClInclude Include="SRC\Engine\Engine.h" />
     <ClInclude Include="SRC\Engine\GameObject.h" />
     <ClInclude Include="SRC\Engine\Logger.h" />
-    <ClInclude Include="SRC\Engine\Modules\GarbageCollector.h" />
     <ClInclude Include="SRC\Engine\Modules\InputManager.h" />
-    <ClInclude Include="SRC\Engine\Modules\NavigationServer.h" />
     <ClInclude Include="SRC\Engine\Modules\PhysicsServer.h" />
     <ClInclude Include="SRC\Engine\Modules\RenderingServer.h" />
     <ClInclude Include="SRC\Engine\Modules\ResourcesManager.h" />
@@ -51,7 +48,6 @@
     <ClInclude Include="SRC\Engine\Resources\SpriteSheet.hpp" />
     <ClInclude Include="SRC\Engine\Utils.hpp" />
     <ClInclude Include="SRC\Game\Game.h" />
-    <ClInclude Include="SRC\Game\GameConfigs\GameConfigs.h" />
     <ClInclude Include="SRC\Game\GameObject\Enemies\BaseEnemy.h" />
     <ClInclude Include="SRC\Game\GameObject\Enemies\ShotgunEnemy.h" />
     <ClInclude Include="SRC\Game\GameObject\EnemyBullet.h" />
@@ -71,17 +67,14 @@
     <ClCompile Include="SRC\Engine\Components\ColliderTileMap2D.cpp" />
     <ClCompile Include="SRC\Engine\Components\Component2D.cpp" />
     <ClCompile Include="SRC\Engine\Components\ComponentUI.cpp" />
-    <ClCompile Include="SRC\Engine\Components\NavAgent2D.cpp" />
-    <ClCompile Include="SRC\Engine\Components\NavMesh2D.cpp" />
+    <ClCompile Include="SRC\Engine\Components\LabelUI.cpp" />
     <ClCompile Include="SRC\Engine\Components\ObjectTileMap2D.cpp" />
     <ClCompile Include="SRC\Engine\Components\Sprite2D.cpp" />
     <ClCompile Include="SRC\Engine\Components\TileMap2D.cpp" />
     <ClCompile Include="SRC\Engine\Components\Transform2D.cpp" />
     <ClCompile Include="SRC\Engine\Engine.cpp" />
     <ClCompile Include="SRC\Engine\Logger.cpp" />
-    <ClCompile Include="SRC\Engine\Modules\GarbageCollector.cpp" />
     <ClCompile Include="SRC\Engine\Modules\InputManager.cpp" />
-    <ClCompile Include="SRC\Engine\Modules\NavigationServer.cpp" />
     <ClCompile Include="SRC\Engine\Modules\PhysicsServer.cpp" />
     <ClCompile Include="SRC\Engine\Modules\RenderingServer.cpp" />
     <ClCompile Include="SRC\Engine\Modules\ResourcesManager.cpp" />
@@ -163,7 +156,6 @@
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
     <ClCompile Include="SRC\Game\Game.cpp" />
-    <ClCompile Include="SRC\Game\GameConfigs\GameConfigs.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Enemies\BaseEnemy.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>

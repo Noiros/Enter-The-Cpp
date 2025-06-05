@@ -1,7 +1,7 @@
 ﻿#include "ColliderTileMap2D.h"
 #include <fstream>
 #include <sstream>
-#include <glm.hpp>
+#include "../Logger.h"
 
 void ColliderTileMap2D::Ready()
 {

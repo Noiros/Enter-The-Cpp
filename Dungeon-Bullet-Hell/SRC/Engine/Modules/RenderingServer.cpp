@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <fwd.hpp>
 #include <SDL_render.h>
+#include <SDL_ttf.h>
+
 #include "../../Game/Game.h"
 #include "SceneTree.h"
 
@@ -19,8 +21,6 @@ RenderingServer::RenderingServer()
         return;
     }
 
-    //SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "1"); //bilinear filtering
-
     window = SDL_CreateWindow("My Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, DISPLAY_WIDTH, DISPLAY_HEIGHT,
                               SDL_WINDOW_RESIZABLE);
     if (!window)
@@ -28,6 +28,7 @@ RenderingServer::RenderingServer()
         Logger::Err("Error creating SDL Window!");
         return;
     }
+    TTF_Init();
 
 #ifdef VSYNC
     renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_PRESENTVSYNC);
@@ -47,7 +48,7 @@ RenderingServer::RenderingServer()
 void RenderingServer::Clear()
 {
     //clear draw buffer
-    SDL_SetRenderDrawColor(renderer, 80, 60, 40, 255);
+    SDL_SetRenderDrawColor(renderer, 29, 28, 43, 255);
     SDL_RenderClear(renderer);
 }
 

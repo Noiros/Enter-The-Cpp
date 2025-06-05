@@ -12,7 +12,6 @@
 #include "../Engine/Components/ColliderTileMap2D.h"
 #include "../Engine/Components/ObjectTileMap2D.h"
 #include "../Engine/Components/TileMap2D.h"
-#include "GameObject/Enemy.h"
 #include "GameObject/RoomObject.h"
 #include "GameObject/Enemies/BaseEnemy.h"
 #include "GameObject/Enemies/ShotgunEnemy.h"
@@ -80,12 +79,22 @@ void Game::GenMap()
             float finalTileSize = 48;
             RoomObject* roomLevel = sceneTree->AddGameObject<RoomObject>();
             roomLevel->transform->position = glm::vec2(room->position.x, -room->position.y) * finalTileSize * 20.0f;
-            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Floor.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -4;
-            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Walls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
-            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Overlay.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
-            roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/Deco.png"), std::string(roomRes->csvPath) + "_Deco.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -1;
-            roomLevel->AddComponent<ColliderTileMap2D>(std::string(roomRes->csvPath) + "_Colls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize);
-            roomLevel->AddComponent<ObjectTileMap2D>(std::string(roomRes->csvPath) + "_Objects.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize);
+
+            if (room->position == glm::vec2(0, 0))
+            {
+                roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), "./Assets/Maps/Rooms/Spawn_Room_Floor.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -4;
+                roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), "./Assets/Maps/Rooms/Spawn_Room_Walls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
+                roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/Deco.png"), "./Assets/Maps/Rooms/Spawn_Room_Deco.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -1;
+                roomLevel->AddComponent<ColliderTileMap2D>("./Assets/Maps/Rooms/Spawn_Room_Colls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize);
+            } else
+            {
+                roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Floor.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -4;
+                roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Walls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
+                roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Overlay.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
+                roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/Deco.png"), std::string(roomRes->csvPath) + "_Deco.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -1;
+                roomLevel->AddComponent<ColliderTileMap2D>(std::string(roomRes->csvPath) + "_Colls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize);
+                roomLevel->AddComponent<ObjectTileMap2D>(std::string(roomRes->csvPath) + "_Objects.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize);
+            }
 
             Logger::Log("Room generated");
         }

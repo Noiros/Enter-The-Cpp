@@ -9,7 +9,7 @@
 class AnimatedSprite2D : public Component2D
 {
     public:
-        AnimatedSprite2D(SpriteSheet sheet) : spriteSheet(sheet) {};
+        AnimatedSprite2D(SpriteSheet sheet) : spriteSheet(sheet) {}
 
         SpriteSheet spriteSheet;
     

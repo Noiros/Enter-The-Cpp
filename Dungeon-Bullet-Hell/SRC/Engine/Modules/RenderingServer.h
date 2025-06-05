@@ -12,13 +12,10 @@ class RenderingServer
 {
     public:
         RenderingServer();
-
-        ~RenderingServer()
-        {
-        };
+        ~RenderingServer() {}
     
-        static void SetInstance(RenderingServer* instance) { s_instance = instance; };
-        static RenderingServer& Get() { return *s_instance; };
+        static void SetInstance(RenderingServer* instance) { s_instance = instance; }
+        static RenderingServer& Get() { return *s_instance; }
         RenderingServer(const RenderingServer&) = delete;
         RenderingServer& operator=(const RenderingServer&) = delete;
 

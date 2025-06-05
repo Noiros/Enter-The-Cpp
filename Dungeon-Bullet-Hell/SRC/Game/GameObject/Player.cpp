@@ -12,7 +12,6 @@ void Player::Ready()
 {
     Logger::Log("Player ready.");
 
-    ResourcesManager* resourcesManager = &ResourcesManager::Get();
     inputManager = &InputManager::Get();
 
     SpriteSheet spriteSheet("./Assets/Characters/Player.png", {16, 16});
@@ -20,7 +19,8 @@ void Player::Ready()
     movement = &AddComponent<CharacterMovement2D>();
     animatedSprite = &AddComponent<AnimatedSprite2D>(spriteSheet);
     camera = &AddComponent<Camera2D>();
-
+    label = &AddComponent<LabelUI>("Life : " + std::to_string(HP), 50, 0, 0); 
+    
     Animation animIdle({0}, spriteSheet, 1.0f);
     animatedSprite->AddAnimation("Idle", animIdle);
     Animation animWalkUp({9, 13, 17, 21}, spriteSheet, 0.1f);
@@ -44,7 +44,13 @@ void Player::Ready()
 
 void Player::TakeDamage(int damage)
 {
+    if (invincibilityTimer > 0 or isDashing) return;
     
+    HP -= damage;
+    label->text = "Life : " + std::to_string(HP);
+    invincibilityTimer = invincibilityDuration;
+
+    if (HP <= 0) SceneTree::Get().DestroyGameObject(this);
 }
 
 void Player::EquipGun()
@@ -54,6 +60,7 @@ void Player::EquipGun()
 
 void Player::Update(float deltaTime)
 {
+    invincibilityTimer -= deltaTime;
     if (isDashing)
     {
         if (SDL_GetTicks() - startDash > 100)

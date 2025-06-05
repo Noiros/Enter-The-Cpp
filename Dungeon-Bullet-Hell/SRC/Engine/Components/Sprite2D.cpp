@@ -3,7 +3,6 @@
 #include "Transform2D.h"
 #include "../Engine.h"
 #include "../GameObject.h"
-#include "../../Engine/Logger.h"
 
 
 void Sprite2D::Ready()

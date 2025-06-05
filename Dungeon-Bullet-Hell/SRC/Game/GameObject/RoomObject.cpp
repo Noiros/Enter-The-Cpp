@@ -1,12 +1,12 @@
 ﻿#include "RoomObject.h"
 
-#include <Windows.h>
-
 #include "Enemy.h"
 #include "Player.h"
 #include "../../Engine/Logger.h"
 #include "../../Engine/Modules/PhysicsServer.h"
 #include "../../Engine/Modules/SceneTree.h"
+#include "../../Engine/Components/ColliderTileMap2D.h"
+#include "../../Engine/Components/TileMap2D.h"
 
 void RoomObject::Ready()
 {

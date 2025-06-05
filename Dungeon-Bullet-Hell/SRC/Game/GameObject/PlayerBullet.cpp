@@ -2,17 +2,21 @@
 
 #include "Enemy.h"
 #include "../../Engine/Logger.h"
-#include "../../Engine/Components/Sprite2D.h"
 #include "../../Engine/Components/Collider2D.h"
 
 
 void PlayerBullet::Ready()
 {
-    AddComponent<Sprite2D>(Sprite("./Assets/Images/FX/PlantSpike.png"));
-    transform->size = glm::vec2(20);
+    SpriteSheet spriteSheet("./Assets/FXs/CanonBall.png", {16, 16});
+    Animation animator({0, 1, 2, 3, 4}, spriteSheet, 0.1f);
+
+    animatedSprite = &AddComponent<AnimatedSprite2D>(spriteSheet);
+    animatedSprite->AddAnimation("Idle", animator);
+    animatedSprite->PlayAnimation("Idle");
+    
+    transform->size = glm::vec2(16);
     
     movement = &AddComponent<CharacterMovement2D>();
-
     transform->rotation = glm::degrees(std::atan2(direction.y, direction.x));
     movement->SetLinearVelocity(direction * bulletSpeed * 1000.0f);
 

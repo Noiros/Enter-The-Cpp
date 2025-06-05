@@ -14,15 +14,15 @@ public:
     glm::vec2 gunHandle = {20, 0};
     GunTeam team = PLAYER;
     
-    Sprite2D* sprite;
-    GameObject* parent;
-    glm::vec2 lookAtDir;
+    Sprite2D* sprite = nullptr;
+    GameObject* parent = nullptr;
+    glm::vec2 lookAtDir = {0, 0};
 
-    Gun(GameObject* s) : parent(s) {};
+    Gun(GameObject* s) : parent(s) {}
     void Ready() override;
     void Update(float deltaTime) override;
     void Shoot();
 
 private:
-    uint32_t lastFire;
+    uint32_t lastFire = 0;
 };

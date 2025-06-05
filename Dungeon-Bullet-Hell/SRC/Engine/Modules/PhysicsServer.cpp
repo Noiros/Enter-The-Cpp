@@ -27,32 +27,14 @@ void PhysicsServer::RmCollider(Collider2D* collider)
 Collider2D* PhysicsServer::TestMovement(Collider2D* collider, glm::vec2 movement)
 {
     SDL_Rect destAABB = collider->collisionShape.collisionShape;
-    destAABB.x += movement.x + collider->gameObject->transform->position.x;
-    destAABB.y += movement.y + collider->gameObject->transform->position.y;
+    destAABB.x += int(movement.x + collider->gameObject->transform->position.x);
+    destAABB.y += int(movement.y + collider->gameObject->transform->position.y);
     for (Collider2D* coll : colliders[collider->layer])
     {
         SDL_Rect testAABB = coll->collisionShape.collisionShape;
-        testAABB.x += coll->gameObject->transform->position.x;
-        testAABB.y += coll->gameObject->transform->position.y;
+        testAABB.x += int(coll->gameObject->transform->position.x);
+        testAABB.y += int(coll->gameObject->transform->position.y);
         if (coll->gameObject->IsActive() && coll->isTrigger == false && coll != collider && IsCollidingAABB(destAABB, testAABB) == true)
-        {
-            return coll;
-        }
-    }
-    return nullptr;
-}
-
-Collider2D* PhysicsServer::IsOverlapping(Collider2D* collider)
-{
-    SDL_Rect destAABB = collider->collisionShape.collisionShape;
-    destAABB.x += collider->gameObject->transform->position.x;
-    destAABB.y += collider->gameObject->transform->position.y;
-    for (Collider2D* coll : colliders[collider->layer])
-    {
-        SDL_Rect testAABB = coll->collisionShape.collisionShape;
-        testAABB.x += coll->gameObject->transform->position.x;
-        testAABB.y += coll->gameObject->transform->position.y;
-        if (coll != collider && IsCollidingAABB(destAABB, testAABB) == true)
         {
             return coll;
         }
@@ -65,14 +47,14 @@ std::vector<Collider2D*> PhysicsServer::GetOverloppingBodies(Collider2D* collide
     std::vector<Collider2D*> bodies;
     
     SDL_Rect destAABB = collider->collisionShape.collisionShape;
-    destAABB.x += collider->gameObject->transform->position.x;
-    destAABB.y += collider->gameObject->transform->position.y;
+    destAABB.x += int(collider->gameObject->transform->position.x);
+    destAABB.y += int(collider->gameObject->transform->position.y);
     
     for (Collider2D* coll : colliders[collider->layer])
     {
         SDL_Rect testAABB = coll->collisionShape.collisionShape;
-        testAABB.x += coll->gameObject->transform->position.x;
-        testAABB.y += coll->gameObject->transform->position.y;
+        testAABB.x += int(coll->gameObject->transform->position.x);
+        testAABB.y += int(coll->gameObject->transform->position.y);
         if (coll->gameObject->IsActive() && coll != collider && IsCollidingAABB(destAABB, testAABB) == true)
         {
             bodies.push_back(coll);

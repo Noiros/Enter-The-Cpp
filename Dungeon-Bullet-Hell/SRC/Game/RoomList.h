@@ -1,12 +1,9 @@
 ﻿#pragma once
 #include "../Engine/Plugins/DungeonGenerator.h"
 
-#include "../Engine/Plugins/DungeonGenerator.h" // Assurez-vous que c'est le bon chemin
 #include <vector>
 #include <string>
-#include <random> // Pour std::mt19937, std::uniform_int_distribution
-#include <algorithm> // Pour std::sort
-
+#include <random>
 
 class RoomList {
 public:    

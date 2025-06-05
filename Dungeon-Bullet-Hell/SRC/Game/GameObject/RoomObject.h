@@ -2,8 +2,6 @@
 #include "Empty.h"
 #include "../../Engine/GameObject.h"
 #include "../../Engine/Components/Collider2D.h"
-#include "../../Engine/Components/ColliderTileMap2D.h"
-#include "../../Engine/Components/TileMap2D.h"
 
 class RoomObject : public GameObject
 {

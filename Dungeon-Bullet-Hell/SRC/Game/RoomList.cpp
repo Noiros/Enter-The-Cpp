@@ -1,6 +1,4 @@
 ﻿#include "RoomList.h"
-#include <iostream> // Pour débogage
-
 #include "../Engine/Logger.h"
 
 const RoomResource* RoomList::GetBestRoomResource(const Room* dungeonRoom) const {
@@ -22,7 +20,7 @@ const RoomResource* RoomList::GetBestRoomResource(const Room* dungeonRoom) const
         return matchingResources[distribution(randomEngine)];
     }
 
-    Logger::Err("No RoomResource found for connections");
+    Logger::Err("No Room Resource found for connections");
     return nullptr;
 }
 

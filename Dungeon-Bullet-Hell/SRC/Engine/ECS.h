@@ -1,7 +1,6 @@
 ﻿#pragma once
 #include <array>
 #include <bitset>
-#include <iostream>
 
 class GameObject;
 class Component;

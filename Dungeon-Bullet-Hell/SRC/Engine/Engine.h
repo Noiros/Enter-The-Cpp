@@ -1,6 +1,4 @@
 ﻿#pragma once
-#include <memory>
-
 #include "Modules/InputManager.h"
 #include "Modules/PhysicsServer.h"
 #include "Modules/RenderingServer.h"

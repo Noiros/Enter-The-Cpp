@@ -9,8 +9,8 @@ public:
     ResourcesManager();
     ~ResourcesManager();
 
-    static void SetInstance(ResourcesManager* instance) { s_instance = instance; };
-    static ResourcesManager& Get() { return *s_instance; };
+    static void SetInstance(ResourcesManager* instance) { s_instance = instance; }
+    static ResourcesManager& Get() { return *s_instance; }
     ResourcesManager(const ResourcesManager&) = delete;
     ResourcesManager& operator=(const ResourcesManager&) = delete;
 

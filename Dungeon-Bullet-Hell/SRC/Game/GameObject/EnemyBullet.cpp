@@ -1,15 +1,19 @@
 ﻿#include "EnemyBullet.h"
 
 #include "Enemy.h"
-#include "../../Engine/Logger.h"
-#include "../../Engine/Components/Sprite2D.h"
 #include "../../Engine/Components/Collider2D.h"
 
 
 void EnemyBullet::Ready()
-{    
-    AddComponent<Sprite2D>(Sprite("./Assets/FXs/Fireball.png"));
-    transform->size = glm::vec2(20);
+{
+    SpriteSheet spriteSheet("./Assets/FXs/Fireball.png", {16, 16});
+    Animation animator({0, 1, 2, 3}, spriteSheet, 0.1f);
+
+    animatedSprite = &AddComponent<AnimatedSprite2D>(spriteSheet);
+    animatedSprite->AddAnimation("Idle", animator);
+    animatedSprite->PlayAnimation("Idle");
+    
+    transform->size = glm::vec2(32);
     
     movement = &AddComponent<CharacterMovement2D>();
 
@@ -27,10 +31,13 @@ void EnemyBullet::HitObject(GameObject* other)
         GameObject::HitObject(other);
         
         auto* player = dynamic_cast<Player*>(other);
-        if (player && !player->isDashing) {
-            player->HP -= 1;
-            if (player->HP <= 0) SceneTree::Get().DestroyGameObject(player);
+        if (player) {
+            player->TakeDamage(1);
         }
-        SceneTree::Get().DestroyGameObject(this);
+        auto* enemy = dynamic_cast<Enemy*>(other);
+        if (!enemy)
+        {
+            SceneTree::Get().DestroyGameObject(this);
+        }
     }
 }

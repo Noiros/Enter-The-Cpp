@@ -1,5 +1,5 @@
 #include "TileMap2D.h"
-#include <iostream>
+#include "../Logger.h"
 #include <fstream>
 #include <sstream>
 #include <glm.hpp>

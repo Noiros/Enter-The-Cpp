@@ -1,8 +1,6 @@
 ﻿#pragma once
 
 #include <vec2.hpp>
-#include <__msvc_string_view.hpp>
-
 #include "Component2D.h"
 
 class Transform2D : public Component2D

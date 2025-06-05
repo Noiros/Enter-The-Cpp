@@ -4,22 +4,22 @@
 #include "../../Engine/Engine.h"
 #include "../../Engine/Components/CharacterMovement2D.h"
 #include "../../Engine/Components/AnimatedSprite2D.h"
-#include "../../Engine/Components/Collider2D.h"
-
-#include <memory>
 
 #include "Gun.h"
+#include "../../Engine/Components/LabelUI.h"
 
 class Player : public GameObject
 {
 public:
     InputManager* inputManager;
 
-    int HP = 3;
+    int HP = 5;
     
     float dashTime = 2.0f;
     float dashCooldown = 2.5f;
     bool isDashing = false;
+    float invincibilityDuration = 1.0f;
+    float invincibilityTimer = 0.0f;
     
     void Update(float deltaTime);
     void Ready();
@@ -27,10 +27,11 @@ public:
     void EquipGun();
 
 private:
-    CharacterMovement2D* movement;
-    AnimatedSprite2D* animatedSprite;
-    Camera2D* camera;
-    Gun* gun;
+    CharacterMovement2D* movement = nullptr;
+    AnimatedSprite2D* animatedSprite = nullptr;
+    Camera2D* camera = nullptr;
+    Gun* gun = nullptr;
+    LabelUI* label = nullptr;
     
     uint32_t startDash = 0;
     uint32_t lastDash = 0;

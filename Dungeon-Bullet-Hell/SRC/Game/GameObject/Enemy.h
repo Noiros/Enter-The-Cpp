@@ -5,6 +5,8 @@
 class Enemy : public GameObject
 {
     public:
+        ~Enemy() { SceneTree::Get().DestroyGameObject(gun); }
+    
         void Update(float deltaTime);
         void Ready();
         void EquipGun();
@@ -18,8 +20,8 @@ class Enemy : public GameObject
         float attackDistance = 300.0f;
 
 protected:
-    Player* player;
-    CharacterMovement2D* movement;
-    AnimatedSprite2D* animatedSprite;
-    Gun* gun;
+    Player* player = nullptr;
+    CharacterMovement2D* movement = nullptr;
+    AnimatedSprite2D* animatedSprite = nullptr;
+    Gun* gun = nullptr;
 };

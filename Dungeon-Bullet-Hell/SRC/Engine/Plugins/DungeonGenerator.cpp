@@ -40,8 +40,6 @@ int Room::GetDoorCount() const {
 }
 
 int Room::GetComplexityCost() const {
-    // Vous aviez cette fonction, je la laisse au cas où elle serait utilisée ailleurs.
-    // Si elle n'est pas utilisée, vous pouvez la supprimer.
     return GetDoorCount();
 }
 
@@ -66,7 +64,6 @@ DungeonGenerator::~DungeonGenerator() {
     }
     rooms.clear();
     grid.clear();
-    // pendingRoomsVector n'est plus un membre, il est local à GenerateDungeon
 }
 
 void DungeonGenerator::AddRoom(Room* room) {
@@ -89,10 +86,22 @@ void DungeonGenerator::GenerateDungeon(int desiredRoomCount) {
     // 1. Créer la salle de départ
     Room* startRoom = new Room({0, 0});
     AddRoom(startRoom); // Ajoute à 'grid' et 'rooms'
-    roomExpansionStack.push_back(startRoom);
+    // Nous n'ajoutons PAS startRoom à la pile d'expansion, pour éviter toute expansion future à partir d'elle.
 
     int currentRoomCount = 1;
 
+    // Forcer la première extension vers le nord
+    if (currentRoomCount < desiredRoomCount) {
+        glm::vec2 northNeighborPos = startRoom->position + GetDirectionVector(Direction::NORTH);
+        Room* northRoom = new Room(northNeighborPos);
+        startRoom->connections[Direction::NORTH] = true;
+        northRoom->connections[GetOppositeDirection(Direction::NORTH)] = true;
+        AddRoom(northRoom);
+        roomExpansionStack.push_back(northRoom); // Seule la salle du nord est ajoutée à la pile
+        currentRoomCount++;
+    }
+
+    // Itérer à travers la pile d'expansion des salles
     while (currentRoomCount < desiredRoomCount && !roomExpansionStack.empty()) {
         Room* currentRoom = roomExpansionStack.back();
 
@@ -116,10 +125,16 @@ void DungeonGenerator::GenerateDungeon(int desiredRoomCount) {
                     break; 
                 }
             } else { // Une pièce existe déjà à cette position
-                Room* existingNeighbor = it->second;
-                if (!currentRoom->connections.at(dir) || !existingNeighbor->connections.at(GetOppositeDirection(dir))) {
+                // Si la pièce voisine est la salle de départ, et que la connexion n'est pas déjà établie vers le nord
+                // alors nous ne créons pas de connexion, pour maintenir la salle de départ avec une seule porte.
+                if (neighborPos == glm::vec2(0,0) && dir != Direction::NORTH) {
+                    continue; 
+                }
+
+                // Si la connexion n'existe pas déjà, ou si les deux côtés ne sont pas connectés, créer la connexion
+                if (!currentRoom->connections.at(dir) || !it->second->connections.at(GetOppositeDirection(dir))) {
                     currentRoom->connections[dir] = true;
-                    existingNeighbor->connections[GetOppositeDirection(dir)] = true;
+                    it->second->connections[GetOppositeDirection(dir)] = true;
                 }
             }
         }

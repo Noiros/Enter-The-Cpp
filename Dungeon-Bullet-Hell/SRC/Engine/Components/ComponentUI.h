@@ -2,7 +2,4 @@
 
 #include "../Component.h"
 
-class ComponentUI : public Component
-{
-public:
-};
+class ComponentUI : public Component {};

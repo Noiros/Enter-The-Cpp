@@ -1,12 +1,11 @@
 ﻿#include <vec2.hpp>
-
 #include "Sprite.h"
 #include "../Utils.hpp"
 
 class SpriteSheet : public Sprite
 {
     public:
-        SpriteSheet(std::string_view path, glm::vec2 size) : Sprite(path), tileSize(size) {};
+        SpriteSheet(std::string_view path, glm::vec2 size) : Sprite(path), tileSize(size) {}
     
         glm::vec2 tileSize = {16, 16};
         
@@ -21,7 +20,6 @@ class SpriteSheet : public Sprite
 
             return glm::vec2(static_cast<float>(tileX) * tileSize.x, static_cast<float>(tileY) * tileSize.y);
         }
-
 };
 
 

@@ -3,12 +3,12 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "Room_Door.tmx",
+    "activeFile": "Rooms/4_Room_NSWE_01.tmx",
     "expandedProjectPaths": [
-        "Corridors",
-        ".",
         "Rooms",
-        "Rooms/4"
+        "Rooms/4",
+        ".",
+        "Corridors"
     ],
     "fileStates": {
         "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Collisions.tsx": {
@@ -67,7 +67,7 @@
         "Collisions.tsx": {
             "dynamicWrapping": true,
             "scaleInDock": 5.5,
-            "scaleInEditor": 1
+            "scaleInEditor": 11
         },
         "Deco.tsx": {
             "dynamicWrapping": false,
@@ -91,7 +91,7 @@
             "scale": 2.9895312499999998,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 340.6888621752993,
+                "x": 256.7292113103016,
                 "y": 144.33700935556374
             }
         },
@@ -99,23 +99,23 @@
             "scale": 3,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 379.83333333333337,
+                "x": 296.1666666666667,
                 "y": 170.83333333333334
             }
         },
         "Rooms/1_Room_N_01.tmx": {
             "scale": 3.8326562499999994,
-            "selectedLayer": 5,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 118.58616331689024,
                 "y": 160.07175180398713
             }
         },
         "Rooms/1_Room_S_01.tmx": {
             "scale": 3.8326562499999994,
-            "selectedLayer": 4,
+            "selectedLayer": 2,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -123,7 +123,7 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -139,7 +139,7 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -147,7 +147,7 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -163,7 +163,7 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 0,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -179,7 +179,7 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -187,7 +187,7 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -195,7 +195,7 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -203,7 +203,7 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -211,7 +211,7 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
@@ -219,16 +219,16 @@
             "scale": 3.8326562499999994,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.07175180398713,
+                "x": 160.07175180398715,
                 "y": 160.07175180398713
             }
         },
         "Rooms/3_Room_SEW_01.tmx": {
             "scale": 3.8326562499999994,
-            "selectedLayer": 3,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 160.07175180398713,
-                "y": 209.38480981695142
+                "x": 160.07175180398715,
+                "y": 160.07175180398713
             }
         },
         "Rooms/4/Room_01.tmx": {
@@ -241,10 +241,18 @@
         },
         "Rooms/4_Room_NSWE_01.tmx": {
             "scale": 3,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 186.5,
+                "y": 165.16666666666663
+            }
+        },
+        "Rooms/Spawn_Room.tmx": {
+            "scale": 3.8326562499999994,
             "selectedLayer": 3,
             "viewCenter": {
-                "x": 144.66666666666663,
-                "y": 144.16666666666663
+                "x": 160.07175180398715,
+                "y": 160.07175180398713
             }
         },
         "WallsFloor.tsx": {
@@ -265,28 +273,36 @@
     "openFiles": [
         "Rooms/4_Room_NSWE_01.tmx",
         "Rooms/1_Room_E_01.tmx",
-        "Objects.tsx",
-        "Room_Door.tmx",
         "Rooms/1_Room_N_01.tmx",
         "Rooms/1_Room_S_01.tmx",
         "Rooms/1_Room_W_01.tmx",
         "Rooms/2_Room_EW_01.tmx",
-        "Rooms/2_Room_NE_01.tmx"
+        "Rooms/2_Room_NE_01.tmx",
+        "Rooms/3_Room_SEW_01.tmx",
+        "Rooms/3_Room_NSW_01.tmx",
+        "Collisions.tsx",
+        "Rooms/Spawn_Room.tmx",
+        "Rooms/2_Room_NS_01.tmx",
+        "Rooms/2_Room_NW_01.tmx",
+        "Rooms/2_Room_SW_01.tmx",
+        "Rooms/3_Room_NEW_01.tmx",
+        "Rooms/2_Room_SE_01.tmx",
+        "Rooms/3_Room_NSE_01.tmx"
     ],
     "project": "MainMap.tiled-project",
     "recentFiles": [
-        "Rooms/4_Room_NSWE_01.tmx",
-        "Rooms/1_Room_E_01.tmx",
-        "Objects.tsx",
+        "Rooms/3_Room_NSE_01.tmx",
+        "Rooms/2_Room_SE_01.tmx",
+        "Rooms/3_Room_NEW_01.tmx",
+        "Rooms/2_Room_SW_01.tmx",
+        "Rooms/2_Room_NW_01.tmx",
+        "Rooms/2_Room_NS_01.tmx",
+        "Rooms/Spawn_Room.tmx",
+        "Collisions.tsx",
+        "Rooms/3_Room_NSW_01.tmx",
+        "Rooms/3_Room_SEW_01.tmx",
         "Rooms/2_Room_NE_01.tmx",
-        "Rooms/2_Room_EW_01.tmx",
-        "Rooms/1_Room_W_01.tmx",
-        "Rooms/1_Room_S_01.tmx",
-        "Rooms/1_Room_N_01.tmx",
-        "Room_Door.tmx",
-        "Rooms/2_Room_EW.tmx",
-        "Rooms/2_Room_NS.tmx",
-        "Rooms/2_Room_NS_01.tmx"
+        "Rooms/2_Room_EW_01.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

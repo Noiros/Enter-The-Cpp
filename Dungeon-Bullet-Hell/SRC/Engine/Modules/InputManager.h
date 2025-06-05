@@ -3,7 +3,6 @@
 #include <SDL.h>
 #include <unordered_map>
 #include <set>
-#include <__msvc_string_view.hpp>
 
 enum class Action;
 
@@ -25,8 +24,8 @@ public:
     float GetMouseX();
     float GetMouseY();
 
-    static void SetInstance(InputManager* instance) { s_instance = instance; };
-    static InputManager& Get() { return *s_instance; };
+    static void SetInstance(InputManager* instance) { s_instance = instance; }
+    static InputManager& Get() { return *s_instance; }
     InputManager(const InputManager&) = delete;
     InputManager& operator=(const InputManager&) = delete;
 

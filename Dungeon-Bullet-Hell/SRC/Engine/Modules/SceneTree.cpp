@@ -1,7 +1,6 @@
 ﻿#include "SceneTree.h"
 
 #include "../../Game/Game.h"
-#include "../Logger.h"
 
 SceneTree* SceneTree::s_instance = nullptr;
 

@@ -1,5 +1,4 @@
 ﻿#pragma once
-#include <SDL_render.h>
 #include <string>
 
 #include "TileMap2D.h"
@@ -17,16 +16,16 @@ public:
     void ReadTileMapData(const std::string& filename);
 
 private:
-    //Taille d'une tile
+    //Size of source tile
     static constexpr size_t tileHeight = 16;
     static constexpr size_t tileWidth = 16;
-    //Nombre de tiles sur le tilemap
+    //Size of the tilemap
     size_t tilemapHeight = 8;
     size_t tilemapWidth = 8;
-    //Taille de la map en tiles
+    //Size of the map
     size_t width;
     size_t height;
-    //Taille des tiles rendues en pixels
+    //Size of destination tiles
     float finalTileWidth = 16;
     float finalTileHeight = 16; 
     
