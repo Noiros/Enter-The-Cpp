@@ -19,5 +19,4 @@ void BaseEnemy::Ready()
     Animation animDash({0, 1, 2, 3}, spriteSheet, 0.1f);
     
     Enemy::Ready();
-
 }

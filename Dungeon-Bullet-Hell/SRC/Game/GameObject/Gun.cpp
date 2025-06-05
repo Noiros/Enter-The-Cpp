@@ -9,7 +9,7 @@ void Gun::Ready()
 {
     GameObject::Ready();
 
-    sprite = &AddComponent<Sprite2D>(Sprite("./Assets/Guns/milit.png"));
+    sprite = &AddComponent<Sprite2D>(Sprite("./Assets/Guns/seven-seven.png"));
     transform->scale = glm::vec2(3.0f);
     transform->anchor = glm::vec2(-0.5f, 0.5f);
 }

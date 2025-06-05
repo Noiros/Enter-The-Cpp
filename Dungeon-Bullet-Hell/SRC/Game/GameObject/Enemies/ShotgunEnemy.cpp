@@ -2,7 +2,7 @@
 
 void ShotgunEnemy::Ready()
 {
-    SpriteSheet spriteSheet("./Assets/Characters/Player.png", {16, 16});
+    SpriteSheet spriteSheet("./Assets/Characters/Skeleton.png", {16, 16});
     
     animatedSprite = &AddComponent<AnimatedSprite2D>(spriteSheet);
     
