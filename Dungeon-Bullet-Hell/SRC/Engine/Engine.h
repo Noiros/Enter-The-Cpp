@@ -18,6 +18,10 @@ public:
     Engine();
     ~Engine();
     
+    uint64_t millisFrame = 0;
+    uint64_t millisUpdateFrame = 0;
+    uint64_t millisRenderFrame = 0;
+    
     static void SetInstance(Engine* instance) { s_instance = instance; };
     static Engine& Get() { return *s_instance; };
     Engine(const Engine&) = delete;

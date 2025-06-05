@@ -70,8 +70,12 @@ void Engine::Update()
     millisecondPreviousFrame = SDL_GetTicks64();
 
     renderingServer.Clear();
+    uint64_t startUpdateMillis = SDL_GetTicks64();
     sceneTree.Update(deltaTime);
+    millisUpdateFrame = SDL_GetTicks64() - startUpdateMillis;
+    uint64_t startRenderMillis = SDL_GetTicks64();
     renderingServer.Render();
+    millisRenderFrame = SDL_GetTicks64() - startRenderMillis;
 
     SDL_Event sdlEvent;
     while (SDL_PollEvent(&sdlEvent))
@@ -84,4 +88,5 @@ void Engine::Update()
             break;
         }
     }
+    millisFrame = SDL_GetTicks64() - millisecondPreviousFrame;
 }

@@ -156,6 +156,7 @@
     <ClCompile Include="SRC\Engine\Modules\RenderingServer.cpp" />
     <ClCompile Include="SRC\Engine\Modules\ResourcesManager.cpp" />
     <ClCompile Include="SRC\Engine\Modules\SceneTree.cpp" />
+    <ClCompile Include="SRC\Engine\Monitor.cpp" />
     <ClCompile Include="SRC\Engine\Plugins\DungeonGenerator.cpp" />
     <ClCompile Include="SRC\Game\Game.cpp" />
     <ClCompile Include="SRC\Game\GameObject\Empty.cpp" />
@@ -193,6 +194,7 @@
     <ClInclude Include="SRC\Engine\Modules\RenderingServer.h" />
     <ClInclude Include="SRC\Engine\Modules\ResourcesManager.h" />
     <ClInclude Include="SRC\Engine\Modules\SceneTree.h" />
+    <ClInclude Include="SRC\Engine\Monitor.h" />
     <ClInclude Include="SRC\Engine\Plugins\DungeonGenerator.h" />
     <ClInclude Include="SRC\Engine\Resources\Animation.h" />
     <ClInclude Include="SRC\Engine\Resources\CollisionShape.h" />

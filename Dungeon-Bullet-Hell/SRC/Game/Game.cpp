@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "../Engine/Logger.h"
+#include "../Engine/Monitor.h"
 #include "../Engine/Modules/RenderingServer.h"
 #include <SDL.h>
 #include "GameObject/Player.h"
@@ -49,6 +50,9 @@ void Game::Start(Engine* engine)
     inputManager->BindButton(Action::Shoot, SDL_CONTROLLER_BUTTON_RIGHTSHOULDER);
     inputManager->BindButton(Action::Dash, SDL_CONTROLLER_BUTTON_LEFTSHOULDER);
 
+    //Create perfs monitor
+    Monitor* monitor = sceneTree->AddGameObject<Monitor>();
+    
     //Create player
     player = sceneTree->AddGameObject<Player>("Player");
     player->transform->position = glm::vec2(10, 10) * 48.0f;

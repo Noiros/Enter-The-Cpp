@@ -24,6 +24,6 @@ void ShotgunEnemy::Ready()
     
     gun->bulletsPerShot = 10;
     gun->gunSpread = 30.0f;
-    gun->fireRate = 0.5f;
+    gun->fireRate = 1.0f;
     gun->bulletSpeed = 10.0f;
 }
