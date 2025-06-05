@@ -1,8 +1,6 @@
 ﻿#pragma once
 #include "../Engine/Plugins/DungeonGenerator.h"
 
-#pragma once
-
 #include "../Engine/Plugins/DungeonGenerator.h" // Assurez-vous que c'est le bon chemin
 #include <vector>
 #include <string>
@@ -11,7 +9,7 @@
 
 
 class RoomList {
-public:
+public:    
     std::vector<RoomResource> rooms = {
         RoomResource("./Assets/Maps/Rooms/1_Room_E_01", {Direction::EAST}),
         RoomResource("./Assets/Maps/Rooms/1_Room_S_01", {Direction::SOUTH}),
@@ -40,11 +38,8 @@ public:
         randomEngine.seed(rd());
     }
 
-    // Renvoie la RoomResource la plus propice pour une salle donnée
-    // Prend les connexions de la salle générée et trouve une RoomResource correspondante.
     const RoomResource* GetBestRoomResource(const Room* dungeonRoom) const;
 
 private:
-    // Helper pour trier un vecteur de directions afin d'avoir une représentation canonique
     std::vector<Direction> GetSortedDirections(const std::map<Direction, bool>& connections) const;
 };

@@ -53,10 +53,7 @@ void Game::Start(Engine* engine)
     //Create player
     player = sceneTree->AddGameObject<Player>("Player");
     player->transform->position = glm::vec2(10, 10) * 48.0f;
-    
-    //Enemy* enemy = sceneTree->AddGameObject<Enemy>();
-    //enemy->transform->position = glm::vec2(5, 5) * 48.0f;
-    
+        
     //Initialize gameObjects IDs
     sceneTree->RegisterGameObjectFactory(0, [](std::string_view name){ return std::make_unique<BaseEnemy>(); });
     sceneTree->RegisterGameObjectFactory(1, [](std::string_view name){ return std::make_unique<ShotgunEnemy>(); });
@@ -69,13 +66,14 @@ void Game::GenMap()
 {
     RoomList roomList;
     DungeonGenerator generator;
-    generator.GenerateDungeon(50); 
+    generator.GenerateDungeon(50); // Gen a map of 50 rooms
     
     for (Room* room : generator.rooms) {
         Logger::Log("Add Room (" + std::to_string(room->position.x) + ", " + std::to_string(room->position.y) + ") Door count: " + std::to_string(room->GetDoorCount()));
         
         const RoomResource* roomRes = roomList.GetBestRoomResource(room);
 
+        // Generate the room
         if (roomRes != nullptr)
         {
             glm::ivec2 roomSize = {20, 20};

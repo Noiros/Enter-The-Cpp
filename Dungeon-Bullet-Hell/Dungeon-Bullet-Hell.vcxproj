@@ -19,7 +19,6 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SRC\ECS\ECS.h" />
     <ClInclude Include="SRC\Engine\Component.h" />
     <ClInclude Include="SRC\Engine\Components\AnimatedSprite2D.h" />
     <ClInclude Include="SRC\Engine\Components\Camera2D.h" />
@@ -34,6 +33,7 @@
     <ClInclude Include="SRC\Engine\Components\Sprite2D.h" />
     <ClInclude Include="SRC\Engine\Components\TileMap2D.h" />
     <ClInclude Include="SRC\Engine\Components\Transform2D.h" />
+    <ClInclude Include="SRC\Engine\ECS.h" />
     <ClInclude Include="SRC\Engine\Engine.h" />
     <ClInclude Include="SRC\Engine\GameObject.h" />
     <ClInclude Include="SRC\Engine\Logger.h" />

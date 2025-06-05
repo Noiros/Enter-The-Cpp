@@ -3,8 +3,12 @@
         "height": 4300,
         "width": 2
     },
-    "activeFile": "",
+    "activeFile": "Room_Door.tmx",
     "expandedProjectPaths": [
+        "Corridors",
+        ".",
+        "Rooms",
+        "Rooms/4"
     ],
     "fileStates": {
         "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Collisions.tsx": {
@@ -67,7 +71,7 @@
         },
         "Deco.tsx": {
             "dynamicWrapping": false,
-            "scaleInDock": 1,
+            "scaleInDock": 3,
             "scaleInEditor": 4
         },
         "MainMap.tmx": {
@@ -81,19 +85,27 @@
         "Objects.tsx": {
             "dynamicWrapping": true,
             "scaleInDock": 11,
-            "scaleInEditor": 1
+            "scaleInEditor": 11
+        },
+        "Room_Door.tmx": {
+            "scale": 2.9895312499999998,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 340.6888621752993,
+                "y": 144.33700935556374
+            }
         },
         "Rooms/1_Room_E_01.tmx": {
             "scale": 3,
             "selectedLayer": 4,
             "viewCenter": {
-                "x": 199.66666666666663,
+                "x": 379.83333333333337,
                 "y": 170.83333333333334
             }
         },
         "Rooms/1_Room_N_01.tmx": {
             "scale": 3.8326562499999994,
-            "selectedLayer": 3,
+            "selectedLayer": 5,
             "viewCenter": {
                 "x": 160.07175180398713,
                 "y": 160.07175180398713
@@ -101,7 +113,7 @@
         },
         "Rooms/1_Room_S_01.tmx": {
             "scale": 3.8326562499999994,
-            "selectedLayer": 1,
+            "selectedLayer": 4,
             "viewCenter": {
                 "x": 160.07175180398713,
                 "y": 160.07175180398713
@@ -241,7 +253,7 @@
             "scaleInEditor": 4
         }
     },
-    "last.exportedFilePath": "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Dungeon-Bullet-Hell/Assets/Maps",
+    "last.exportedFilePath": "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Dungeon-Bullet-Hell/Assets/Maps/Rooms",
     "last.externalTilesetPath": "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Tiled",
     "last.imagePath": "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Dungeon-Bullet-Hell/Assets/Maps",
     "map.height": 20,
@@ -251,21 +263,30 @@
     "map.tileWidth": 16,
     "map.width": 20,
     "openFiles": [
+        "Rooms/4_Room_NSWE_01.tmx",
+        "Rooms/1_Room_E_01.tmx",
+        "Objects.tsx",
+        "Room_Door.tmx",
+        "Rooms/1_Room_N_01.tmx",
+        "Rooms/1_Room_S_01.tmx",
+        "Rooms/1_Room_W_01.tmx",
+        "Rooms/2_Room_EW_01.tmx",
+        "Rooms/2_Room_NE_01.tmx"
     ],
     "project": "MainMap.tiled-project",
     "recentFiles": [
+        "Rooms/4_Room_NSWE_01.tmx",
         "Rooms/1_Room_E_01.tmx",
+        "Objects.tsx",
+        "Rooms/2_Room_NE_01.tmx",
+        "Rooms/2_Room_EW_01.tmx",
+        "Rooms/1_Room_W_01.tmx",
+        "Rooms/1_Room_S_01.tmx",
+        "Rooms/1_Room_N_01.tmx",
+        "Room_Door.tmx",
         "Rooms/2_Room_EW.tmx",
         "Rooms/2_Room_NS.tmx",
-        "Rooms/2_Room_EW_01.tmx",
-        "Rooms/2_Room_NE_01.tmx",
-        "Rooms/2_Room_NS_01.tmx",
-        "Rooms/2_Room_NW_01.tmx",
-        "Rooms/2_Room_SE_01.tmx",
-        "Rooms/2_Room_SW_01.tmx",
-        "Rooms/1_Room_S_01.tmx",
-        "Rooms/1_Room_W_01.tmx",
-        "Rooms/1_Room_N_01.tmx"
+        "Rooms/2_Room_NS_01.tmx"
     ],
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {

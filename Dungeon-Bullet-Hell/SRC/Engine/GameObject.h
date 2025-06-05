@@ -3,7 +3,7 @@
 #include <vector>
 #include <memory>
 #include <string>
-#include "../ECS/ECS.h"
+#include "ECS.h"
 #include "Component.h"
 #include "../Engine/Components/Transform2D.h"
 
