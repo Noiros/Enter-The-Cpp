@@ -17,6 +17,8 @@ public:
     bool IsColliding(Collider2D* obj1, Collider2D* obj2);
     bool IsCollidingAABB(SDL_Rect obj1, SDL_Rect obj2);
 
+
+    //Creer le singleton
     static void SetInstance(PhysicsServer* instance) { s_instance = instance; }
     static PhysicsServer& Get() { return *s_instance; }
     PhysicsServer(const PhysicsServer&) = delete;

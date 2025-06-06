@@ -6,7 +6,8 @@
 #include <random>
 
 class RoomList {
-public:    
+public:
+    // List of rooms to choose from directions of the doors
     std::vector<RoomResource> rooms = {
         RoomResource("./Assets/Maps/Rooms/1_Room_E_01", {Direction::EAST}),
         RoomResource("./Assets/Maps/Rooms/1_Room_S_01", {Direction::SOUTH}),

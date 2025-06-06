@@ -46,9 +46,9 @@ class SceneTree
         inline GameObject* AddGameObjectByID(int id, std::string_view name = "") {
             std::unique_ptr<GameObject> obj = CreateGameObjectByID(id, name);
             if (obj) {
-                GameObject* rawPtr = obj.release(); // Utilisez .release() pour transférer la propriété
-                gameObjects.push_back(std::unique_ptr<GameObject>(rawPtr)); // Ré-encapsulez si nécessaire ou ajustez gameObjects
-                rawPtr->Ready(); // Appeler Ready après l'ajout à la liste
+                GameObject* rawPtr = obj.release();
+                gameObjects.push_back(std::unique_ptr<GameObject>(rawPtr));
+                rawPtr->Ready();
                 return rawPtr;
             }
             return nullptr;

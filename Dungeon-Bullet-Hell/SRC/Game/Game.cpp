@@ -84,6 +84,7 @@ void Game::GenMap()
             RoomObject* roomLevel = sceneTree->AddGameObject<RoomObject>();
             roomLevel->transform->position = glm::vec2(room->position.x, -room->position.y) * finalTileSize * 20.0f;
 
+            //Set a specific room resource for the room 0, 0
             if (room->position == glm::vec2(0, 0))
             {
                 roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), "./Assets/Maps/Rooms/Spawn_Room_Floor.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -4;

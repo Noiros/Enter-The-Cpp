@@ -24,6 +24,7 @@ public:
     float GetMouseX();
     float GetMouseY();
 
+    //Creer le singleton
     static void SetInstance(InputManager* instance) { s_instance = instance; }
     static InputManager& Get() { return *s_instance; }
     InputManager(const InputManager&) = delete;

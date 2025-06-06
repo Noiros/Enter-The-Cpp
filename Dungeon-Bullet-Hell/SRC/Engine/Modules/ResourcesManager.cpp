@@ -29,7 +29,6 @@ void ResourcesManager::ClearAssets()
 void ResourcesManager::AddTexture(std::string_view fileName)
 {
     SDL_Texture* texture = IMG_LoadTexture(RenderingServer::Get().GetRenderer(), fileName.data());
-    //get the raw const char*
     if (texture)
     {
         textures.emplace(fileName, texture);
