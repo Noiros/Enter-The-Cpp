@@ -69,7 +69,7 @@ void Game::GenMap()
 {
     RoomList roomList;
     DungeonGenerator generator;
-    generator.GenerateDungeon(50); // Gen a map of 50 rooms
+    generator.GenerateDungeon(25); // Gen a map of 50 rooms
     
     for (Room* room : generator.rooms) {
         Logger::Log("Add Room (" + std::to_string(room->position.x) + ", " + std::to_string(room->position.y) + ") Door count: " + std::to_string(room->GetDoorCount()));
@@ -94,7 +94,7 @@ void Game::GenMap()
             {
                 roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Floor.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -4;
                 roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Walls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
-                roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Overlay.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -2;
+                roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/WallFloor.png"), std::string(roomRes->csvPath) + "_Overlay.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = 2;
                 roomLevel->AddComponent<TileMap2D>(resourcesManager->GetTexture("./Assets/Maps/Deco.png"), std::string(roomRes->csvPath) + "_Deco.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize).ZOrder = -1;
                 roomLevel->AddComponent<ColliderTileMap2D>(std::string(roomRes->csvPath) + "_Colls.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize);
                 roomLevel->AddComponent<ObjectTileMap2D>(std::string(roomRes->csvPath) + "_Objects.csv", roomSize.x, roomSize.y, finalTileSize, finalTileSize);
