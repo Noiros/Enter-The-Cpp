@@ -1,0 +1,313 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "Rooms/2_Room_NW_01.tmx",
+    "expandedProjectPaths": [
+        "Corridors",
+        ".",
+        "Rooms",
+        "Rooms/4"
+    ],
+    "fileStates": {
+        "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Collisions.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Deco.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Objects.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/WallsFloor.tsx": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx": {
+            "scale": 3,
+            "selectedLayer": 10,
+            "viewCenter": {
+                "x": 3.5,
+                "y": 179.83333333333334
+            }
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#Objects": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#Water_coasts_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#Water_coasts_animation_decorative_cracks": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#Water_detilazation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#cracked_tiles": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#cracked_tiles_floor": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#doors_lever_chest_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#fire_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#fire_animation2": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#trap_animation": {
+            "scaleInDock": 1
+        },
+        "C:/Users/noiro/Downloads/craftpix-net-169442-free-2d-top-down-pixel-dungeon-asset-pack/Tiled_files/Dungeon1.tmx#walls_floor": {
+            "scaleInDock": 1
+        },
+        "Collisions.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 5.5,
+            "scaleInEditor": 11
+        },
+        "Deco.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 3,
+            "scaleInEditor": 4
+        },
+        "MainMap.tmx": {
+            "scale": 1.5,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 478.3333333333333,
+                "y": 297.6666666666667
+            }
+        },
+        "Objects.tsx": {
+            "dynamicWrapping": true,
+            "scaleInDock": 11,
+            "scaleInEditor": 11
+        },
+        "Room_Door.tmx": {
+            "scale": 2.9895312499999998,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 256.7292113103016,
+                "y": 144.33700935556374
+            }
+        },
+        "Rooms/1_Room_E_01.tmx": {
+            "scale": 3,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 166.16666666666666,
+                "y": 170.83333333333334
+            }
+        },
+        "Rooms/1_Room_N_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 118.58616331689022,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/1_Room_S_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/1_Room_W_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/2_Room_EW.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/2_Room_EW_01.tmx": {
+            "scale": 3,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 173.5,
+                "y": 187.83333333333334
+            }
+        },
+        "Rooms/2_Room_NE_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/2_Room_NS.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/2_Room_NS_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 0,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/2_Room_NW.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/2_Room_NW_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/2_Room_SE_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/2_Room_SW_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/3_Room_NEW_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/3_Room_NSE_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 4,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/3_Room_NSW_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/3_Room_SEW_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/4/Room_01.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 1,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "Rooms/4_Room_NSWE_01.tmx": {
+            "scale": 3,
+            "selectedLayer": 5,
+            "viewCenter": {
+                "x": 254.16666666666666,
+                "y": 165.16666666666663
+            }
+        },
+        "Rooms/Spawn_Room.tmx": {
+            "scale": 3.8326562499999994,
+            "selectedLayer": 3,
+            "viewCenter": {
+                "x": 160.07175180398713,
+                "y": 160.07175180398713
+            }
+        },
+        "WallsFloor.tsx": {
+            "dynamicWrapping": false,
+            "scaleInDock": 2,
+            "scaleInEditor": 4
+        }
+    },
+    "last.exportedFilePath": "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Dungeon-Bullet-Hell/Assets/Maps/Rooms",
+    "last.externalTilesetPath": "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Tiled",
+    "last.imagePath": "C:/Users/noiro/Documents/Dungeon-Bullet-Hell/Dungeon-Bullet-Hell/Assets/Maps",
+    "map.height": 20,
+    "map.lastUsedExportFilter": "Fichiers CSV (*.csv)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "map.width": 20,
+    "openFiles": [
+        "Rooms/4_Room_NSWE_01.tmx",
+        "Rooms/1_Room_E_01.tmx",
+        "Rooms/1_Room_N_01.tmx",
+        "Rooms/1_Room_S_01.tmx",
+        "Rooms/1_Room_W_01.tmx",
+        "Rooms/2_Room_EW_01.tmx",
+        "Rooms/2_Room_NE_01.tmx",
+        "Rooms/3_Room_SEW_01.tmx",
+        "Rooms/3_Room_NSW_01.tmx",
+        "Collisions.tsx",
+        "Rooms/Spawn_Room.tmx",
+        "Rooms/2_Room_NS_01.tmx",
+        "Rooms/2_Room_NW_01.tmx",
+        "Rooms/2_Room_SW_01.tmx",
+        "Rooms/3_Room_NEW_01.tmx",
+        "Rooms/2_Room_SE_01.tmx",
+        "Rooms/3_Room_NSE_01.tmx"
+    ],
+    "project": "MainMap.tiled-project",
+    "recentFiles": [
+        "Rooms/4_Room_NSWE_01.tmx",
+        "Rooms/1_Room_E_01.tmx",
+        "Rooms/1_Room_N_01.tmx",
+        "Rooms/1_Room_S_01.tmx",
+        "Rooms/1_Room_W_01.tmx",
+        "Rooms/2_Room_EW_01.tmx",
+        "Rooms/2_Room_NE_01.tmx",
+        "Rooms/3_Room_SEW_01.tmx",
+        "Rooms/3_Room_NSW_01.tmx",
+        "Collisions.tsx",
+        "Rooms/Spawn_Room.tmx",
+        "Rooms/2_Room_NS_01.tmx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    },
+    "tileset.type": 0
+}
