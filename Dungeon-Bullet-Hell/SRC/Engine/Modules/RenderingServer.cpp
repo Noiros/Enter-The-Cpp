@@ -21,7 +21,7 @@ RenderingServer::RenderingServer()
         return;
     }
 
-    window = SDL_CreateWindow("My Game", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, DISPLAY_WIDTH, DISPLAY_HEIGHT,
+    window = SDL_CreateWindow("Enter the CPP", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, DISPLAY_WIDTH, DISPLAY_HEIGHT,
                               SDL_WINDOW_RESIZABLE);
     if (!window)
     {
